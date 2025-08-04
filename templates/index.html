@@ -1,0 +1,217 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraper UI</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .light-mode {
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: #eee;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .dark-mode form {
+            background: #1e1e1e;
+            box-shadow: 0 8px 20px rgba(255,255,255,0.05);
+        }
+
+        select, input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .dark-mode select,
+        .dark-mode input[type="text"] {
+            background: #222;
+            color: white;
+            border: 1px solid #555;
+        }
+
+        input[type="submit"] {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        .message {
+            margin-top: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .dark-mode tr:nth-child(even) {
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode th {
+            background: #333;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .loader {
+            display: none;
+            margin-top: 20px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="light-mode">
+
+<div class="toggle-switch">
+    <label>
+        <input type="checkbox" id="modeToggle"> 🌙 Dark Mode
+    </label>
+</div>
+
+<div class="container">
+    <h2>🌐 Modular Web Scraper</h2>
+
+    <form method="POST" onsubmit="showLoader()">
+        <select name="site" required>
+            <option value="google_maps">Google Maps</option>
+            <option value="indiamart">IndiaMART</option>
+        </select>
+
+        <input type="text" name="query" placeholder="e.g. temples in delhi" required>
+
+        <input type="submit" value="Run Scraper">
+        <div class="loader" id="loader"></div>
+    </form>
+
+    <div class="message">{{ message|safe }}</div>
+
+    {% if table_data %}
+        <h3 style="margin-top: 40px;">Scraped Results</h3>
+        {% if output_file %}
+        <a class="download-btn" href="{{ url_for('static', filename=output_file) }}" download>⬇ Download CSV</a>
+        {% endif %}
+        <table>
+            <thead>
+                <tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}</tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script>
+            document.querySelector("table").scrollIntoView({ behavior: "smooth" });
+        </script>
+    {% endif %}
+</div>
+
+<script>
+    function showLoader() {
+        document.getElementById("loader").style.display = "inline-block";
+    }
+
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("light-mode");
+    });
+</script>
+
+</body>
+</html>
