@@ -1,4 +1,128 @@
-<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraper UI</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f7f7f7;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background: #eee;
+        }
+        .message {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #ffffe0;
+            border: 1px solid #e0e0aa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Web Scraper Interface</h1>
+
+    {% if message %}
+    <div class="message">{{ message|safe }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <label for="site">Select Site</label>
+        <select name="site" required>
+            <option value="">--Choose--</option>
+            <option value="google_maps">Google Maps</option>
+            <option value="indiamart">IndiaMART</option>
+        </select>
+
+        <label for="query">Search Query</label>
+        <input type="text" name="query" placeholder="e.g., hospitals in delhi" required>
+
+        <label for="limit">Limit Results (optional)</label>
+        <input type="number" name="limit" min="1" placeholder="e.g., 50">
+
+        <button type="submit">Scrape</button>
+    </form>
+
+    {% if output_file %}
+        <p><strong>Download:</strong> <a href="{{ url_for('static', filename=output_file) }}">{{ output_file }}</a></p>
+    {% endif %}
+
+    {% if headers and table_data %}
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!--
+
 
 <!DOCTYPE html>
 <html>
@@ -215,3 +339,6 @@
 
 </body>
 </html>
+
+
+-->

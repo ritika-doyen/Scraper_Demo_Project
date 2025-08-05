@@ -1,11 +1,5 @@
-
-
-
-
-
-"""
-
 # indiamart.py
+
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -32,21 +26,21 @@ def save_results(results, query, output_file):
     df.to_csv(file_name, index=False)
     logger.info(f"IndiaMART results saved to {file_name}")
 
-def run_scraper(query: str, output_file: str = None):
+def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
+    logger.info(f"Received limit: {limit}")
+
     search_url = build_search_url(query)
     logger.info(f"Opening URL: {search_url}")
 
     results = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=50)
-        context = browser.new_context()
-        context.set_extra_http_headers({
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-            "Accept-Language": "en-US,en;q=0.9"
-        })
-
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(user_agent=(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+        ))
         page = context.new_page()
         page.goto(search_url, timeout=60000)
 
@@ -58,8 +52,9 @@ def run_scraper(query: str, output_file: str = None):
             logger.error("⏱ Timeout: No IndiaMART results.")
             browser.close()
             save_results([], query, output_file)
-            return
+            return 0  # Return 0 count if nothing is found
 
+        # Scroll to load more
         for _ in range(10):
             page.mouse.wheel(0, 2000)
             time.sleep(2)
@@ -69,6 +64,10 @@ def run_scraper(query: str, output_file: str = None):
         cards = soup.select("div.supplierInfoDiv")
 
         for card in cards:
+            if limit and len(results) >= limit:
+                logger.info(f"Reached limit: {limit}")
+                break
+
             name_tag = card.select_one("a.cardlinks")
             address_tag = card.select_one("p.tac.wpw")
             phone_tag = card.select_one("span.pns_h")
@@ -83,14 +82,17 @@ def run_scraper(query: str, output_file: str = None):
                 "Phone": phone,
             })
 
-        logger.info(f"✅ Scraped {len(results)} listings.")
+        logger.info(f"Scraped {len(results)} listings.")
         browser.close()
         save_results(results, query, output_file)
+
+    return len(results)  # Return number of records scraped
+
+
 
 
 
 """
-
 
 # indiamart.py
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
@@ -176,8 +178,4 @@ def run_scraper(query: str, output_file: str = None):
         browser.close()
         save_results(results, query, output_file)
 
-
-
-
-
-
+"""

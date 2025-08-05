@@ -133,3 +133,32 @@
 2025-08-04 19:35:11,718 - INFO - Waiting 5 seconds before checking for results...
 2025-08-04 19:35:37,736 - INFO - ✅ Scraped 20 results.
 2025-08-04 19:35:38,142 - INFO - IndiaMART results saved to static\speakers_indiamart_040825.csv
+2025-08-05 11:23:56,139 - INFO - Running IndiaMART scraper for: speakers
+2025-08-05 11:23:56,140 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-05 11:23:59,075 - INFO - Waiting 5 seconds before checking for results...
+2025-08-05 11:24:01,360 - INFO - Running IndiaMART scraper for: speakers
+2025-08-05 11:24:01,361 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-05 11:24:03,612 - INFO - Waiting 5 seconds before checking for results...
+2025-08-05 11:24:21,520 - INFO - Running IndiaMART scraper for: healthcare
+2025-08-05 11:24:21,520 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=healthcare
+2025-08-05 11:24:24,320 - INFO - Waiting 5 seconds before checking for results...
+2025-08-05 11:24:26,032 - INFO - ✅ Scraped 20 results.
+2025-08-05 11:24:26,325 - INFO - IndiaMART results saved to static\speakers_indiamart_050825.csv
+2025-08-05 11:24:30,078 - INFO - ✅ Scraped 20 results.
+2025-08-05 11:24:30,703 - INFO - IndiaMART results saved to static\speakers_indiamart_050825.csv
+2025-08-05 11:24:50,578 - INFO - ✅ Scraped 20 results.
+2025-08-05 11:24:50,787 - INFO - IndiaMART results saved to static\healthcare_indiamart_050825.csv
+2025-08-05 13:41:04,375 - INFO - Running IndiaMART scraper for: speakers
+2025-08-05 13:41:04,376 - INFO - Received limit: 15
+2025-08-05 13:41:04,376 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-05 13:41:06,403 - INFO - Waiting 5 seconds before checking for results...
+2025-08-05 13:41:22,117 - INFO - Running IndiaMART scraper for: speakers
+2025-08-05 13:41:22,117 - INFO - Received limit: 15
+2025-08-05 13:41:22,117 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-05 13:41:23,714 - INFO - Waiting 5 seconds before checking for results...
+2025-08-05 13:41:31,936 - INFO - Reached limit: 15
+2025-08-05 13:41:31,936 - INFO - Scraped 15 listings.
+2025-08-05 13:41:32,075 - INFO - IndiaMART results saved to static\speakers_indiamart_050825.csv
+2025-08-05 13:41:49,181 - INFO - Reached limit: 15
+2025-08-05 13:41:49,181 - INFO - Scraped 15 listings.
+2025-08-05 13:41:49,330 - INFO - IndiaMART results saved to static\speakers_indiamart_050825.csv

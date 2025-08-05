@@ -562,3 +562,417 @@ Call log:
 2025-08-04 19:30:01,163 - INFO - Scrolling... (12/12)
 2025-08-04 19:30:03,240 - INFO - Found 66 listings
 2025-08-04 19:30:06,671 - INFO - Results saved to static\temples_google_maps_040825.csv
+2025-08-05 11:20:39,707 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-05 11:20:51,257 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-05 11:20:59,800 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-05 11:21:07,509 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-05 11:21:15,499 - INFO - Waiting for results pane to load...
+2025-08-05 11:21:15,625 - INFO - Waiting for results pane to load...
+2025-08-05 11:21:16,847 - INFO - Scrolling to load all listings...
+2025-08-05 11:21:16,848 - INFO - Scrolling... (1/12)
+2025-08-05 11:21:16,996 - INFO - Scrolling to load all listings...
+2025-08-05 11:21:16,996 - INFO - Scrolling... (1/12)
+2025-08-05 11:21:20,732 - INFO - Scrolling... (2/12)
+2025-08-05 11:21:22,283 - INFO - Scrolling... (2/12)
+2025-08-05 11:21:23,100 - INFO - Scrolling... (3/12)
+2025-08-05 11:21:25,310 - INFO - Scrolling... (3/12)
+2025-08-05 11:21:25,446 - INFO - Scrolling... (4/12)
+2025-08-05 11:21:27,285 - INFO - Waiting for results pane to load...
+2025-08-05 11:21:27,763 - INFO - Scrolling... (4/12)
+2025-08-05 11:21:28,768 - INFO - Scrolling... (5/12)
+2025-08-05 11:21:30,745 - INFO - Scrolling... (5/12)
+2025-08-05 11:21:31,470 - INFO - Scrolling... (6/12)
+2025-08-05 11:21:33,799 - INFO - Scrolling... (6/12)
+2025-08-05 11:21:34,225 - INFO - Scrolling... (7/12)
+2025-08-05 11:21:35,584 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-05 11:21:36,420 - INFO - Scrolling... (7/12)
+2025-08-05 11:21:36,822 - INFO - Scrolling... (8/12)
+2025-08-05 11:21:37,598 - INFO - Scrolling to load all listings...
+2025-08-05 11:21:37,792 - INFO - Scrolling... (1/12)
+2025-08-05 11:21:39,739 - INFO - Scrolling... (8/12)
+2025-08-05 11:21:39,834 - INFO - Scrolling... (2/12)
+2025-08-05 11:21:40,925 - INFO - Scrolling... (9/12)
+2025-08-05 11:21:41,862 - INFO - Waiting for results pane to load...
+2025-08-05 11:21:41,987 - INFO - Scrolling... (9/12)
+2025-08-05 11:21:42,115 - INFO - Scrolling to load all listings...
+2025-08-05 11:21:42,336 - INFO - Scrolling... (1/12)
+2025-08-05 11:21:43,062 - INFO - Scrolling... (10/12)
+2025-08-05 11:21:44,046 - INFO - Scrolling... (4/12)
+2025-08-05 11:21:44,529 - INFO - Scrolling... (2/12)
+2025-08-05 11:21:44,925 - INFO - Scrolling... (10/12)
+2025-08-05 11:21:45,489 - INFO - Scrolling... (11/12)
+2025-08-05 11:21:47,334 - INFO - Scrolling... (3/12)
+2025-08-05 11:21:47,791 - INFO - Scrolling... (11/12)
+2025-08-05 11:21:47,955 - INFO - Scrolling... (12/12)
+2025-08-05 11:21:48,089 - INFO - Scrolling... (5/12)
+2025-08-05 11:21:49,687 - INFO - Scrolling... (4/12)
+2025-08-05 11:21:50,340 - INFO - Scrolling... (12/12)
+2025-08-05 11:21:51,072 - INFO - Found 76 listings
+2025-08-05 11:21:53,104 - INFO - Scrolling... (6/12)
+2025-08-05 11:21:53,190 - INFO - Found 76 listings
+2025-08-05 11:21:54,253 - INFO - Scrolling... (5/12)
+2025-08-05 11:21:55,454 - INFO - Scrolling... (7/12)
+2025-08-05 11:21:59,054 - INFO - Scrolling... (6/12)
+2025-08-05 11:22:01,945 - INFO - Scrolling... (7/12)
+2025-08-05 11:22:02,063 - INFO - Scrolling... (8/12)
+2025-08-05 11:22:05,155 - INFO - Scrolling... (8/12)
+2025-08-05 11:22:06,929 - INFO - Scrolling... (9/12)
+2025-08-05 11:22:08,102 - INFO - Scrolling... (9/12)
+2025-08-05 11:22:09,776 - INFO - Scrolling... (10/12)
+2025-08-05 11:22:11,282 - INFO - Scrolling... (10/12)
+2025-08-05 11:22:13,060 - INFO - Scrolling... (11/12)
+2025-08-05 11:22:14,750 - INFO - Scrolling... (11/12)
+2025-08-05 11:22:15,950 - INFO - Scrolling... (12/12)
+2025-08-05 11:22:18,833 - INFO - Scrolling... (12/12)
+2025-08-05 11:22:21,030 - INFO - Found 76 listings
+2025-08-05 11:22:21,843 - INFO - Found 56 listings
+2025-08-05 11:22:29,546 - INFO - Waiting for results pane to load...
+2025-08-05 11:22:29,807 - INFO - Results saved to static\colleges_in_pune_google_maps_050825.csv
+2025-08-05 11:22:29,828 - INFO - Results saved to static\colleges_in_pune_google_maps_050825.csv
+2025-08-05 11:22:29,964 - INFO - Scrolling to load all listings...
+2025-08-05 11:22:29,968 - INFO - Scrolling... (1/12)
+2025-08-05 11:22:30,295 - INFO - Results saved to static\colleges_in_pune_google_maps_050825.csv
+2025-08-05 11:22:30,472 - INFO - Results saved to static\colleges_in_pune_google_maps_050825.csv
+2025-08-05 11:22:32,026 - INFO - Scrolling... (2/12)
+2025-08-05 11:22:34,056 - INFO - Scrolling... (3/12)
+2025-08-05 11:22:36,091 - INFO - Scrolling... (4/12)
+2025-08-05 11:22:38,217 - INFO - Scrolling... (5/12)
+2025-08-05 11:22:40,289 - INFO - Scrolling... (6/12)
+2025-08-05 11:22:42,334 - INFO - Scrolling... (7/12)
+2025-08-05 11:22:44,410 - INFO - Scrolling... (8/12)
+2025-08-05 11:22:46,467 - INFO - Scrolling... (9/12)
+2025-08-05 11:22:48,573 - INFO - Scrolling... (10/12)
+2025-08-05 11:22:50,699 - INFO - Scrolling... (11/12)
+2025-08-05 11:22:52,775 - INFO - Scrolling... (12/12)
+2025-08-05 11:22:55,048 - INFO - Found 37 listings
+2025-08-05 11:22:57,961 - INFO - Results saved to static\colleges_in_pune_google_maps_050825.csv
+2025-08-05 11:25:04,838 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-05 11:25:11,754 - INFO - Waiting for results pane to load...
+2025-08-05 11:25:11,869 - INFO - Scrolling to load all listings...
+2025-08-05 11:25:11,870 - INFO - Scrolling... (1/12)
+2025-08-05 11:25:13,912 - INFO - Scrolling... (2/12)
+2025-08-05 11:25:15,946 - INFO - Scrolling... (3/12)
+2025-08-05 11:25:17,985 - INFO - Scrolling... (4/12)
+2025-08-05 11:25:20,065 - INFO - Scrolling... (5/12)
+2025-08-05 11:25:22,091 - INFO - Scrolling... (6/12)
+2025-08-05 11:25:24,137 - INFO - Scrolling... (7/12)
+2025-08-05 11:25:26,407 - INFO - Scrolling... (8/12)
+2025-08-05 11:25:28,640 - INFO - Scrolling... (9/12)
+2025-08-05 11:25:30,753 - INFO - Scrolling... (10/12)
+2025-08-05 11:25:32,802 - INFO - Scrolling... (11/12)
+2025-08-05 11:25:34,861 - INFO - Scrolling... (12/12)
+2025-08-05 11:25:36,936 - INFO - Found 59 listings
+2025-08-05 11:25:39,165 - INFO - Results saved to static\colleges_in_haryana_google_maps_050825.csv
+2025-08-05 11:44:55,213 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-05 11:45:11,377 - INFO - Waiting for results pane to load...
+2025-08-05 11:45:11,709 - INFO - Scrolling to load all listings...
+2025-08-05 11:45:11,726 - INFO - Scrolling... (1/12)
+2025-08-05 11:45:13,943 - INFO - Scrolling... (2/12)
+2025-08-05 11:45:17,107 - INFO - Scrolling... (3/12)
+2025-08-05 11:45:19,204 - INFO - Scrolling... (4/12)
+2025-08-05 11:45:21,888 - INFO - Scrolling... (5/12)
+2025-08-05 11:45:23,949 - INFO - Scrolling... (6/12)
+2025-08-05 11:45:26,014 - INFO - Scrolling... (7/12)
+2025-08-05 11:45:28,067 - INFO - Scrolling... (8/12)
+2025-08-05 11:45:30,102 - INFO - Scrolling... (9/12)
+2025-08-05 11:45:32,151 - INFO - Scrolling... (10/12)
+2025-08-05 11:45:34,199 - INFO - Scrolling... (11/12)
+2025-08-05 11:45:36,235 - INFO - Scrolling... (12/12)
+2025-08-05 11:45:38,289 - INFO - Found 88 listings
+2025-08-05 11:45:41,914 - INFO - Results saved to static\colleges_in_pune_google_maps_050825.csv
+2025-08-05 12:29:47,074 - INFO - Running Google Maps scraper for: 30 colleges in pune
+2025-08-05 12:29:53,297 - INFO - Running Google Maps scraper for: 30 colleges in pune
+2025-08-05 12:30:01,580 - INFO - Waiting for results pane to load...
+2025-08-05 12:30:02,145 - INFO - Scrolling to load all listings...
+2025-08-05 12:30:02,163 - INFO - Scrolling... (1/12)
+2025-08-05 12:30:04,441 - INFO - Waiting for results pane to load...
+2025-08-05 12:30:04,619 - INFO - Scrolling to load all listings...
+2025-08-05 12:30:04,664 - INFO - Scrolling... (1/12)
+2025-08-05 12:30:04,983 - INFO - Scrolling... (2/12)
+2025-08-05 12:30:06,779 - INFO - Scrolling... (2/12)
+2025-08-05 12:30:07,021 - INFO - Scrolling... (3/12)
+2025-08-05 12:30:08,845 - INFO - Scrolling... (3/12)
+2025-08-05 12:30:09,446 - INFO - Scrolling... (4/12)
+2025-08-05 12:30:10,921 - INFO - Scrolling... (4/12)
+2025-08-05 12:30:11,582 - INFO - Scrolling... (5/12)
+2025-08-05 12:30:13,707 - INFO - Scrolling... (6/12)
+2025-08-05 12:30:13,735 - INFO - Scrolling... (5/12)
+2025-08-05 12:30:15,752 - INFO - Scrolling... (7/12)
+2025-08-05 12:30:15,777 - INFO - Scrolling... (6/12)
+2025-08-05 12:30:17,788 - INFO - Scrolling... (8/12)
+2025-08-05 12:30:17,816 - INFO - Scrolling... (7/12)
+2025-08-05 12:30:20,088 - INFO - Scrolling... (9/12)
+2025-08-05 12:30:20,133 - INFO - Scrolling... (8/12)
+2025-08-05 12:30:22,111 - INFO - Scrolling... (10/12)
+2025-08-05 12:30:22,176 - INFO - Scrolling... (9/12)
+2025-08-05 12:30:24,140 - INFO - Scrolling... (11/12)
+2025-08-05 12:30:24,214 - INFO - Scrolling... (10/12)
+2025-08-05 12:30:26,367 - INFO - Scrolling... (11/12)
+2025-08-05 12:30:26,469 - INFO - Scrolling... (12/12)
+2025-08-05 12:30:28,406 - INFO - Scrolling... (12/12)
+2025-08-05 12:30:28,512 - INFO - Found 36 listings
+2025-08-05 12:30:29,153 - INFO - Results saved to static\30_colleges_in_pune_google_maps_050825.csv
+2025-08-05 12:30:30,501 - INFO - Found 88 listings
+2025-08-05 12:30:33,193 - INFO - Results saved to static\30_colleges_in_pune_google_maps_050825.csv
+2025-08-05 12:30:54,482 - INFO - Running Google Maps scraper for: 30 colleges in pune
+2025-08-05 12:31:00,892 - INFO - Waiting for results pane to load...
+2025-08-05 12:31:01,080 - INFO - Scrolling to load all listings...
+2025-08-05 12:31:01,089 - INFO - Scrolling... (1/12)
+2025-08-05 12:31:03,173 - INFO - Scrolling... (2/12)
+2025-08-05 12:31:05,234 - INFO - Scrolling... (3/12)
+2025-08-05 12:42:51,971 - INFO - Running Google Maps scraper for: 10 hospitals in delhi
+2025-08-05 12:43:06,258 - INFO - Waiting for results pane to load...
+2025-08-05 12:43:06,739 - INFO - Scrolling to load all listings...
+2025-08-05 12:43:06,746 - INFO - Scrolling... (1/12)
+2025-08-05 12:43:09,255 - INFO - Scrolling... (2/12)
+2025-08-05 12:43:11,408 - INFO - Scrolling... (3/12)
+2025-08-05 12:43:13,486 - INFO - Scrolling... (4/12)
+2025-08-05 12:43:15,734 - INFO - Scrolling... (5/12)
+2025-08-05 12:43:17,945 - INFO - Scrolling... (6/12)
+2025-08-05 12:43:20,036 - INFO - Scrolling... (7/12)
+2025-08-05 12:43:22,095 - INFO - Scrolling... (8/12)
+2025-08-05 12:43:24,183 - INFO - Scrolling... (9/12)
+2025-08-05 12:43:26,212 - INFO - Scrolling... (10/12)
+2025-08-05 12:43:28,271 - INFO - Scrolling... (11/12)
+2025-08-05 12:43:30,300 - INFO - Scrolling... (12/12)
+2025-08-05 12:43:32,370 - INFO - Found 39 listings
+2025-08-05 12:43:33,360 - INFO - Results saved to static\10_hospitals_in_delhi_google_maps_050825.csv
+2025-08-05 12:47:00,676 - INFO - Running Google Maps scraper for: 20 temples 
+2025-08-05 12:47:06,975 - INFO - Waiting for results pane to load...
+2025-08-05 12:47:07,344 - INFO - Scrolling to load listings...
+2025-08-05 12:47:07,364 - INFO - Scrolling... (1/12)
+2025-08-05 12:47:09,783 - INFO - Listings visible: 12
+2025-08-05 12:47:09,783 - INFO - Scrolling... (2/12)
+2025-08-05 12:47:11,825 - INFO - Listings visible: 18
+2025-08-05 12:47:11,826 - INFO - Scrolling... (3/12)
+2025-08-05 12:47:13,902 - INFO - Listings visible: 20
+2025-08-05 12:47:13,903 - INFO - Scrolling... (4/12)
+2025-08-05 12:47:15,986 - INFO - Listings visible: 26
+2025-08-05 12:47:15,986 - INFO - Scrolling... (5/12)
+2025-08-05 12:47:18,064 - INFO - Listings visible: 32
+2025-08-05 12:47:18,065 - INFO - Scrolling... (6/12)
+2025-08-05 12:47:20,219 - INFO - Listings visible: 38
+2025-08-05 12:47:20,222 - INFO - Scrolling... (7/12)
+2025-08-05 12:47:22,280 - INFO - Listings visible: 40
+2025-08-05 12:47:22,282 - INFO - Scrolling... (8/12)
+2025-08-05 12:47:24,343 - INFO - Listings visible: 46
+2025-08-05 12:47:24,352 - INFO - Scrolling... (9/12)
+2025-08-05 12:47:26,418 - INFO - Listings visible: 52
+2025-08-05 12:47:26,419 - INFO - Scrolling... (10/12)
+2025-08-05 12:47:28,471 - INFO - Listings visible: 58
+2025-08-05 12:47:28,472 - INFO - Scrolling... (11/12)
+2025-08-05 12:47:30,525 - INFO - Listings visible: 60
+2025-08-05 12:47:30,526 - INFO - Scrolling... (12/12)
+2025-08-05 12:47:32,602 - INFO - Listings visible: 66
+2025-08-05 12:47:32,638 - INFO - Found 66 listings
+2025-08-05 12:47:35,511 - INFO - Results saved to static\20_temples__google_maps_050825.csv
+2025-08-05 12:48:52,563 - INFO - Running Google Maps scraper for: 10 hospitals in delhi
+2025-08-05 12:48:59,835 - INFO - Waiting for results pane to load...
+2025-08-05 12:49:00,592 - INFO - Scrolling to load listings...
+2025-08-05 12:49:00,622 - INFO - Scrolling... (1/12)
+2025-08-05 12:49:02,703 - INFO - Listings visible: 16
+2025-08-05 12:49:02,858 - INFO - Scrolling... (2/12)
+2025-08-05 12:49:05,300 - INFO - Listings visible: 21
+2025-08-05 12:49:05,301 - INFO - Scrolling... (3/12)
+2025-08-05 12:49:07,870 - INFO - Listings visible: 29
+2025-08-05 12:49:07,871 - INFO - Scrolling... (4/12)
+2025-08-05 12:49:09,930 - INFO - Listings visible: 37
+2025-08-05 12:49:09,930 - INFO - Scrolling... (5/12)
+2025-08-05 12:49:11,973 - INFO - Listings visible: 40
+2025-08-05 12:49:11,974 - INFO - Scrolling... (6/12)
+2025-08-05 12:49:14,030 - INFO - Listings visible: 40
+2025-08-05 12:49:14,031 - INFO - Scrolling... (7/12)
+2025-08-05 12:49:16,081 - INFO - Listings visible: 40
+2025-08-05 12:49:16,081 - INFO - Scrolling... (8/12)
+2025-08-05 12:49:18,129 - INFO - Listings visible: 40
+2025-08-05 12:49:18,129 - INFO - Scrolling... (9/12)
+2025-08-05 12:49:20,234 - INFO - Listings visible: 40
+2025-08-05 12:49:20,234 - INFO - Scrolling... (10/12)
+2025-08-05 12:49:22,277 - INFO - Listings visible: 40
+2025-08-05 12:49:22,278 - INFO - Scrolling... (11/12)
+2025-08-05 12:49:24,325 - INFO - Listings visible: 40
+2025-08-05 12:49:24,325 - INFO - Scrolling... (12/12)
+2025-08-05 12:49:26,393 - INFO - Listings visible: 40
+2025-08-05 12:49:26,402 - INFO - Found 40 listings
+2025-08-05 12:49:27,132 - INFO - Results saved to static\10_hospitals_in_delhi_google_maps_050825.csv
+2025-08-05 13:00:24,555 - INFO - Running Google Maps scraper for: 10 malls in delhi
+2025-08-05 13:00:36,758 - INFO - Waiting for results pane to load...
+2025-08-05 13:00:37,038 - INFO - Scrolling to load all listings...
+2025-08-05 13:00:37,045 - INFO - Scrolling... (1/12)
+2025-08-05 13:00:39,108 - INFO - Scrolling... (2/12)
+2025-08-05 13:00:41,436 - INFO - Scrolling... (3/12)
+2025-08-05 13:00:43,467 - INFO - Scrolling... (4/12)
+2025-08-05 13:00:45,495 - INFO - Scrolling... (5/12)
+2025-08-05 13:00:47,605 - INFO - Scrolling... (6/12)
+2025-08-05 13:00:49,639 - INFO - Scrolling... (7/12)
+2025-08-05 13:00:51,859 - INFO - Scrolling... (8/12)
+2025-08-05 13:00:53,889 - INFO - Scrolling... (9/12)
+2025-08-05 13:00:56,098 - INFO - Scrolling... (10/12)
+2025-08-05 13:00:58,135 - INFO - Scrolling... (11/12)
+2025-08-05 13:01:00,156 - INFO - Scrolling... (12/12)
+2025-08-05 13:01:02,195 - INFO - Found 66 listings
+2025-08-05 13:01:03,421 - INFO - Results saved to static\10_malls_in_delhi_google_maps_050825.csv
+2025-08-05 13:04:09,890 - INFO - Running Google Maps scraper for: 10 malls in delhi
+2025-08-05 13:04:15,654 - INFO - Waiting for results pane to load...
+2025-08-05 13:04:15,868 - INFO - Scrolling to load listings...
+2025-08-05 13:04:15,872 - INFO - Scrolling... (1/12)
+2025-08-05 13:04:17,975 - INFO - Listings visible: 12
+2025-08-05 13:04:17,986 - INFO - Scrolling... (2/12)
+2025-08-05 13:04:20,184 - INFO - Listings visible: 18
+2025-08-05 13:04:20,188 - INFO - Scrolling... (3/12)
+2025-08-05 13:04:22,225 - INFO - Listings visible: 20
+2025-08-05 13:04:22,226 - INFO - Scrolling... (4/12)
+2025-08-05 13:04:24,296 - INFO - Listings visible: 26
+2025-08-05 13:04:24,336 - INFO - Scrolling... (5/12)
+2025-08-05 13:04:26,619 - INFO - Listings visible: 32
+2025-08-05 13:04:26,620 - INFO - Scrolling... (6/12)
+2025-08-05 13:04:28,659 - INFO - Listings visible: 38
+2025-08-05 13:04:28,660 - INFO - Scrolling... (7/12)
+2025-08-05 13:04:30,694 - INFO - Listings visible: 40
+2025-08-05 13:04:30,694 - INFO - Scrolling... (8/12)
+2025-08-05 13:04:32,751 - INFO - Listings visible: 46
+2025-08-05 13:04:32,753 - INFO - Scrolling... (9/12)
+2025-08-05 13:04:34,846 - INFO - Listings visible: 52
+2025-08-05 13:04:34,846 - INFO - Scrolling... (10/12)
+2025-08-05 13:04:36,884 - INFO - Listings visible: 58
+2025-08-05 13:04:36,885 - INFO - Scrolling... (11/12)
+2025-08-05 13:04:38,922 - INFO - Listings visible: 60
+2025-08-05 13:04:38,922 - INFO - Scrolling... (12/12)
+2025-08-05 13:04:40,958 - INFO - Listings visible: 66
+2025-08-05 13:04:40,972 - INFO - Found 66 listings
+2025-08-05 13:04:42,770 - INFO - Results saved to static\10_malls_in_delhi_google_maps_050825.csv
+2025-08-05 13:07:38,439 - INFO - Running Google Maps scraper for: 10 malls in delhi
+2025-08-05 13:07:43,944 - INFO - Waiting for results pane to load...
+2025-08-05 13:07:44,258 - INFO - Scrolling to load listings...
+2025-08-05 13:07:44,289 - INFO - Scrolling... (1/12)
+2025-08-05 13:07:46,458 - INFO - Listings visible: 12
+2025-08-05 13:07:46,468 - INFO - Scrolling... (2/12)
+2025-08-05 13:07:48,516 - INFO - Listings visible: 18
+2025-08-05 13:07:48,516 - INFO - Scrolling... (3/12)
+2025-08-05 13:07:50,548 - INFO - Listings visible: 20
+2025-08-05 13:07:50,548 - INFO - Scrolling... (4/12)
+2025-08-05 13:07:52,603 - INFO - Listings visible: 26
+2025-08-05 13:07:52,614 - INFO - Scrolling... (5/12)
+2025-08-05 13:07:54,662 - INFO - Listings visible: 32
+2025-08-05 13:07:54,662 - INFO - Scrolling... (6/12)
+2025-08-05 13:07:56,693 - INFO - Listings visible: 38
+2025-08-05 13:07:56,693 - INFO - Scrolling... (7/12)
+2025-08-05 13:07:58,735 - INFO - Listings visible: 40
+2025-08-05 13:07:58,736 - INFO - Scrolling... (8/12)
+2025-08-05 13:08:00,788 - INFO - Listings visible: 46
+2025-08-05 13:08:00,808 - INFO - Scrolling... (9/12)
+2025-08-05 13:08:02,917 - INFO - Listings visible: 52
+2025-08-05 13:08:02,918 - INFO - Scrolling... (10/12)
+2025-08-05 13:08:04,958 - INFO - Listings visible: 58
+2025-08-05 13:08:04,958 - INFO - Scrolling... (11/12)
+2025-08-05 13:08:07,002 - INFO - Listings visible: 60
+2025-08-05 13:08:07,003 - INFO - Scrolling... (12/12)
+2025-08-05 13:08:09,049 - INFO - Listings visible: 66
+2025-08-05 13:08:09,143 - INFO - Found 66 listings
+2025-08-05 13:08:11,547 - INFO - Results saved to static\10_malls_in_delhi_google_maps_050825.csv
+2025-08-05 13:11:17,205 - INFO - Running Google Maps scraper for: 10 hospitals in delhi
+2025-08-05 13:11:22,665 - INFO - Waiting for results pane to load...
+2025-08-05 13:11:22,764 - INFO - Scrolling to load listings...
+2025-08-05 13:11:22,767 - INFO - Scrolling... (1/12)
+2025-08-05 13:11:25,037 - INFO - Listings visible: 16
+2025-08-05 13:11:25,039 - INFO - Scrolling... (2/12)
+2025-08-05 13:11:27,085 - INFO - Listings visible: 21
+2025-08-05 13:11:27,085 - INFO - Scrolling... (3/12)
+2025-08-05 13:11:29,159 - INFO - Listings visible: 29
+2025-08-05 13:11:29,160 - INFO - Scrolling... (4/12)
+2025-08-05 13:11:31,260 - INFO - Listings visible: 37
+2025-08-05 13:11:31,260 - INFO - Scrolling... (5/12)
+2025-08-05 13:11:33,289 - INFO - Listings visible: 40
+2025-08-05 13:11:33,289 - INFO - Scrolling... (6/12)
+2025-08-05 13:11:35,325 - INFO - Listings visible: 40
+2025-08-05 13:11:35,326 - INFO - Scrolling... (7/12)
+2025-08-05 13:11:37,357 - INFO - Listings visible: 40
+2025-08-05 13:11:37,357 - INFO - Scrolling... (8/12)
+2025-08-05 13:11:39,389 - INFO - Listings visible: 40
+2025-08-05 13:11:39,389 - INFO - Scrolling... (9/12)
+2025-08-05 13:11:41,415 - INFO - Listings visible: 40
+2025-08-05 13:11:41,416 - INFO - Scrolling... (10/12)
+2025-08-05 13:11:43,448 - INFO - Listings visible: 40
+2025-08-05 13:11:43,448 - INFO - Scrolling... (11/12)
+2025-08-05 13:11:45,477 - INFO - Listings visible: 40
+2025-08-05 13:11:45,479 - INFO - Scrolling... (12/12)
+2025-08-05 13:11:47,507 - INFO - Listings visible: 40
+2025-08-05 13:11:47,514 - INFO - Found 40 listings
+2025-08-05 13:11:48,767 - INFO - Results saved to static\10_hospitals_in_delhi_google_maps_050825.csv
+2025-08-05 13:21:56,445 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:22:29,891 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:31:58,360 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:33:54,685 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:33:54,685 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-05 13:33:54,685 - INFO - ✅ Received limit: 10
+2025-08-05 13:33:59,330 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:33:59,331 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-05 13:33:59,331 - INFO - ✅ Received limit: 10
+2025-08-05 13:34:01,968 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:34:01,968 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-05 13:34:01,968 - INFO - ✅ Received limit: 10
+2025-08-05 13:34:12,901 - INFO - Waiting for results pane to load...
+2025-08-05 13:34:12,974 - INFO - Waiting for results pane to load...
+2025-08-05 13:34:13,045 - INFO - Waiting for results pane to load...
+2025-08-05 13:34:13,080 - INFO - Scrolling to load listings...
+2025-08-05 13:34:13,080 - INFO - Scrolling... (1/12)
+2025-08-05 13:34:13,097 - INFO - Scrolling to load listings...
+2025-08-05 13:34:13,097 - INFO - Scrolling... (1/12)
+2025-08-05 13:34:13,150 - INFO - Scrolling to load listings...
+2025-08-05 13:34:13,150 - INFO - Scrolling... (1/12)
+2025-08-05 13:34:15,209 - INFO - Listings visible: 16
+2025-08-05 13:34:15,209 - INFO - 🛑 Stopping scroll early at 16 listings.
+2025-08-05 13:34:15,224 - INFO - Found 16 listings
+2025-08-05 13:34:15,224 - INFO - Limiting to first 10 results.
+2025-08-05 13:34:16,443 - INFO - Listings visible: 16
+2025-08-05 13:34:16,443 - INFO - 🛑 Stopping scroll early at 16 listings.
+2025-08-05 13:34:16,454 - INFO - Found 16 listings
+2025-08-05 13:34:16,454 - INFO - Limiting to first 10 results.
+2025-08-05 13:34:17,047 - INFO - Results saved to static\colleges_in_haryana_google_maps_050825.csv
+2025-08-05 13:34:17,077 - INFO - Listings visible: 16
+2025-08-05 13:34:17,078 - INFO - 🛑 Stopping scroll early at 16 listings.
+2025-08-05 13:34:17,087 - INFO - Found 16 listings
+2025-08-05 13:34:17,087 - INFO - Limiting to first 10 results.
+2025-08-05 13:34:17,717 - INFO - Results saved to static\colleges_in_haryana_google_maps_050825.csv
+2025-08-05 13:34:18,474 - INFO - Results saved to static\colleges_in_haryana_google_maps_050825.csv
+2025-08-05 13:34:48,639 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:34:48,639 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-05 13:34:48,639 - INFO - ✅ Received limit: 10
+2025-08-05 13:34:51,954 - INFO - Waiting for results pane to load...
+2025-08-05 13:34:52,070 - INFO - Scrolling to load listings...
+2025-08-05 13:34:52,070 - INFO - Scrolling... (1/12)
+2025-08-05 13:34:54,108 - INFO - Listings visible: 16
+2025-08-05 13:34:54,109 - INFO - 🛑 Stopping scroll early at 16 listings.
+2025-08-05 13:34:54,121 - INFO - Found 16 listings
+2025-08-05 13:34:54,122 - INFO - Limiting to first 10 results.
+2025-08-05 13:34:54,399 - INFO - Results saved to static\colleges_in_haryana_google_maps_050825.csv
+2025-08-05 13:36:03,948 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:36:03,949 - INFO - Running Google Maps scraper for: hospitals in haryana
+2025-08-05 13:36:03,949 - INFO - ✅ Received limit: 20
+2025-08-05 13:36:08,176 - INFO - Waiting for results pane to load...
+2025-08-05 13:36:08,265 - INFO - Scrolling to load listings...
+2025-08-05 13:36:08,265 - INFO - Scrolling... (1/12)
+2025-08-05 13:36:10,388 - INFO - Listings visible: 16
+2025-08-05 13:36:10,388 - INFO - Scrolling... (2/12)
+2025-08-05 13:36:12,429 - INFO - Listings visible: 20
+2025-08-05 13:36:12,429 - INFO - 🛑 Stopping scroll early at 20 listings.
+2025-08-05 13:36:12,435 - INFO - Found 20 listings
+2025-08-05 13:36:12,435 - INFO - Limiting to first 20 results.
+2025-08-05 13:36:13,070 - INFO - Results saved to static\hospitals_in_haryana_google_maps_050825.csv
+2025-08-05 13:49:11,482 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-05 13:49:11,483 - INFO - Running Google Maps scraper for: hospitals in gujrat
+2025-08-05 13:49:11,483 - INFO - Received limit: 30
+2025-08-05 13:49:14,974 - INFO - Waiting for results pane to load...
+2025-08-05 13:49:15,128 - INFO - Scrolling to load listings...
+2025-08-05 13:49:15,129 - INFO - Scrolling... (1/12)
+2025-08-05 13:49:17,173 - INFO - Listings visible: 16
+2025-08-05 13:49:17,173 - INFO - Scrolling... (2/12)
+2025-08-05 13:49:19,210 - INFO - Listings visible: 20
+2025-08-05 13:49:19,211 - INFO - Scrolling... (3/12)
+2025-08-05 13:49:21,265 - INFO - Listings visible: 28
+2025-08-05 13:49:21,266 - INFO - Scrolling... (4/12)
+2025-08-05 13:49:23,326 - INFO - Listings visible: 36
+2025-08-05 13:49:23,326 - INFO - Stopping scroll early at 36 listings.
+2025-08-05 13:49:23,337 - INFO - Found 36 listings
+2025-08-05 13:49:23,337 - INFO - Limiting to first 30 results.
+2025-08-05 13:49:24,210 - INFO - Results saved to static\hospitals_in_gujrat_google_maps_050825.csv
