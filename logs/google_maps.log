@@ -1183,3 +1183,34 @@ Call log:
 2025-08-06 15:10:40,171 - INFO - Listings visible: 66
 2025-08-06 15:10:40,187 - INFO - Found 66 listings
 2025-08-06 15:10:42,174 - INFO - Results saved to static\malls_in_delhi_google_maps_060825.csv
+2025-08-06 15:38:46,619 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 15:38:46,620 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-06 15:38:46,620 - INFO - Received limit: None
+2025-08-06 15:38:51,684 - INFO - Waiting for results pane to load...
+2025-08-06 15:38:51,752 - INFO - Scrolling to load listings...
+2025-08-06 15:38:51,752 - INFO - Scrolling... (1/12)
+2025-08-06 15:38:53,840 - INFO - Listings visible: 16
+2025-08-06 15:38:53,841 - INFO - Scrolling... (2/12)
+2025-08-06 15:38:55,924 - INFO - Listings visible: 20
+2025-08-06 15:38:55,924 - INFO - Scrolling... (3/12)
+2025-08-06 15:38:57,962 - INFO - Listings visible: 28
+2025-08-06 15:38:57,964 - INFO - Scrolling... (4/12)
+2025-08-06 15:38:59,990 - INFO - Listings visible: 36
+2025-08-06 15:38:59,990 - INFO - Scrolling... (5/12)
+2025-08-06 15:39:02,022 - INFO - Listings visible: 40
+2025-08-06 15:39:02,023 - INFO - Scrolling... (6/12)
+2025-08-06 15:39:04,051 - INFO - Listings visible: 48
+2025-08-06 15:39:04,051 - INFO - Scrolling... (7/12)
+2025-08-06 15:39:06,084 - INFO - Listings visible: 56
+2025-08-06 15:39:06,084 - INFO - Scrolling... (8/12)
+2025-08-06 15:39:08,122 - INFO - Listings visible: 60
+2025-08-06 15:39:08,123 - INFO - Scrolling... (9/12)
+2025-08-06 15:39:10,163 - INFO - Listings visible: 68
+2025-08-06 15:39:10,163 - INFO - Scrolling... (10/12)
+2025-08-06 15:39:12,204 - INFO - Listings visible: 76
+2025-08-06 15:39:12,204 - INFO - Scrolling... (11/12)
+2025-08-06 15:39:14,238 - INFO - Listings visible: 80
+2025-08-06 15:39:14,238 - INFO - Scrolling... (12/12)
+2025-08-06 15:39:16,282 - INFO - Listings visible: 88
+2025-08-06 15:39:16,298 - INFO - Found 88 listings
+2025-08-06 15:39:19,238 - INFO - Results saved to static\colleges_in_haryana_google_maps_060825.csv
