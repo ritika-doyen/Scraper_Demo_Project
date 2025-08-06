@@ -4,12 +4,12 @@ This project provides a simple web interface to scrape business listings from pl
 
 ## Features
 
-✅ Scrape business listings using keywords
-✅ Supports Google Maps and IndiaMART
-✅ Set custom record limit (e.g., "50 hospitals in Delhi")
-✅ UI to display and download scraped results
-✅ Auto-detects if fewer records are available than requested
-✅ Built using Playwright, BeautifulSoup, and Flask
+1. Scrape business listings using keywords
+2. Supports Google Maps and IndiaMART
+3. Set custom record limit (e.g., "50 hospitals in Delhi")
+4. UI to display and download scraped results
+5. Auto-detects if fewer records are available than requested
+6. Built using Playwright, BeautifulSoup, and Flask
 
 
 ## Tech Stack
