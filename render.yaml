@@ -1,9 +1,7 @@
 services:
   - type: web
-    name: scraper-demo-project
-    runtime: python
+    name: scraper-app
+    env: python
     buildCommand: bash build.sh
-    startCommand: python app.py
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10
+    startCommand: gunicorn app:app
+    plan: free
