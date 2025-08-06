@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
-echo "Installing Playwright browsers..."
-npx playwright install
-echo "Playwright installation complete."
+#!/bin/bash
+
+echo "Installing Playwright browser dependencies..."
+playwright install chromium

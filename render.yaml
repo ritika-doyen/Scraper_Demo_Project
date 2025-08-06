@@ -1,11 +1,8 @@
 services:
   - type: web
-    name: scraper-project
+    name: scraper-demo-project
     env: python
-    buildCommand: |
-      pip install -r requirements.txt
-      bash build.sh
-    startCommand: gunicorn app:app
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10
+    buildCommand: bash build.sh
+    startCommand: python app.py
+    plan: free
+    region: oregon
