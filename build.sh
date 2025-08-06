@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# Install Playwright browser binaries during Render build
-playwright install
+echo "Installing Playwright browsers..."
+npx playwright install
+echo "Playwright installation complete."
