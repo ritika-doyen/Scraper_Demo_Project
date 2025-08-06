@@ -162,3 +162,24 @@
 2025-08-05 13:41:49,181 - INFO - Reached limit: 15
 2025-08-05 13:41:49,181 - INFO - Scraped 15 listings.
 2025-08-05 13:41:49,330 - INFO - IndiaMART results saved to static\speakers_indiamart_050825.csv
+2025-08-06 13:55:02,916 - INFO - Running IndiaMART scraper for: healthcare
+2025-08-06 13:55:02,917 - INFO - Received limit: None
+2025-08-06 13:55:02,917 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=healthcare
+2025-08-06 13:55:08,627 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 13:55:09,386 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 13:55:33,950 - INFO - Running IndiaMART scraper for: healthcare
+2025-08-06 13:55:33,950 - INFO - Received limit: None
+2025-08-06 13:55:33,950 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=healthcare
+2025-08-06 13:55:35,915 - INFO - Scraped 20 listings.
+2025-08-06 13:55:36,674 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 13:55:36,988 - INFO - Scraped 20 listings.
+2025-08-06 13:55:38,520 - INFO - IndiaMART results saved to static\healthcare_indiamart_060825.csv
+2025-08-06 13:55:38,726 - INFO - IndiaMART results saved to static\healthcare_indiamart_060825.csv
+2025-08-06 13:55:57,634 - INFO - Running IndiaMART scraper for: speakers
+2025-08-06 13:55:57,635 - INFO - Received limit: None
+2025-08-06 13:55:57,636 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-06 13:56:00,569 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 13:56:02,910 - INFO - Scraped 20 listings.
+2025-08-06 13:56:03,253 - INFO - IndiaMART results saved to static\healthcare_indiamart_060825.csv
+2025-08-06 13:56:26,546 - INFO - Scraped 20 listings.
+2025-08-06 13:56:27,012 - INFO - IndiaMART results saved to static\speakers_indiamart_060825.csv

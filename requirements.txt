@@ -2,6 +2,5 @@ requests
 beautifulsoup4
 pandas
 playwright
-pandas
 streamlit
 flask

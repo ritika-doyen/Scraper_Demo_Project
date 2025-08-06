@@ -976,3 +976,55 @@ Call log:
 2025-08-05 13:49:23,337 - INFO - Found 36 listings
 2025-08-05 13:49:23,337 - INFO - Limiting to first 30 results.
 2025-08-05 13:49:24,210 - INFO - Results saved to static\hospitals_in_gujrat_google_maps_050825.csv
+2025-08-06 13:54:08,200 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 13:54:08,202 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-06 13:54:08,202 - INFO - Received limit: 20
+2025-08-06 13:54:11,908 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 13:54:11,909 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-06 13:54:11,909 - INFO - Received limit: 20
+2025-08-06 13:54:28,137 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 13:54:28,138 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-06 13:54:28,138 - INFO - Received limit: 20
+2025-08-06 13:54:41,115 - INFO - Waiting for results pane to load...
+2025-08-06 13:54:41,685 - INFO - Scrolling to load listings...
+2025-08-06 13:54:41,686 - INFO - Scrolling... (1/12)
+2025-08-06 13:54:41,829 - INFO - Waiting for results pane to load...
+2025-08-06 13:54:42,385 - INFO - Scrolling to load listings...
+2025-08-06 13:54:42,385 - INFO - Scrolling... (1/12)
+2025-08-06 13:54:43,964 - INFO - Listings visible: 16
+2025-08-06 13:54:43,964 - INFO - Scrolling... (2/12)
+2025-08-06 13:54:44,873 - INFO - Listings visible: 16
+2025-08-06 13:54:44,874 - INFO - Scrolling... (2/12)
+2025-08-06 13:54:45,541 - INFO - Waiting for results pane to load...
+2025-08-06 13:54:45,667 - INFO - Scrolling to load listings...
+2025-08-06 13:54:45,667 - INFO - Scrolling... (1/12)
+2025-08-06 13:54:46,689 - INFO - Listings visible: 20
+2025-08-06 13:54:46,689 - INFO - Stopping scroll early at 20 listings.
+2025-08-06 13:54:46,711 - INFO - Found 20 listings
+2025-08-06 13:54:46,712 - INFO - Limiting to first 20 results.
+2025-08-06 13:54:46,933 - INFO - Listings visible: 20
+2025-08-06 13:54:46,933 - INFO - Stopping scroll early at 20 listings.
+2025-08-06 13:54:46,992 - INFO - Found 20 listings
+2025-08-06 13:54:46,992 - INFO - Limiting to first 20 results.
+2025-08-06 13:54:48,192 - INFO - Listings visible: 16
+2025-08-06 13:54:48,193 - INFO - Scrolling... (2/12)
+2025-08-06 13:54:49,044 - INFO - Results saved to static\colleges_in_pune_google_maps_060825.csv
+2025-08-06 13:54:49,078 - INFO - Results saved to static\colleges_in_pune_google_maps_060825.csv
+2025-08-06 13:54:51,583 - INFO - Listings visible: 20
+2025-08-06 13:54:51,584 - INFO - Stopping scroll early at 20 listings.
+2025-08-06 13:54:51,602 - INFO - Found 20 listings
+2025-08-06 13:54:51,602 - INFO - Limiting to first 20 results.
+2025-08-06 13:54:53,228 - INFO - Results saved to static\colleges_in_pune_google_maps_060825.csv
+2025-08-06 13:55:23,462 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 13:55:23,463 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-06 13:55:23,463 - INFO - Received limit: 20
+2025-08-06 13:55:29,393 - INFO - Waiting for results pane to load...
+2025-08-06 13:55:29,492 - INFO - Scrolling to load listings...
+2025-08-06 13:55:29,492 - INFO - Scrolling... (1/12)
+2025-08-06 13:55:31,604 - INFO - Listings visible: 16
+2025-08-06 13:55:31,604 - INFO - Scrolling... (2/12)
+2025-08-06 13:55:33,717 - INFO - Listings visible: 20
+2025-08-06 13:55:33,717 - INFO - Stopping scroll early at 20 listings.
+2025-08-06 13:55:33,728 - INFO - Found 20 listings
+2025-08-06 13:55:33,728 - INFO - Limiting to first 20 results.
+2025-08-06 13:55:34,558 - INFO - Results saved to static\colleges_in_pune_google_maps_060825.csv
