@@ -1028,3 +1028,158 @@ Call log:
 2025-08-06 13:55:33,728 - INFO - Found 20 listings
 2025-08-06 13:55:33,728 - INFO - Limiting to first 20 results.
 2025-08-06 13:55:34,558 - INFO - Results saved to static\colleges_in_pune_google_maps_060825.csv
+2025-08-06 15:08:36,888 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 15:08:36,888 - INFO - Running Google Maps scraper for: malls in delhi
+2025-08-06 15:08:36,888 - INFO - Received limit: None
+2025-08-06 15:08:47,678 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 15:08:47,680 - INFO - Running Google Maps scraper for: malls in delhi
+2025-08-06 15:08:47,680 - INFO - Received limit: None
+2025-08-06 15:08:50,829 - INFO - Waiting for results pane to load...
+2025-08-06 15:08:51,453 - INFO - Scrolling to load listings...
+2025-08-06 15:08:51,453 - INFO - Scrolling... (1/12)
+2025-08-06 15:08:52,794 - INFO - Waiting for results pane to load...
+2025-08-06 15:08:53,177 - INFO - Scrolling to load listings...
+2025-08-06 15:08:53,177 - INFO - Scrolling... (1/12)
+2025-08-06 15:08:53,990 - INFO - Listings visible: 12
+2025-08-06 15:08:53,990 - INFO - Scrolling... (2/12)
+2025-08-06 15:08:55,284 - INFO - Listings visible: 12
+2025-08-06 15:08:55,284 - INFO - Scrolling... (2/12)
+2025-08-06 15:08:57,235 - INFO - Listings visible: 18
+2025-08-06 15:08:57,235 - INFO - Scrolling... (3/12)
+2025-08-06 15:08:57,498 - INFO - Listings visible: 18
+2025-08-06 15:08:57,498 - INFO - Scrolling... (3/12)
+2025-08-06 15:08:59,582 - INFO - Listings visible: 20
+2025-08-06 15:08:59,582 - INFO - Scrolling... (4/12)
+2025-08-06 15:08:59,586 - INFO - Listings visible: 20
+2025-08-06 15:08:59,587 - INFO - Scrolling... (4/12)
+2025-08-06 15:09:01,634 - INFO - Listings visible: 26
+2025-08-06 15:09:01,634 - INFO - Scrolling... (5/12)
+2025-08-06 15:09:01,677 - INFO - Listings visible: 26
+2025-08-06 15:09:01,677 - INFO - Scrolling... (5/12)
+2025-08-06 15:09:03,772 - INFO - Listings visible: 32
+2025-08-06 15:09:03,772 - INFO - Scrolling... (6/12)
+2025-08-06 15:09:03,909 - INFO - Listings visible: 32
+2025-08-06 15:09:03,909 - INFO - Scrolling... (6/12)
+2025-08-06 15:09:05,803 - INFO - Listings visible: 38
+2025-08-06 15:09:05,803 - INFO - Scrolling... (7/12)
+2025-08-06 15:09:05,937 - INFO - Listings visible: 38
+2025-08-06 15:09:05,937 - INFO - Scrolling... (7/12)
+2025-08-06 15:09:07,833 - INFO - Listings visible: 40
+2025-08-06 15:09:07,833 - INFO - Scrolling... (8/12)
+2025-08-06 15:09:07,982 - INFO - Listings visible: 40
+2025-08-06 15:09:07,982 - INFO - Scrolling... (8/12)
+2025-08-06 15:09:09,875 - INFO - Listings visible: 46
+2025-08-06 15:09:09,876 - INFO - Scrolling... (9/12)
+2025-08-06 15:09:10,023 - INFO - Listings visible: 46
+2025-08-06 15:09:10,024 - INFO - Scrolling... (9/12)
+2025-08-06 15:09:11,968 - INFO - Listings visible: 52
+2025-08-06 15:09:11,969 - INFO - Scrolling... (10/12)
+2025-08-06 15:09:12,140 - INFO - Listings visible: 52
+2025-08-06 15:09:12,140 - INFO - Scrolling... (10/12)
+2025-08-06 15:09:14,012 - INFO - Listings visible: 58
+2025-08-06 15:09:14,013 - INFO - Scrolling... (11/12)
+2025-08-06 15:09:14,173 - INFO - Listings visible: 58
+2025-08-06 15:09:14,173 - INFO - Scrolling... (11/12)
+2025-08-06 15:09:16,044 - INFO - Listings visible: 60
+2025-08-06 15:09:16,045 - INFO - Scrolling... (12/12)
+2025-08-06 15:09:16,219 - INFO - Listings visible: 60
+2025-08-06 15:09:16,219 - INFO - Scrolling... (12/12)
+2025-08-06 15:09:18,154 - INFO - Listings visible: 66
+2025-08-06 15:09:18,219 - INFO - Found 66 listings
+2025-08-06 15:09:18,340 - INFO - Listings visible: 66
+2025-08-06 15:09:18,369 - INFO - Found 66 listings
+2025-08-06 15:09:24,507 - INFO - Results saved to static\malls_in_delhi_google_maps_060825.csv
+2025-08-06 15:09:24,572 - INFO - Results saved to static\malls_in_delhi_google_maps_060825.csv
+2025-08-06 15:09:27,831 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 15:09:27,831 - INFO - Running Google Maps scraper for: malls in delhi
+2025-08-06 15:09:27,831 - INFO - Received limit: None
+2025-08-06 15:09:32,649 - INFO - Waiting for results pane to load...
+2025-08-06 15:09:32,782 - INFO - Scrolling to load listings...
+2025-08-06 15:09:32,782 - INFO - Scrolling... (1/12)
+2025-08-06 15:09:34,836 - INFO - Listings visible: 12
+2025-08-06 15:09:34,836 - INFO - Scrolling... (2/12)
+2025-08-06 15:09:36,550 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 15:09:36,550 - INFO - Running Google Maps scraper for: malls in delhi
+2025-08-06 15:09:36,550 - INFO - Received limit: None
+2025-08-06 15:09:36,863 - INFO - Listings visible: 18
+2025-08-06 15:09:36,863 - INFO - Scrolling... (3/12)
+2025-08-06 15:09:38,891 - INFO - Listings visible: 20
+2025-08-06 15:09:38,891 - INFO - Scrolling... (4/12)
+2025-08-06 15:09:40,659 - INFO - Waiting for results pane to load...
+2025-08-06 15:09:40,868 - INFO - Scrolling to load listings...
+2025-08-06 15:09:40,868 - INFO - Scrolling... (1/12)
+2025-08-06 15:09:40,957 - INFO - Listings visible: 26
+2025-08-06 15:09:40,957 - INFO - Scrolling... (5/12)
+2025-08-06 15:09:42,966 - INFO - Listings visible: 12
+2025-08-06 15:09:42,967 - INFO - Scrolling... (2/12)
+2025-08-06 15:09:43,201 - INFO - Listings visible: 32
+2025-08-06 15:09:43,201 - INFO - Scrolling... (6/12)
+2025-08-06 15:09:45,038 - INFO - Listings visible: 18
+2025-08-06 15:09:45,039 - INFO - Scrolling... (3/12)
+2025-08-06 15:09:45,274 - INFO - Listings visible: 38
+2025-08-06 15:09:45,274 - INFO - Scrolling... (7/12)
+2025-08-06 15:09:47,065 - INFO - Listings visible: 20
+2025-08-06 15:09:47,065 - INFO - Scrolling... (4/12)
+2025-08-06 15:09:47,312 - INFO - Listings visible: 40
+2025-08-06 15:09:47,312 - INFO - Scrolling... (8/12)
+2025-08-06 15:09:49,122 - INFO - Listings visible: 26
+2025-08-06 15:09:49,122 - INFO - Scrolling... (5/12)
+2025-08-06 15:09:49,396 - INFO - Listings visible: 46
+2025-08-06 15:09:49,396 - INFO - Scrolling... (9/12)
+2025-08-06 15:09:51,173 - INFO - Listings visible: 32
+2025-08-06 15:09:51,173 - INFO - Scrolling... (6/12)
+2025-08-06 15:09:51,659 - INFO - Listings visible: 52
+2025-08-06 15:09:51,659 - INFO - Scrolling... (10/12)
+2025-08-06 15:09:53,202 - INFO - Listings visible: 38
+2025-08-06 15:09:53,202 - INFO - Scrolling... (7/12)
+2025-08-06 15:09:53,684 - INFO - Listings visible: 58
+2025-08-06 15:09:53,684 - INFO - Scrolling... (11/12)
+2025-08-06 15:09:55,227 - INFO - Listings visible: 40
+2025-08-06 15:09:55,227 - INFO - Scrolling... (8/12)
+2025-08-06 15:09:55,714 - INFO - Listings visible: 60
+2025-08-06 15:09:55,714 - INFO - Scrolling... (12/12)
+2025-08-06 15:09:57,256 - INFO - Listings visible: 46
+2025-08-06 15:09:57,257 - INFO - Scrolling... (9/12)
+2025-08-06 15:09:57,815 - INFO - Listings visible: 66
+2025-08-06 15:09:57,834 - INFO - Found 66 listings
+2025-08-06 15:09:59,288 - INFO - Listings visible: 52
+2025-08-06 15:09:59,288 - INFO - Scrolling... (10/12)
+2025-08-06 15:10:00,510 - INFO - Results saved to static\malls_in_delhi_google_maps_060825.csv
+2025-08-06 15:10:01,324 - INFO - Listings visible: 58
+2025-08-06 15:10:01,324 - INFO - Scrolling... (11/12)
+2025-08-06 15:10:03,365 - INFO - Listings visible: 60
+2025-08-06 15:10:03,365 - INFO - Scrolling... (12/12)
+2025-08-06 15:10:05,398 - INFO - Listings visible: 66
+2025-08-06 15:10:05,408 - INFO - Found 66 listings
+2025-08-06 15:10:07,156 - INFO - Results saved to static\malls_in_delhi_google_maps_060825.csv
+2025-08-06 15:10:11,384 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-06 15:10:11,384 - INFO - Running Google Maps scraper for: malls in delhi
+2025-08-06 15:10:11,384 - INFO - Received limit: None
+2025-08-06 15:10:15,541 - INFO - Waiting for results pane to load...
+2025-08-06 15:10:15,617 - INFO - Scrolling to load listings...
+2025-08-06 15:10:15,618 - INFO - Scrolling... (1/12)
+2025-08-06 15:10:17,703 - INFO - Listings visible: 12
+2025-08-06 15:10:17,704 - INFO - Scrolling... (2/12)
+2025-08-06 15:10:19,735 - INFO - Listings visible: 18
+2025-08-06 15:10:19,736 - INFO - Scrolling... (3/12)
+2025-08-06 15:10:21,766 - INFO - Listings visible: 20
+2025-08-06 15:10:21,766 - INFO - Scrolling... (4/12)
+2025-08-06 15:10:23,808 - INFO - Listings visible: 26
+2025-08-06 15:10:23,809 - INFO - Scrolling... (5/12)
+2025-08-06 15:10:25,859 - INFO - Listings visible: 32
+2025-08-06 15:10:25,859 - INFO - Scrolling... (6/12)
+2025-08-06 15:10:27,890 - INFO - Listings visible: 38
+2025-08-06 15:10:27,891 - INFO - Scrolling... (7/12)
+2025-08-06 15:10:29,926 - INFO - Listings visible: 40
+2025-08-06 15:10:29,926 - INFO - Scrolling... (8/12)
+2025-08-06 15:10:31,975 - INFO - Listings visible: 46
+2025-08-06 15:10:31,975 - INFO - Scrolling... (9/12)
+2025-08-06 15:10:34,069 - INFO - Listings visible: 52
+2025-08-06 15:10:34,070 - INFO - Scrolling... (10/12)
+2025-08-06 15:10:36,105 - INFO - Listings visible: 58
+2025-08-06 15:10:36,105 - INFO - Scrolling... (11/12)
+2025-08-06 15:10:38,130 - INFO - Listings visible: 60
+2025-08-06 15:10:38,130 - INFO - Scrolling... (12/12)
+2025-08-06 15:10:40,171 - INFO - Listings visible: 66
+2025-08-06 15:10:40,187 - INFO - Found 66 listings
+2025-08-06 15:10:42,174 - INFO - Results saved to static\malls_in_delhi_google_maps_060825.csv

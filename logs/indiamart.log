@@ -183,3 +183,20 @@
 2025-08-06 13:56:03,253 - INFO - IndiaMART results saved to static\healthcare_indiamart_060825.csv
 2025-08-06 13:56:26,546 - INFO - Scraped 20 listings.
 2025-08-06 13:56:27,012 - INFO - IndiaMART results saved to static\speakers_indiamart_060825.csv
+2025-08-06 15:09:18,914 - INFO - Running IndiaMART scraper for: headphone
+2025-08-06 15:09:18,915 - INFO - Received limit: None
+2025-08-06 15:09:18,915 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=headphone
+2025-08-06 15:09:23,039 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 15:09:50,019 - INFO - Scraped 20 listings.
+2025-08-06 15:09:50,309 - INFO - IndiaMART results saved to static\headphone_indiamart_060825.csv
+2025-08-06 15:29:49,602 - INFO - Running IndiaMART scraper for: speakers
+2025-08-06 15:29:49,602 - INFO - Running IndiaMART scraper for: speakers
+2025-08-06 15:29:49,602 - INFO - Received limit: None
+2025-08-06 15:29:49,602 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-06 15:29:49,602 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-06 15:29:59,274 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 15:29:59,388 - INFO - Waiting 5 seconds before checking for results...
+2025-08-06 15:30:25,147 - INFO - Scraped 20 listings.
+2025-08-06 15:30:25,346 - INFO - IndiaMART results saved to static\speakers_indiamart_060825.csv
+2025-08-06 15:30:25,489 - INFO - Scraped 20 listings.
+2025-08-06 15:30:25,627 - INFO - IndiaMART results saved to static\speakers_indiamart_060825.csv
