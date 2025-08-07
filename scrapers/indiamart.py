@@ -1,110 +1,89 @@
 # indiamart.py
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
-from urllib.parse import quote_plus
-from datetime import datetime
-import time
 import csv
 import os
+import time
+from datetime import datetime
+from urllib.parse import quote_plus
 from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
-logger.info("🛠 Custom indiamart.py loaded.")
-
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
 
-def auto_scroll(page, scroll_pause=2, scroll_count=10, limit=None):
-    logger.info("Scrolling through the page...")
-    for i in range(scroll_count):
-        logger.info(f"Scroll iteration: {i+1}")
-        page.mouse.wheel(0, 10000)
-        time.sleep(scroll_pause)
-
-        current_cards = len(page.locator(".prd-listing").all())
-        logger.info(f"Listings visible: {current_cards}")
-        if limit and current_cards >= limit:
-            logger.info(f"Stopping scroll early at {current_cards} listings.")
-            break
-
 def extract_data(page, limit=None):
-    logger.info("Extracting data from IndiaMART cards...")
-    cards = page.locator(".prd-listing").all()
-    logger.info(f"Found {len(cards)} cards")
-
-    if limit:
-        cards = cards[:limit]
-
     data = []
-    for i, card in enumerate(cards):
-        try:
-            name = card.locator("h2").inner_text().strip()
-        except:
-            name = "N/A"
+    try:
+        cards = page.query_selector_all(".supplierInfoDiv")
+        logger.info(f"Found {len(cards)} cards on the page.")
+        for idx, card in enumerate(cards):
+            if limit and len(data) >= limit:
+                break
 
-        try:
-            location = card.locator(".cmp-loc").inner_text().strip()
-        except:
-            location = "N/A"
+            company_name = card.query_selector(".companyname a")
+            location = card.query_selector(".newLocationUi span.highlight")
+            phone_elem = card.query_selector(".pns_h, .contactnumber .duet")
 
-        try:
-            url = card.locator("a").first.get_attribute("href")
-            if url and not url.startswith("http"):
-                url = "https://indiamart.com" + url
-        except:
-            url = "N/A"
+            company = company_name.inner_text().strip() if company_name else ""
+            city = location.inner_text().strip() if location else ""
+            phone = phone_elem.inner_text().strip() if phone_elem else ""
 
-        data.append({
-            "Name": name,
-            "Location": location,
-            "Profile URL": url or "N/A"
-        })
+            data.append({
+                "Company Name": company,
+                "Location": city,
+                "Phone": phone,
+            })
 
-    logger.info(f"Extracted {len(data)} records.")
+    except Exception as e:
+        logger.error(f"Error extracting data: {e}")
     return data
 
-def save_to_csv(data, output_file):
-    # Ensure the directory exists
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
-    with open(output_file, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["Name", "Location", "Profile URL"])
+def save_to_csv(data, file_path):
+    if not data:
+        logger.warning("No data to save.")
+        return
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=data[0].keys())
         writer.writeheader()
         writer.writerows(data)
-    logger.info(f"✅ Saved {len(data)} records to {output_file}")
+    logger.info(f"Saved {len(data)} records to {file_path}")
 
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Received limit: {limit}")
-
-    search_url = build_search_url(query)
-
-    if not output_file:
-        date_str = datetime.now().strftime("%d%m%y")
-        filename_safe = query.lower().replace(" ", "_")
-        output_file = f"static/{filename_safe}_indiamart_{date_str}.csv"
+    url = build_search_url(query)
+    logger.info(f"Opening URL: {url}")
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
-        page = browser.new_page()
-        logger.info(f"Opening URL: {search_url}")
-        page.goto(search_url, timeout=60000)
-
         try:
-            logger.info("Waiting for cards to appear...")
-            page.wait_for_selector(".prd-listing", timeout=20000)
-        except PlaywrightTimeoutError:
-            logger.error("Timeout: Could not find listings.")
-            save_to_csv([], output_file)
-            print("FOUND_COUNT: 0")
-            return 0
+            # Always headless for Render (or server)
+            browser = p.chromium.launch(
+                headless=True,
+                args=["--disable-blink-features=AutomationControlled"]
+            )
+            context = browser.new_context()
+            page = context.new_page()
+            page.goto(url, timeout=60000)
+            time.sleep(5)  # Wait for JS to load cards
 
-        auto_scroll(page, scroll_count=12, scroll_pause=2, limit=limit)
-        data = extract_data(page, limit=limit)
-        save_to_csv(data, output_file)
-        print(f"FOUND_COUNT: {len(data)}")
-        browser.close()
-        return len(data)
+            data = extract_data(page, limit=limit)
+            if output_file:
+                save_to_csv(data, output_file)
+
+            browser.close()
+            logger.info(f"Scraping completed with {len(data)} results.")
+            print(f"FOUND_COUNT: {len(data)}")
+            return len(data)
+
+        except PlaywrightTimeoutError:
+            logger.error("Timeout while loading IndiaMART.")
+        except Exception as e:
+            logger.error(f"Unexpected error: {e}")
+
+        return 0
 
 
 

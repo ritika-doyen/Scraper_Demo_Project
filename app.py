@@ -1,3 +1,4 @@
+
 # app.py
 
 from flask import Flask, render_template, request, redirect, url_for
@@ -39,20 +40,18 @@ def index():
                 # Extract FOUND_COUNT from stdout
                 found_count = None
                 if result.stdout:
-                    lines = result.stdout.strip().splitlines()
-                    for line in lines:
+                    for line in result.stdout.splitlines():
                         if "FOUND_COUNT:" in line:
                             try:
                                 found_count = int(line.split("FOUND_COUNT:")[1].strip())
-                                break
-                            except Exception as e:
-                                print(f"Failed to parse FOUND_COUNT from line: {line} – {e}")
+                            except ValueError:
+                                pass
 
                 # Compare with limit
-                if limit and found_count is not None:
+                if limit:
                     try:
                         int_limit = int(limit)
-                        if found_count < int_limit:
+                        if found_count is not None and found_count < int_limit:
                             last_message += f"<br>⚠️ Only {found_count} records found out of requested {int_limit}."
                     except ValueError:
                         last_message += "<br>⚠️ Invalid limit value."
@@ -89,8 +88,10 @@ def index():
                            table_data=last_table_data)
 
 if __name__ == "__main__":
+    import os
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
 
 
