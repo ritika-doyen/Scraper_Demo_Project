@@ -1,21 +1,11 @@
-Product,Company,Address,Phone
-"Semi Glossy PVC Flooring Carpet Tiles, Size: 4x8 Feet(1200x2400 mm)",Rime Interio Private Limited,"Shop Premises No. Ugf-215-D, Sushant Shopping Arcade, Sushant Lok-I, Gurugram - 122001, Dist.Gurugram, Haryana",08047642893
-2x2 Feet Vitrified Floor Tiles,Hippostores Technology Private Limited,"First Floor, Unit No 1 And Unit No 5, Good Earth Business Bay2, Sector 58, Behrampur Village, Gurugram, Gurugram - 122102, Dist.Gurugram, Haryana",07943435373
-Heavy Duty Vitrified Parking Tiles 400x400mm,Krishna Ceramics,"City Court, 1st Floor With Roof Rights, Khasra No. 86 Min, Dlf Phase 1 Gurugram, Sikanderpur Ghosi V, Sector 24, Gurugram - 122002, Dist.Gurugram, Haryana",08046055375
-"Ceramic Vitrified Floor Tile, Usage Area: Living Room",Aangan,"Shop No. 2 , Opp Community Center, Near Vrtika Chowk , Sec 66. Main Sohna Road, Badshahpur, Gurgaon - 122001, Dist.Gurugram, Haryana",08047635426
-Double Charged Vitrified Tiles,Shri Krishna Tiles & Concepts,"Gupta MKT Opp C Block Palam Vihar, Gurugram - 122001, Dist.Gurugram, Haryana",08048950558
-"Nano Eden Floor Tiles, 600x600 mm",Orient Bell Limited,"16 And 17, Iris House, Dda Complex, Business Centre, Nangal Raya, Nangal Raya, New Delhi - 110046, Dist.New Delhi, Delhi",08046060776
-Polished Glazed Vitrified Tiles 800x1600,Marvel And Co.,"Office No. 4013, Fourth Floor, Survey No. 919, City Mall, Shanala Bypass,, Patel Colony, Morbi - 363641, Dist.Morbi, Gujarat",08046043151
-Parking Tile,Neon Tile LLP,"Forth Floor, Office No. 419, Ishan Business Center, 8-A National Highway, At-Lalpar, Behind Ishan Ceramic Zone, LALPAR, Morbi - 363642, Dist.Morbi, Gujarat",07942843756
-"Vitrified Living Room Floor Tiles, 2x4 Feet",Ruhi Ceramica LLP,"Survey No.77 Paiki 1, Plot No.2 And 3, Harigun Business Center, Third Floor Office No. 19, Mahendra Nagar, Mahendranagar, Morbi - 363642, Dist.Morbi, Gujarat",07942824627
-"TIZO VITRIFIED FLOOR TILES, 600x1200 mm",Tizo Tiles LLP,"survey no 1133 near manali hotel, Lakhdhirpur, Morbi - 363641, Dist.Morbi, Gujarat",07942840830
-800x1600 Glazed Vitrified Tiles,Skyrun Ceramic,"Ground Floor, Shop No. 43, Plot No. 01, Survey No. 38b 1 Paiki, Ceramic Plaza-1, At - Trajpar, C/O. United Cera Trade, Morbi, Morbi - 363642, Dist.Morbi, Gujarat",07942543368
-Double Charged Vitrified Tile,Superb Tiles Zone,"Khasra No 1945/4, Galino 3, Rajeev Nagar, Gurugram - 122001, Dist.Gurugram, Haryana",07949324260
-"Cement Outdoor Designer Pavers, For Landscaping, Thickness: 60 Mm",Terra Firma GRC And Concrete Company,"Jamal Number 110/98, Village Balola,Tehsil, Wazirabad Distt,Gurugram, Gurugram - 122015, Dist.Gurugram, Haryana",08046037518
-"Tile Flooring Services, New floor Installation",Aditya Raj Contractors,"Shop- No-2, Main Basai Road, Near Kutiya Mandir, Gurugram - 122001, Dist.Gurugram, Haryana",08048617643
-"GVT keralam Floor Tile, Size: 2x4 Feet(600x1200 mm)",Mangalam The World Of Tiles,"Plot No. 9, Marble Market,, Gurugram - 122001, Dist.Gurugram, Haryana",07942828586
-"Glossy Vitrified Kwatra Floor Tiles, Size: 2x4 Feet",Kwatra Tiles & Sanitary Wares,"Ground Floor, F-156, Main Road, Jagatpuri, Ghondli, New Delhi - 110051, Dist.New Delhi, Delhi",08045738695
-"Ceramic Olivia 16/16 parking tiles, 600x600 mm",R.M.Rana Traders,"Prashant Vihar, Loni, Plot No. 21 - 22, Ghaziabad Road, Khasra No. 1486/1, 50 Mtr. Distance From Banthla Railway Crossing Bridge, Banthla, Loni - 201102, Dist.Ghaziabad, Uttar Pradesh",08044459187
-"Ceramic Floor Tiles, Size: 4x8 Feet",Rohini Ceramics Private Limited,"B-234,Pocket-00, Sector-1,Rohini,, New Delhi - 110085, Dist.New Delhi, Delhi",08048985475
-High Glossy Nano Polished Vitrified Floor Tile,Hindustan Marble House,"1455/5 Mohan Mecon Socity Vasundhra Sector 5, Vasundhara, Ghaziabad - 201012, Dist.Ghaziabad, Uttar Pradesh",08043864912
-"Ceramic Somany Kitchen Floor Tile, 1x1 Feet(30x30 Cm), Matte",Katho Interior Products Private Limited,"U/G/F A-201 KH. No. 30 R/S/P, Flat No. 2 Saidulajaib South Delhi, New Delhi - 110068, Dist.New Delhi, Delhi",07942547284
+Company Name,Location,Phone
+Rime Interio Private Limited,Gurugram,08047642893
+Hippostores Technology Private Limited,Gurugram,07943435373
+Krishna Ceramics,Gurugram,08046055375
+Aangan,Gurgaon,08047635426
+Shri Krishna Tiles & Concepts,Gurugram,08048950558
+Orient Bell Limited,New Delhi,08046060776
+Marvel And Co.,Morbi,08046043151
+Neon Tile LLP,Morbi,07942843756
+Ruhi Ceramica LLP,Morbi,07942824627
+Tizo Tiles LLP,Morbi,07942840830

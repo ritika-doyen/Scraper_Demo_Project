@@ -234,3 +234,27 @@
 2025-08-07 12:57:02,716 - INFO - Found 20 total cards.
 2025-08-07 12:57:02,751 - INFO - Scraped 20 listings.
 2025-08-07 12:57:03,051 - INFO - IndiaMART results saved to static\tiles_indiamart_070825.csv
+2025-08-07 15:42:39,013 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 15:42:39,014 - INFO - Received limit: 21
+2025-08-07 15:42:39,014 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 15:42:48,319 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 15:42:48,319 - INFO - Received limit: 21
+2025-08-07 15:42:48,319 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 15:42:58,719 - INFO - Found 10 cards on the page.
+2025-08-07 15:42:59,387 - INFO - Saved 10 records to static\speakers_indiamart_070825.csv
+2025-08-07 15:42:59,462 - INFO - Found 10 cards on the page.
+2025-08-07 15:42:59,900 - INFO - Scraping completed with 10 results.
+2025-08-07 15:43:00,165 - INFO - Saved 10 records to static\speakers_indiamart_070825.csv
+2025-08-07 15:43:00,322 - INFO - Scraping completed with 10 results.
+2025-08-07 15:43:01,357 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 15:43:01,358 - INFO - Received limit: 21
+2025-08-07 15:43:01,358 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 15:43:08,331 - INFO - Found 10 cards on the page.
+2025-08-07 15:43:08,797 - INFO - Saved 10 records to static\speakers_indiamart_070825.csv
+2025-08-07 15:43:09,080 - INFO - Scraping completed with 10 results.
+2025-08-07 15:44:05,755 - INFO - Running IndiaMART scraper for: tiles
+2025-08-07 15:44:05,755 - INFO - Received limit: None
+2025-08-07 15:44:05,755 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=tiles
+2025-08-07 15:44:12,460 - INFO - Found 10 cards on the page.
+2025-08-07 15:44:12,904 - INFO - Saved 10 records to static\tiles_indiamart_070825.csv
+2025-08-07 15:44:13,017 - INFO - Scraping completed with 10 results.
