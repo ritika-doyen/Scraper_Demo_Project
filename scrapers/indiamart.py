@@ -1,96 +1,93 @@
 # indiamart.py
 
-# indiamart.py
-
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import csv
-import time
+import os
 from datetime import datetime
-from urllib.parse import quote_plus
-from utils.logger import get_logger
 
-logger = get_logger("indiamart")
+def scrape_indiamart_data(query, limit):
+    url = f"https://dir.indiamart.com/search.mp?ss={query.replace(' ', '%20')}"
 
-logger.info("🛠 Custom indiamart.py loaded with enhanced stealth and scraping logic.")
+    output_folder = "static"
+    os.makedirs(output_folder, exist_ok=True)
 
-def build_search_url(query):
-    return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
+    date_str = datetime.now().strftime("%d%m%y")
+    filename = f"speakers_indiamart_{date_str}.csv"
+    filepath = os.path.join(output_folder, filename)
 
-def extract_data(page, limit=None):
-    cards = page.locator(".supplierInfoDiv").all()
-    logger.info(f"Found {len(cards)} supplier cards")
-    
-    if limit:
-        cards = cards[:limit]
-
-    data = []
-    for i, card in enumerate(cards):
-        try:
-            name = card.locator(".companyname a").inner_text().strip()
-            location = card.locator(".newLocationUi span").inner_text().strip()
-            phone = card.locator(".contactnumber span.pns_h").inner_text().strip()
-            url = card.locator(".companyname a").get_attribute("href")
-            data.append({
-                "Name": name,
-                "Location": location,
-                "Phone": phone,
-                "URL": url
-            })
-        except Exception as e:
-            logger.warning(f"Error parsing card {i}: {e}")
-            continue
-
-    return data
-
-def save_to_csv(data, file_path):
-    with open(file_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["Name", "Location", "Phone", "URL"])
-        writer.writeheader()
-        writer.writerows(data)
-    logger.info(f"Results saved to {file_path}")
-
-def run_scraper(query, output_file=None, limit=None):
-    logger.info(f"Running IndiaMART scraper for: {query}")
-    logger.info(f"Received limit: {limit}")
-
-    search_url = build_search_url(query)
-
-    if not output_file:
-        date_str = datetime.now().strftime("%d%m%y")
-        output_file = f"{query.replace(' ', '_')}_indiamart_{date_str}.csv"
+    scraped_data = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=["--disable-blink-features=AutomationControlled"]
-        )
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                       "AppleWebKit/537.36 (KHTML, like Gecko) "
-                       "Chrome/115.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 800}
         )
         page = context.new_page()
-        logger.info(f"Opening URL: {search_url}")
-        page.goto(search_url, timeout=60000)
 
         try:
-            logger.info("Waiting for supplier cards to load...")
-            page.wait_for_selector(".supplierInfoDiv", timeout=20000)
-        except PlaywrightTimeoutError:
-            logger.warning("Timeout: supplierInfoDiv not found.")
-            save_to_csv([], output_file)
-            return 0
+            page.goto(url, timeout=60000)
+            page.wait_for_timeout(5000)  # wait for JavaScript to load results
 
-        # Give extra time for JS to load more cards
-        time.sleep(3)
+            # Wait for the result cards to appear
+            try:
+                page.wait_for_selector(".card", timeout=10000)
+            except PlaywrightTimeoutError:
+                print("❌ .card selector not found. Possibly no results or bot-blocked.")
 
-        results = extract_data(page, limit=limit)
-        if not results:
-            logger.warning("No data scraped from IndiaMART.")
+            # DEBUG: Save page HTML to inspect what's being loaded (especially on Render)
+            with open(os.path.join(output_folder, "debug_rendered_page.html"), "w", encoding="utf-8") as f:
+                f.write(page.content())
 
-        save_to_csv(results, output_file)
-        browser.close()
-        return len(results)
+            cards = page.query_selector_all(".card")
+
+            for card in cards:
+                if len(scraped_data) >= limit:
+                    break
+
+                try:
+                    name = card.query_selector("h2 a")
+                    name_text = name.inner_text().strip() if name else ""
+
+                    company = card.query_selector(".cmpny")
+                    company_text = company.inner_text().strip() if company else ""
+
+                    location = card.query_selector(".loc")
+                    location_text = location.inner_text().strip() if location else ""
+
+                    phone = card.query_selector(".contact-number")
+                    phone_text = phone.inner_text().strip() if phone else ""
+
+                    scraped_data.append({
+                        "Name": name_text,
+                        "Company": company_text,
+                        "Location": location_text,
+                        "Phone": phone_text,
+                    })
+
+                except Exception as e:
+                    print("❌ Error parsing card:", e)
+
+            browser.close()
+
+        except Exception as e:
+            print("❌ Error during scraping:", e)
+
+    # Save to CSV
+    if scraped_data:
+        keys = scraped_data[0].keys()
+        with open(filepath, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=keys)
+            writer.writeheader()
+            writer.writerows(scraped_data)
+
+    return {
+        "filename": filename,
+        "count": len(scraped_data),
+        "limit": limit,
+        "filepath": filepath
+    }
+
 
 
 
