@@ -216,3 +216,21 @@
 2025-08-07 12:38:46,998 - INFO - Found 20 cards with 'div.card'
 2025-08-07 12:38:47,336 - INFO - Scraped 20 listings.
 2025-08-07 12:38:47,352 - INFO - IndiaMART results saved to static\speakers_indiamart_070825.csv
+2025-08-07 12:56:35,658 - INFO - Running IndiaMART scraper for: tiles
+2025-08-07 12:56:35,658 - INFO - Received limit: None
+2025-08-07 12:56:35,658 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=tiles
+2025-08-07 12:56:41,218 - INFO - Running IndiaMART scraper for: tiles
+2025-08-07 12:56:41,218 - INFO - Received limit: None
+2025-08-07 12:56:41,218 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=tiles
+2025-08-07 12:56:45,479 - INFO - Waiting for results to appear...
+2025-08-07 12:56:45,604 - INFO - Waiting for results to appear...
+2025-08-07 12:56:45,903 - INFO - Scrolling to load more content...
+2025-08-07 12:56:46,109 - INFO - Scrolling to load more content...
+2025-08-07 12:57:02,171 - INFO - Extracting data from page content...
+2025-08-07 12:57:02,377 - INFO - Found 20 total cards.
+2025-08-07 12:57:02,398 - INFO - Scraped 20 listings.
+2025-08-07 12:57:02,466 - INFO - Extracting data from page content...
+2025-08-07 12:57:02,555 - INFO - IndiaMART results saved to static\tiles_indiamart_070825.csv
+2025-08-07 12:57:02,716 - INFO - Found 20 total cards.
+2025-08-07 12:57:02,751 - INFO - Scraped 20 listings.
+2025-08-07 12:57:03,051 - INFO - IndiaMART results saved to static\tiles_indiamart_070825.csv
