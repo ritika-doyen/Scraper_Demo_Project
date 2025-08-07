@@ -1,39 +1,56 @@
-## indiamart.py
+# indiamart.py
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import csv
 import os
 import time
-from datetime import datetime
 from urllib.parse import quote_plus
 from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
-def build_search_url(query, page=1):
-    return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}&page={page}"
+def build_search_url(query):
+    return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
+
+def scroll_until_end(page, max_scrolls=50):
+    logger.info("Starting auto-scroll to load all results...")
+    last_height = 0
+    for i in range(max_scrolls):
+        page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
+        time.sleep(2)
+        new_height = page.evaluate("document.body.scrollHeight")
+        if new_height == last_height:
+            logger.info(f"No more content loaded after {i+1} scrolls.")
+            break
+        last_height = new_height
+    logger.info("Auto-scroll completed.")
 
 def extract_data_from_page(page):
     data = []
-    cards = page.query_selector_all(".supplierInfoDiv")
-    logger.info(f"Found {len(cards)} cards on the current page.")
-    for card in cards:
-        try:
-            company = card.query_selector(".companyname a")
-            city = card.query_selector(".newLocationUi span.highlight")
-            phone = card.query_selector(".pns_h, .contactnumber .duet")
-            product = card.query_selector(".pnm, .prod_name, .product-name")
-            supplier = card.query_selector(".cmp-contact span")
+    try:
+        cards = page.query_selector_all(".supplierInfoDiv")
+        logger.info(f"Found {len(cards)} cards on current scroll.")
+
+        for card in cards:
+            company_name = card.query_selector(".companyname a")
+            location = card.query_selector(".newLocationUi span.highlight")
+            phone_elem = card.query_selector(".pns_h, .contactnumber .duet")
+            link = card.query_selector(".companyname a")
+
+            company = company_name.inner_text().strip() if company_name else ""
+            city = location.inner_text().strip() if location else ""
+            phone = phone_elem.inner_text().strip() if phone_elem else ""
+            url = link.get_attribute("href") if link else ""
 
             data.append({
-                "Company Name": company.inner_text().strip() if company else "",
-                "Location": city.inner_text().strip() if city else "",
-                "Phone": phone.inner_text().strip() if phone else "",
-                "Product Name": product.inner_text().strip() if product else "",
-                "Supplier": supplier.inner_text().strip() if supplier else "",
+                "Company Name": company,
+                "Location": city,
+                "Phone": phone,
+                "URL": url
             })
-        except Exception as e:
-            logger.warning(f"Error extracting card: {e}")
+
+    except Exception as e:
+        logger.error(f"Error extracting data: {e}")
     return data
 
 def save_to_csv(data, file_path):
@@ -50,45 +67,33 @@ def save_to_csv(data, file_path):
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Received limit: {limit}")
-    total_data = []
-    page_num = 1
+    url = build_search_url(query)
+    logger.info(f"Opening URL: {url}")
+
+    all_data = []
 
     with sync_playwright() as p:
         try:
             browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
             context = browser.new_context()
             page = context.new_page()
+            page.goto(url, timeout=60000)
+            page.wait_for_selector(".supplierInfoDiv", timeout=15000)
 
-            while True:
-                url = build_search_url(query, page_num)
-                logger.info(f"Opening URL: {url}")
-                page.goto(url, timeout=60000)
-                time.sleep(4)
+            scroll_until_end(page)
 
-                page_data = extract_data_from_page(page)
-                if not page_data:
-                    logger.info("No more data found on this page. Stopping.")
-                    break
+            all_data = extract_data_from_page(page)
 
-                total_data.extend(page_data)
-
-                if limit and len(total_data) >= limit:
-                    total_data = total_data[:limit]
-                    break
-
-                # IndiaMART usually limits results to 20 pages
-                page_num += 1
-                if page_num > 20:
-                    logger.info("Reached maximum page limit.")
-                    break
+            if limit:
+                all_data = all_data[:int(limit)]
 
             if output_file:
-                save_to_csv(total_data, output_file)
+                save_to_csv(all_data, output_file)
 
             browser.close()
-            logger.info(f"Scraping completed with {len(total_data)} results.")
-            print(f"FOUND_COUNT: {len(total_data)}")
-            return len(total_data)
+            logger.info(f"Scraping completed with {len(all_data)} results.")
+            print(f"FOUND_COUNT: {len(all_data)}")
+            return len(all_data)
 
         except PlaywrightTimeoutError:
             logger.error("Timeout while loading IndiaMART.")
@@ -96,6 +101,11 @@ def run_scraper(query, output_file=None, limit=None):
             logger.error(f"Unexpected error: {e}")
 
         return 0
+
+
+
+
+
 
 
 
