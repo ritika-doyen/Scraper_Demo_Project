@@ -258,3 +258,11 @@
 2025-08-07 15:44:12,460 - INFO - Found 10 cards on the page.
 2025-08-07 15:44:12,904 - INFO - Saved 10 records to static\tiles_indiamart_070825.csv
 2025-08-07 15:44:13,017 - INFO - Scraping completed with 10 results.
+2025-08-07 16:12:00,871 - INFO - Running IndiaMART scraper for: tiles
+2025-08-07 16:12:00,871 - INFO - Received limit: None
+2025-08-07 16:12:00,871 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=tiles
+2025-08-07 16:12:17,210 - INFO - Scraping page 1...
+2025-08-07 16:12:17,407 - INFO - Found 10 cards on this page.
+2025-08-07 16:12:18,672 - INFO - No more pages to scrape.
+2025-08-07 16:12:18,674 - INFO - Saved 10 records to static\tiles_indiamart_070825.csv
+2025-08-07 16:12:18,924 - INFO - Scraping completed with 10 results.

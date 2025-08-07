@@ -10,40 +10,31 @@ from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
+def build_search_url(query, page=1):
+    return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}&page={page}"
 
-def build_search_url(query):
-    return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
+def extract_data_from_page(page):
+    data = []
+    cards = page.query_selector_all(".supplierInfoDiv")
+    logger.info(f"Found {len(cards)} cards on the current page.")
+    for card in cards:
+        try:
+            company = card.query_selector(".companyname a")
+            city = card.query_selector(".newLocationUi span.highlight")
+            phone = card.query_selector(".pns_h, .contactnumber .duet")
+            product = card.query_selector(".pnm, .prod_name, .product-name")
+            supplier = card.query_selector(".cmp-contact span")
 
-
-def extract_data_from_page(page, collected, limit=None):
-    new_data = []
-    try:
-        cards = page.query_selector_all(".supplierInfoDiv")
-        logger.info(f"Found {len(cards)} cards on this page.")
-
-        for idx, card in enumerate(cards):
-            if limit and len(collected) + len(new_data) >= limit:
-                break
-
-            company_name = card.query_selector(".companyname a")
-            location = card.query_selector(".newLocationUi span.highlight")
-            phone_elem = card.query_selector(".pns_h, .contactnumber .duet")
-
-            company = company_name.inner_text().strip() if company_name else ""
-            city = location.inner_text().strip() if location else ""
-            phone = phone_elem.inner_text().strip() if phone_elem else ""
-
-            new_data.append({
-                "Company Name": company,
-                "Location": city,
-                "Phone": phone,
+            data.append({
+                "Company Name": company.inner_text().strip() if company else "",
+                "Location": city.inner_text().strip() if city else "",
+                "Phone": phone.inner_text().strip() if phone else "",
+                "Product Name": product.inner_text().strip() if product else "",
+                "Supplier": supplier.inner_text().strip() if supplier else "",
             })
-
-    except Exception as e:
-        logger.error(f"Error extracting data from page: {e}")
-
-    return new_data
-
+        except Exception as e:
+            logger.warning(f"Error extracting card: {e}")
+    return data
 
 def save_to_csv(data, file_path):
     if not data:
@@ -56,54 +47,48 @@ def save_to_csv(data, file_path):
         writer.writerows(data)
     logger.info(f"Saved {len(data)} records to {file_path}")
 
-
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Received limit: {limit}")
-    url = build_search_url(query)
-    logger.info(f"Opening URL: {url}")
+    total_data = []
+    page_num = 1
 
     with sync_playwright() as p:
         try:
             browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
             context = browser.new_context()
             page = context.new_page()
-            page.goto(url, timeout=60000)
-            time.sleep(5)
-
-            all_data = []
-            page_count = 0
 
             while True:
-                page_count += 1
-                logger.info(f"Scraping page {page_count}...")
+                url = build_search_url(query, page_num)
+                logger.info(f"Opening URL: {url}")
+                page.goto(url, timeout=60000)
+                time.sleep(4)
 
-                new_data = extract_data_from_page(page, all_data, limit)
-                all_data.extend(new_data)
-
-                if limit and len(all_data) >= limit:
-                    logger.info(f"Reached limit of {limit} records.")
+                page_data = extract_data_from_page(page)
+                if not page_data:
+                    logger.info("No more data found on this page. Stopping.")
                     break
 
-                next_button = page.query_selector(".pgntn .pgntn-nxt")
-                if not next_button or "disabled" in next_button.get_attribute("class"):
-                    logger.info("No more pages to scrape.")
+                total_data.extend(page_data)
+
+                if limit and len(total_data) >= limit:
+                    total_data = total_data[:limit]
                     break
 
-                try:
-                    next_button.click()
-                    time.sleep(5)
-                except Exception as e:
-                    logger.warning(f"Failed to click next button: {e}")
+                # IndiaMART usually limits results to 20 pages
+                page_num += 1
+                if page_num > 20:
+                    logger.info("Reached maximum page limit.")
                     break
 
             if output_file:
-                save_to_csv(all_data, output_file)
+                save_to_csv(total_data, output_file)
 
             browser.close()
-            logger.info(f"Scraping completed with {len(all_data)} results.")
-            print(f"FOUND_COUNT: {len(all_data)}")
-            return len(all_data)
+            logger.info(f"Scraping completed with {len(total_data)} results.")
+            print(f"FOUND_COUNT: {len(total_data)}")
+            return len(total_data)
 
         except PlaywrightTimeoutError:
             logger.error("Timeout while loading IndiaMART.")
