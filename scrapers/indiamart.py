@@ -42,54 +42,59 @@ def run_scraper(query, output_file=None, limit=None):
             "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
         ))
         page = context.new_page()
+        page.goto(search_url, timeout=60000)
 
         try:
-            page.goto(search_url, timeout=60000)
-            logger.info("Waiting up to 30s for cards to appear...")
+            logger.info("Waiting for cards to load...")
             page.wait_for_selector("div.card", timeout=30000)
+            time.sleep(5)
+
+            logger.info("Scrolling...")
+            for _ in range(8):
+                page.mouse.wheel(0, 2000)
+                time.sleep(2)
+
+            time.sleep(5)  # Allow JavaScript to finish
+
+            # DEBUG: Save screenshot + HTML on server
+            page.screenshot(path="static/debug_indiamart.png", full_page=True)
+            with open("static/debug_indiamart.html", "w", encoding="utf-8") as f:
+                f.write(page.content())
+
+            html = page.content()
+            soup = BeautifulSoup(html, "html.parser")
+            cards = soup.select("div.card")
+
+            for card in cards:
+                if limit and len(results) >= int(limit):
+                    break
+
+                name_tag = card.select_one("div.companyname a.cardlinks")
+                address_tag = card.select_one("p.tac.wpw")
+                phone_tag = card.select_one("span.pns_h")
+
+                name = name_tag.get_text(strip=True) if name_tag else ""
+                address = address_tag.get_text(strip=True) if address_tag else ""
+                phone = phone_tag.get_text(strip=True) if phone_tag else ""
+
+                if name or address or phone:
+                    results.append({
+                        "Name": name,
+                        "Address": address,
+                        "Phone": phone,
+                    })
+
+            logger.info(f"FOUND_COUNT: {len(results)}")
+            browser.close()
+            save_results(results, query, output_file)
+            return len(results)
+
         except PlaywrightTimeoutError:
-            logger.error("⏱ Timeout: No IndiaMART results.")
-            page.screenshot(path="static/indiamart_error.png")  # Save screenshot for debug
+            logger.error("Timeout: No results found.")
             browser.close()
             save_results([], query, output_file)
             return 0
 
-        # Scroll to load more
-        for _ in range(10):
-            page.mouse.wheel(0, 2000)
-            time.sleep(2)
-
-        html = page.content()
-        soup = BeautifulSoup(html, "html.parser")
-        cards = soup.select("div.card")
-
-        logger.info(f"Found {len(cards)} .card elements.")
-
-        for card in cards:
-            if limit and len(results) >= limit:
-                logger.info(f"Reached limit: {limit}")
-                break
-
-            company_tag = card.select_one(".supplierInfoDiv a.cardlinks")
-            address_tag = card.select_one(".supplierInfoDiv p.tac.wpw")
-            phone_tag = card.select_one(".supplierInfoDiv span.pns_h")
-
-            name = company_tag.get_text(strip=True) if company_tag else ""
-            address = address_tag.get_text(strip=True) if address_tag else ""
-            phone = phone_tag.get_text(strip=True) if phone_tag else ""
-
-            results.append({
-                "Name": name,
-                "Address": address,
-                "Phone": phone,
-            })
-
-        logger.info(f"Scraped {len(results)} listings.")
-        browser.close()
-        save_results(results, query, output_file)
-
-    print(f"FOUND_COUNT: {len(results)}")
-    return len(results)
 
 
 
