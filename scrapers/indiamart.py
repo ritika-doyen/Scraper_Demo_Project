@@ -1,3 +1,5 @@
+# scrapers/indiamart.py
+
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -34,67 +36,56 @@ def run_scraper(query, output_file=None, limit=None):
     results = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
             "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
         ))
         page = context.new_page()
+        page.goto(search_url, timeout=60000)
 
         try:
-            page.goto(search_url, timeout=60000)
-        except Exception as e:
-            logger.error(f"Failed to load IndiaMART page: {e}")
-            browser.close()
-            save_results([], query, output_file)
-            return 0
+            logger.info("Waiting 6 seconds for initial load...")
+            time.sleep(6)
 
-        try:
-            logger.info("Waiting up to 30s for result container...")
-            page.wait_for_selector(".supplierInfoDiv", timeout=30000)
-            logger.info("✅ Results container detected.")
+            logger.info("Scrolling to load more results...")
+            for _ in range(10):
+                page.mouse.wheel(0, 3000)
+                time.sleep(2)
+
+            html = page.content()
+            soup = BeautifulSoup(html, "html.parser")
+
+            cards = soup.select("div.rslwrp")  # UPDATED SELECTOR
+            logger.info(f"Found {len(cards)} cards with 'div.rslwrp'")
+
+            for card in cards:
+                if limit and len(results) >= limit:
+                    logger.info(f"Reached limit: {limit}")
+                    break
+
+                name_tag = card.select_one("a.imsrchname")
+                address_tag = card.select_one("span.srchadd")
+                phone_tag = card.select_one("span.srchph")
+
+                name = name_tag.get_text(strip=True) if name_tag else ""
+                address = address_tag.get_text(strip=True) if address_tag else ""
+                phone = phone_tag.get_text(strip=True) if phone_tag else ""
+
+                results.append({
+                    "Name": name,
+                    "Address": address,
+                    "Phone": phone,
+                })
+
         except PlaywrightTimeoutError:
             logger.error("⏱ Timeout: No IndiaMART results.")
-            page.screenshot(path="static/debug_indiamart.png", full_page=True)
             browser.close()
             save_results([], query, output_file)
             return 0
 
-        # Scroll to load more results
-        for _ in range(10):
-            page.mouse.wheel(0, 2000)
-            time.sleep(1.5)
-
-        page.screenshot(path="static/debug_indiamart.png", full_page=True)
-
-        html = page.content()
-        soup = BeautifulSoup(html, "html.parser")
-        cards = soup.select("div.supplierInfoDiv")
-
-        if not cards:
-            logger.warning("⚠️ No supplier cards found in the HTML.")
-
-        for card in cards:
-            if limit and len(results) >= limit:
-                logger.info(f"Reached limit: {limit}")
-                break
-
-            name_tag = card.select_one("a.cardlinks")
-            address_tag = card.select_one("p.tac.wpw")
-            phone_tag = card.select_one("span.pns_h")
-
-            name = name_tag.get_text(strip=True) if name_tag else ""
-            address = address_tag.get_text(strip=True) if address_tag else ""
-            phone = phone_tag.get_text(strip=True) if phone_tag else ""
-
-            results.append({
-                "Name": name,
-                "Address": address,
-                "Phone": phone,
-            })
-
-        logger.info(f"Scraped {len(results)} listings.")
         browser.close()
+        logger.info(f"Scraped {len(results)} listings.")
         save_results(results, query, output_file)
 
     return len(results)
