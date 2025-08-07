@@ -1,3 +1,5 @@
+# indiamart.py
+
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -9,8 +11,10 @@ from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
+
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
+
 
 def save_results(results, query, output_file):
     if not output_file:
@@ -24,14 +28,52 @@ def save_results(results, query, output_file):
     df.to_csv(file_name, index=False)
     logger.info(f"IndiaMART results saved to {file_name}")
 
+
+def extract_data(page, limit=None):
+    logger.info("Extracting data from page content...")
+    html = page.content()
+    soup = BeautifulSoup(html, "html.parser")
+
+    cards = soup.select("div.card")
+    logger.info(f"Found {len(cards)} total cards.")
+
+    results = []
+    for card in cards:
+        if limit and len(results) >= limit:
+            break
+
+        try:
+            name_tag = card.select_one("div.producttitle a.cardlinks")
+            company_tag = card.select_one("div.companyname a.cardlinks")
+            address_tag = card.select_one("p.tac.wpw")
+            phone_tag = card.select_one("span.pns_h")
+
+            name = name_tag.get_text(strip=True) if name_tag else ""
+            company = company_tag.get_text(strip=True) if company_tag else ""
+            address = address_tag.get_text(strip=True) if address_tag else ""
+            phone = phone_tag.get_text(strip=True) if phone_tag else ""
+
+            if name:  # Only append if valid product
+                results.append({
+                    "Product": name,
+                    "Company": company,
+                    "Address": address,
+                    "Phone": phone
+                })
+
+        except Exception as e:
+            logger.warning(f"Error extracting a card: {e}")
+            continue
+
+    return results
+
+
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Received limit: {limit}")
 
     search_url = build_search_url(query)
     logger.info(f"Opening URL: {search_url}")
-
-    results = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -43,52 +85,32 @@ def run_scraper(query, output_file=None, limit=None):
         page.goto(search_url, timeout=60000)
 
         try:
-            logger.info("Waiting 5 seconds before checking for results...")
-            time.sleep(5)
-            page.wait_for_selector(".card", timeout=25000)
+            logger.info("Waiting for results to appear...")
+            page.wait_for_selector("div.card", timeout=25000)
         except PlaywrightTimeoutError:
-            logger.error("⏱ Timeout: No IndiaMART results.")
-            browser.close()
+            logger.error("Timeout: No IndiaMART results.")
             save_results([], query, output_file)
             return 0
 
-        # Scroll to load more
-        for _ in range(10):
-            page.mouse.wheel(0, 2000)
+        logger.info("Scrolling to load more content...")
+        for _ in range(8):
+            page.mouse.wheel(0, 3000)
             time.sleep(2)
 
-        html = page.content()
-        soup = BeautifulSoup(html, "html.parser")
-        cards = soup.select("div.card")
+        results = extract_data(page, limit)
 
-        for card in cards:
-            if limit and len(results) >= limit:
-                logger.info(f"Reached limit: {limit}")
-                break
+        if not results:
+            logger.warning("No listings found.")
+        elif limit and len(results) < limit:
+            logger.warning(f"Only {len(results)} records found out of requested {limit}.")
+        else:
+            logger.info(f"Scraped {len(results)} listings.")
 
-            name_tag = card.select_one("div.producttitle a.cardlinks")
-            company_tag = card.select_one("div.companyname a.cardlinks")
-            address_tag = card.select_one("p.tac.wpw")
-            phone_tag = card.select_one("span.pns_h")
-
-            name = name_tag.get_text(strip=True) if name_tag else ""
-            company = company_tag.get_text(strip=True) if company_tag else ""
-            address = address_tag.get_text(strip=True) if address_tag else ""
-            phone = phone_tag.get_text(strip=True) if phone_tag else ""
-
-            if name or company or address or phone:
-                results.append({
-                    "Product Name": name,
-                    "Company": company,
-                    "Address": address,
-                    "Phone": phone,
-                })
-
-        logger.info(f"Scraped {len(results)} listings.")
         browser.close()
         save_results(results, query, output_file)
+        return len(results)
 
-    return len(results)
+
 
 
 
