@@ -1,7 +1,6 @@
 # indiamart.py
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
-from bs4 import BeautifulSoup
 import pandas as pd
 import os
 import time
@@ -45,7 +44,7 @@ def run_scraper(query, output_file=None, limit=None):
         page.goto(search_url, timeout=60000)
 
         try:
-            logger.info("Waiting for initial results to load...")
+            logger.info("Waiting for supplier cards...")
             page.wait_for_selector(".supplierInfoDiv", timeout=30000)
         except PlaywrightTimeoutError:
             logger.error("⏱ Timeout: No IndiaMART results.")
@@ -54,35 +53,40 @@ def run_scraper(query, output_file=None, limit=None):
             print("FOUND_COUNT: 0")
             return 0
 
-        # Scroll multiple times to load more content
-        logger.info("Scrolling to load more cards...")
+        logger.info("Scrolling to load more results...")
         for _ in range(10):
-            page.mouse.wheel(0, 2500)
-            time.sleep(2)
+            page.mouse.wheel(0, 3000)
+            time.sleep(1)
 
-        html = page.content()
-        soup = BeautifulSoup(html, "html.parser")
-        cards = soup.select("div.supplierInfoDiv")
+        # Extract each supplier card using Playwright API directly
+        supplier_cards = page.locator(".supplierInfoDiv")
+        count = supplier_cards.count()
 
-        logger.info(f"Found {len(cards)} supplierInfoDiv cards.")
-
-        for card in cards:
-            if limit and len(results) >= limit:
-                logger.info(f"Reached limit: {limit}")
+        logger.info(f"Found {count} supplier cards.")
+        for i in range(count):
+            if limit and len(results) >= int(limit):
+                logger.info(f"Reached scraping limit of {limit}")
                 break
 
-            name_tag = card.select_one("a.cardlinks")
-            address_tag = card.select_one("p.tac.wpw")
-            phone_tag = card.select_one("span.pns_h")
+            try:
+                name = supplier_cards.nth(i).locator("a.cardlinks").inner_text(timeout=1000)
+            except:
+                name = ""
 
-            name = name_tag.get_text(strip=True) if name_tag else ""
-            address = address_tag.get_text(strip=True) if address_tag else ""
-            phone = phone_tag.get_text(strip=True) if phone_tag else ""
+            try:
+                address = supplier_cards.nth(i).locator("p.tac.wpw").inner_text(timeout=1000)
+            except:
+                address = ""
+
+            try:
+                phone = supplier_cards.nth(i).locator("span.pns_h").inner_text(timeout=1000)
+            except:
+                phone = ""
 
             results.append({
-                "Name": name,
-                "Address": address,
-                "Phone": phone,
+                "Name": name.strip(),
+                "Address": address.strip(),
+                "Phone": phone.strip(),
             })
 
         logger.info(f"Scraped {len(results)} listings.")
@@ -91,6 +95,7 @@ def run_scraper(query, output_file=None, limit=None):
 
         print(f"FOUND_COUNT: {len(results)}")
         return len(results)
+
 
 
 
