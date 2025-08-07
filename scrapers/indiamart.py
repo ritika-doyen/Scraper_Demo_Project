@@ -11,10 +11,8 @@ from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
-
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
-
 
 def save_results(results, query, output_file):
     if not output_file:
@@ -28,7 +26,6 @@ def save_results(results, query, output_file):
     df.to_csv(file_name, index=False)
     logger.info(f"IndiaMART results saved to {file_name}")
 
-
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Received limit: {limit}")
@@ -40,76 +37,71 @@ def run_scraper(query, output_file=None, limit=None):
 
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=False,
+            headless=True,  # must be True for Render
             args=["--disable-blink-features=AutomationControlled"]
         )
-
-        context = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
-            ),
-            viewport={"width": 1280, "height": 1024}
-        )
-
+        context = browser.new_context(user_agent=(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+        ))
         page = context.new_page()
         page.goto(search_url, timeout=60000)
 
         try:
-            logger.info("Waiting up to 25s for IndiaMART listings to load...")
-            page.wait_for_selector("div.card", timeout=25000)
+            logger.info("Waiting for result selector...")
+            page.wait_for_selector(".card", timeout=25000)
         except PlaywrightTimeoutError:
-            logger.error("Timeout: No IndiaMART results loaded.")
-            page.screenshot(path="static/debug_screenshot.png", full_page=True)
-            logger.info("Screenshot saved: static/debug_screenshot.png")
+            logger.error("⏱ Timeout: No IndiaMART results.")
+            page.screenshot(path="static/debug_screenshot.png")
             browser.close()
             save_results([], query, output_file)
             return 0
 
         # Scroll to load more
-        for i in range(10):
-            logger.info(f"Scrolling... ({i + 1}/10)")
-            page.mouse.wheel(0, 2000)
+        for _ in range(10):
+            page.mouse.wheel(0, 3000)
             time.sleep(2)
 
-        # Save screenshot to inspect what the live server sees
-        page.screenshot(path="static/debug_screenshot.png", full_page=True)
-        logger.info("Screenshot saved: static/debug_screenshot.png")
+        # Screenshot for debugging
+        page.screenshot(path="static/debug_screenshot.png")
 
-        # Extract HTML and parse
         html = page.content()
         soup = BeautifulSoup(html, "html.parser")
-
         cards = soup.select("div.card")
-        logger.info(f"Found {len(cards)} card(s)")
+
+        logger.info(f"Found {len(cards)} cards on page")
 
         for card in cards:
-            if limit and len(results) >= limit:
-                logger.info(f"Reached limit of {limit} results.")
+            if limit and len(results) >= int(limit):
+                logger.info(f"Reached limit: {limit}")
                 break
 
-            title_tag = card.select_one("a.cardlinks")
-            company_tag = card.select_one("div.supplierInfoDiv a.cardlinks")
-            address_tag = card.select_one("p.tac.wpw")
-            phone_tag = card.select_one("span.pns_h")
+            supplier_div = card.select_one("div.supplierInfoDiv")
 
-            name = title_tag.get_text(strip=True) if title_tag else ""
-            company = company_tag.get_text(strip=True) if company_tag else ""
+            if not supplier_div:
+                continue
+
+            name_tag = supplier_div.select_one("a.cardlinks")
+            address_tag = supplier_div.select_one("p.tac.wpw")
+            phone_tag = supplier_div.select_one("span.pns_h")
+
+            name = name_tag.get_text(strip=True) if name_tag else ""
             address = address_tag.get_text(strip=True) if address_tag else ""
             phone = phone_tag.get_text(strip=True) if phone_tag else ""
 
             results.append({
-                "Title": name,
-                "Company": company,
+                "Name": name,
                 "Address": address,
-                "Phone": phone
+                "Phone": phone,
             })
 
         logger.info(f"Scraped {len(results)} listings.")
         browser.close()
         save_results(results, query, output_file)
 
+    print(f"FOUND_COUNT: {len(results)}")  # For app.py to detect
     return len(results)
+
 
 
 
