@@ -37,8 +37,12 @@ def run_scraper(query, output_file=None, limit=None):
 
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=True,  # must be True for Render
-            args=["--disable-blink-features=AutomationControlled"]
+            headless=True,
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--no-sandbox",
+                "--disable-dev-shm-usage"
+            ]
         )
         context = browser.new_context(user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -48,36 +52,34 @@ def run_scraper(query, output_file=None, limit=None):
         page.goto(search_url, timeout=60000)
 
         try:
-            logger.info("Waiting for result selector...")
-            page.wait_for_selector(".card", timeout=25000)
+            logger.info("Waiting up to 30 seconds for results to appear...")
+            page.wait_for_selector("div.card", timeout=30000)
         except PlaywrightTimeoutError:
-            logger.error("⏱ Timeout: No IndiaMART results.")
-            page.screenshot(path="static/debug_screenshot.png")
+            logger.warning("Timeout: 'div.card' not found.")
+            page.screenshot(path="static/debug_indiamart.png")
             browser.close()
             save_results([], query, output_file)
             return 0
 
-        # Scroll to load more
-        for _ in range(10):
+        # Scroll more for lazy-loading
+        for _ in range(15):
             page.mouse.wheel(0, 3000)
             time.sleep(2)
 
-        # Screenshot for debugging
-        page.screenshot(path="static/debug_screenshot.png")
+        # Debug Screenshot
+        page.screenshot(path="static/debug_indiamart.png")
 
         html = page.content()
         soup = BeautifulSoup(html, "html.parser")
         cards = soup.select("div.card")
 
-        logger.info(f"Found {len(cards)} cards on page")
+        logger.info(f"Found {len(cards)} card elements.")
 
         for card in cards:
             if limit and len(results) >= int(limit):
-                logger.info(f"Reached limit: {limit}")
                 break
 
             supplier_div = card.select_one("div.supplierInfoDiv")
-
             if not supplier_div:
                 continue
 
@@ -98,9 +100,9 @@ def run_scraper(query, output_file=None, limit=None):
         logger.info(f"Scraped {len(results)} listings.")
         browser.close()
         save_results(results, query, output_file)
+        print(f"FOUND_COUNT: {len(results)}")
+        return len(results)
 
-    print(f"FOUND_COUNT: {len(results)}")  # For app.py to detect
-    return len(results)
 
 
 
