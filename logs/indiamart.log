@@ -200,3 +200,19 @@
 2025-08-06 15:30:25,346 - INFO - IndiaMART results saved to static\speakers_indiamart_060825.csv
 2025-08-06 15:30:25,489 - INFO - Scraped 20 listings.
 2025-08-06 15:30:25,627 - INFO - IndiaMART results saved to static\speakers_indiamart_060825.csv
+2025-08-07 12:37:22,173 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 12:37:22,175 - INFO - Received limit: 20
+2025-08-07 12:37:22,175 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 12:37:34,892 - INFO - Waiting for content to load...
+2025-08-07 12:37:39,892 - INFO - Scrolling page to load more results...
+2025-08-07 12:37:55,417 - INFO - Found 20 cards with 'div.card'
+2025-08-07 12:37:55,796 - INFO - Scraped 20 listings.
+2025-08-07 12:37:55,808 - INFO - IndiaMART results saved to static\speakers_indiamart_070825.csv
+2025-08-07 12:38:23,964 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 12:38:23,964 - INFO - Received limit: 20
+2025-08-07 12:38:23,964 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 12:38:26,285 - INFO - Waiting for content to load...
+2025-08-07 12:38:31,287 - INFO - Scrolling page to load more results...
+2025-08-07 12:38:46,998 - INFO - Found 20 cards with 'div.card'
+2025-08-07 12:38:47,336 - INFO - Scraped 20 listings.
+2025-08-07 12:38:47,352 - INFO - IndiaMART results saved to static\speakers_indiamart_070825.csv
