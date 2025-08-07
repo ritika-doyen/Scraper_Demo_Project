@@ -1,4 +1,4 @@
-# indiamart.py
+## indiamart.py
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import csv
@@ -10,16 +10,19 @@ from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
+
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
 
-def extract_data(page, limit=None):
-    data = []
+
+def extract_data_from_page(page, collected, limit=None):
+    new_data = []
     try:
         cards = page.query_selector_all(".supplierInfoDiv")
-        logger.info(f"Found {len(cards)} cards on the page.")
+        logger.info(f"Found {len(cards)} cards on this page.")
+
         for idx, card in enumerate(cards):
-            if limit and len(data) >= limit:
+            if limit and len(collected) + len(new_data) >= limit:
                 break
 
             company_name = card.query_selector(".companyname a")
@@ -30,15 +33,17 @@ def extract_data(page, limit=None):
             city = location.inner_text().strip() if location else ""
             phone = phone_elem.inner_text().strip() if phone_elem else ""
 
-            data.append({
+            new_data.append({
                 "Company Name": company,
                 "Location": city,
                 "Phone": phone,
             })
 
     except Exception as e:
-        logger.error(f"Error extracting data: {e}")
-    return data
+        logger.error(f"Error extracting data from page: {e}")
+
+    return new_data
+
 
 def save_to_csv(data, file_path):
     if not data:
@@ -51,6 +56,7 @@ def save_to_csv(data, file_path):
         writer.writerows(data)
     logger.info(f"Saved {len(data)} records to {file_path}")
 
+
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Received limit: {limit}")
@@ -59,24 +65,45 @@ def run_scraper(query, output_file=None, limit=None):
 
     with sync_playwright() as p:
         try:
-            # Always headless for Render (or server)
-            browser = p.chromium.launch(
-                headless=True,
-                args=["--disable-blink-features=AutomationControlled"]
-            )
+            browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
             context = browser.new_context()
             page = context.new_page()
             page.goto(url, timeout=60000)
-            time.sleep(5)  # Wait for JS to load cards
+            time.sleep(5)
 
-            data = extract_data(page, limit=limit)
+            all_data = []
+            page_count = 0
+
+            while True:
+                page_count += 1
+                logger.info(f"Scraping page {page_count}...")
+
+                new_data = extract_data_from_page(page, all_data, limit)
+                all_data.extend(new_data)
+
+                if limit and len(all_data) >= limit:
+                    logger.info(f"Reached limit of {limit} records.")
+                    break
+
+                next_button = page.query_selector(".pgntn .pgntn-nxt")
+                if not next_button or "disabled" in next_button.get_attribute("class"):
+                    logger.info("No more pages to scrape.")
+                    break
+
+                try:
+                    next_button.click()
+                    time.sleep(5)
+                except Exception as e:
+                    logger.warning(f"Failed to click next button: {e}")
+                    break
+
             if output_file:
-                save_to_csv(data, output_file)
+                save_to_csv(all_data, output_file)
 
             browser.close()
-            logger.info(f"Scraping completed with {len(data)} results.")
-            print(f"FOUND_COUNT: {len(data)}")
-            return len(data)
+            logger.info(f"Scraping completed with {len(all_data)} results.")
+            print(f"FOUND_COUNT: {len(all_data)}")
+            return len(all_data)
 
         except PlaywrightTimeoutError:
             logger.error("Timeout while loading IndiaMART.")
@@ -84,6 +111,7 @@ def run_scraper(query, output_file=None, limit=None):
             logger.error(f"Unexpected error: {e}")
 
         return 0
+
 
 
 
