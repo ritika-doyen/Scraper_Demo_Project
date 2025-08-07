@@ -417,3 +417,23 @@
 2025-08-07 17:05:07,409 - INFO - Found 20 cards on current scroll.
 2025-08-07 17:05:09,923 - INFO - Saved 20 records to static\headphone_indiamart_070825.csv
 2025-08-07 17:05:10,208 - INFO - Scraping completed with 20 results.
+2025-08-07 17:35:03,676 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 17:35:03,677 - INFO - Received limit: None
+2025-08-07 17:35:03,679 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 17:35:16,060 - INFO - Running IndiaMART scraper for: speakers
+2025-08-07 17:35:16,060 - INFO - Received limit: None
+2025-08-07 17:35:16,061 - INFO - Opening URL: https://dir.indiamart.com/search.mp?ss=speakers
+2025-08-07 17:35:17,386 - INFO - Starting auto-scroll to load all results...
+2025-08-07 17:35:20,349 - INFO - Starting auto-scroll to load all results...
+2025-08-07 17:35:24,355 - INFO - No more content loaded after 3 scrolls.
+2025-08-07 17:35:24,355 - INFO - Auto-scroll completed.
+2025-08-07 17:35:24,415 - INFO - Found 20 cards on current scroll.
+2025-08-07 17:35:24,527 - INFO - No more content loaded after 2 scrolls.
+2025-08-07 17:35:24,528 - INFO - Auto-scroll completed.
+2025-08-07 17:35:24,587 - INFO - Found 20 cards on current scroll.
+2025-08-07 17:35:26,637 - INFO - Saving output to absolute path: C:\Users\shari\scraper_project\static\speakers_indiamart_070825.csv
+2025-08-07 17:35:26,640 - INFO - Saved 20 records to C:\Users\shari\scraper_project\static\speakers_indiamart_070825.csv
+2025-08-07 17:35:26,830 - INFO - Saving output to absolute path: C:\Users\shari\scraper_project\static\speakers_indiamart_070825.csv
+2025-08-07 17:35:26,832 - INFO - Saved 20 records to C:\Users\shari\scraper_project\static\speakers_indiamart_070825.csv
+2025-08-07 17:35:26,888 - INFO - Scraping completed with 20 results.
+2025-08-07 17:35:27,165 - INFO - Scraping completed with 20 results.

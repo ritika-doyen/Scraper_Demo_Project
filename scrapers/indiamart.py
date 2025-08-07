@@ -88,7 +88,10 @@ def run_scraper(query, output_file=None, limit=None):
                 all_data = all_data[:int(limit)]
 
             if output_file:
-                save_to_csv(all_data, output_file)
+                absolute_path = os.path.abspath(output_file)
+                logger.info(f"Saving output to absolute path: {absolute_path}")
+                save_to_csv(all_data, absolute_path)
+
 
             browser.close()
             logger.info(f"Scraping completed with {len(all_data)} results.")
