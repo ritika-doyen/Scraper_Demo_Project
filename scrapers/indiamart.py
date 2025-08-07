@@ -1,5 +1,3 @@
-# indiamart.py
-
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -36,32 +34,45 @@ def run_scraper(query, output_file=None, limit=None):
     results = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
         context = browser.new_context(user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
             "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
         ))
         page = context.new_page()
-        page.goto(search_url, timeout=60000)
 
         try:
-            logger.info("Waiting 5 seconds before checking for results...")
-            time.sleep(5)
-            page.wait_for_selector(".supplierInfoDiv", timeout=25000)
-        except PlaywrightTimeoutError:
-            logger.error("⏱ Timeout: No IndiaMART results.")
+            page.goto(search_url, timeout=60000)
+        except Exception as e:
+            logger.error(f"Failed to load IndiaMART page: {e}")
             browser.close()
             save_results([], query, output_file)
-            return 0  # Return 0 count if nothing is found
+            return 0
 
-        # Scroll to load more
+        try:
+            logger.info("Waiting up to 30s for result container...")
+            page.wait_for_selector(".supplierInfoDiv", timeout=30000)
+            logger.info("✅ Results container detected.")
+        except PlaywrightTimeoutError:
+            logger.error("⏱ Timeout: No IndiaMART results.")
+            page.screenshot(path="static/debug_indiamart.png", full_page=True)
+            browser.close()
+            save_results([], query, output_file)
+            return 0
+
+        # Scroll to load more results
         for _ in range(10):
             page.mouse.wheel(0, 2000)
-            time.sleep(2)
+            time.sleep(1.5)
+
+        page.screenshot(path="static/debug_indiamart.png", full_page=True)
 
         html = page.content()
         soup = BeautifulSoup(html, "html.parser")
         cards = soup.select("div.supplierInfoDiv")
+
+        if not cards:
+            logger.warning("⚠️ No supplier cards found in the HTML.")
 
         for card in cards:
             if limit and len(results) >= limit:
@@ -86,7 +97,7 @@ def run_scraper(query, output_file=None, limit=None):
         browser.close()
         save_results(results, query, output_file)
 
-    return len(results)  # Return number of records scraped
+    return len(results)
 
 
 

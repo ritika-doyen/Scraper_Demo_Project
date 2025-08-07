@@ -1245,3 +1245,127 @@ Call log:
 2025-08-06 17:43:25,078 - INFO - Listings visible: 84
 2025-08-06 17:43:25,105 - INFO - Found 84 listings
 2025-08-06 17:43:32,067 - INFO - Results saved to static\inox_google_maps_060825.csv
+2025-08-07 11:43:01,330 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-07 11:43:01,331 - INFO - Running Google Maps scraper for: temples
+2025-08-07 11:43:01,331 - INFO - Received limit: None
+2025-08-07 11:43:08,482 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-07 11:43:08,482 - INFO - Running Google Maps scraper for: temples
+2025-08-07 11:43:08,483 - INFO - Received limit: None
+2025-08-07 11:43:33,360 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-07 11:43:33,360 - INFO - Running Google Maps scraper for: temples
+2025-08-07 11:43:33,360 - INFO - Received limit: None
+2025-08-07 11:43:37,440 - INFO - Waiting for results pane to load...
+2025-08-07 11:43:37,734 - INFO - Waiting for results pane to load...
+2025-08-07 11:43:38,040 - INFO - Scrolling to load listings...
+2025-08-07 11:43:38,040 - INFO - Scrolling... (1/12)
+2025-08-07 11:43:38,060 - INFO - Scrolling to load listings...
+2025-08-07 11:43:38,061 - INFO - Scrolling... (1/12)
+2025-08-07 11:43:40,438 - INFO - Listings visible: 12
+2025-08-07 11:43:40,438 - INFO - Scrolling... (2/12)
+2025-08-07 11:43:40,497 - INFO - Listings visible: 12
+2025-08-07 11:43:40,497 - INFO - Scrolling... (2/12)
+2025-08-07 11:43:42,537 - INFO - Listings visible: 18
+2025-08-07 11:43:42,537 - INFO - Scrolling... (3/12)
+2025-08-07 11:43:42,966 - INFO - Listings visible: 18
+2025-08-07 11:43:42,966 - INFO - Scrolling... (3/12)
+2025-08-07 11:43:43,516 - INFO - 🛠 Custom google_maps.py loaded with slicing logic.
+2025-08-07 11:43:43,517 - INFO - Running Google Maps scraper for: temples
+2025-08-07 11:43:43,517 - INFO - Received limit: None
+2025-08-07 11:43:44,595 - INFO - Listings visible: 20
+2025-08-07 11:43:44,595 - INFO - Scrolling... (4/12)
+2025-08-07 11:43:44,698 - INFO - Waiting for results pane to load...
+2025-08-07 11:43:44,904 - INFO - Scrolling to load listings...
+2025-08-07 11:43:44,904 - INFO - Scrolling... (1/12)
+2025-08-07 11:43:45,121 - INFO - Listings visible: 20
+2025-08-07 11:43:45,121 - INFO - Scrolling... (4/12)
+2025-08-07 11:43:46,835 - INFO - Listings visible: 26
+2025-08-07 11:43:46,836 - INFO - Scrolling... (5/12)
+2025-08-07 11:43:47,081 - INFO - Listings visible: 12
+2025-08-07 11:43:47,082 - INFO - Scrolling... (2/12)
+2025-08-07 11:43:47,364 - INFO - Listings visible: 26
+2025-08-07 11:43:47,364 - INFO - Scrolling... (5/12)
+2025-08-07 11:43:48,950 - INFO - Listings visible: 32
+2025-08-07 11:43:48,951 - INFO - Scrolling... (6/12)
+2025-08-07 11:43:49,328 - INFO - Listings visible: 18
+2025-08-07 11:43:49,328 - INFO - Scrolling... (3/12)
+2025-08-07 11:43:50,078 - INFO - Listings visible: 32
+2025-08-07 11:43:50,079 - INFO - Scrolling... (6/12)
+2025-08-07 11:43:51,059 - INFO - Listings visible: 38
+2025-08-07 11:43:51,059 - INFO - Scrolling... (7/12)
+2025-08-07 11:43:51,370 - INFO - Listings visible: 20
+2025-08-07 11:43:51,370 - INFO - Scrolling... (4/12)
+2025-08-07 11:43:52,160 - INFO - Listings visible: 38
+2025-08-07 11:43:52,161 - INFO - Scrolling... (7/12)
+2025-08-07 11:43:53,119 - INFO - Listings visible: 40
+2025-08-07 11:43:53,119 - INFO - Scrolling... (8/12)
+2025-08-07 11:43:53,434 - INFO - Listings visible: 26
+2025-08-07 11:43:53,434 - INFO - Scrolling... (5/12)
+2025-08-07 11:43:54,306 - INFO - Listings visible: 40
+2025-08-07 11:43:54,306 - INFO - Scrolling... (8/12)
+2025-08-07 11:43:55,168 - INFO - Listings visible: 46
+2025-08-07 11:43:55,168 - INFO - Scrolling... (9/12)
+2025-08-07 11:43:55,507 - INFO - Listings visible: 32
+2025-08-07 11:43:55,507 - INFO - Scrolling... (6/12)
+2025-08-07 11:43:56,394 - INFO - Listings visible: 46
+2025-08-07 11:43:56,395 - INFO - Scrolling... (9/12)
+2025-08-07 11:43:57,512 - INFO - Listings visible: 52
+2025-08-07 11:43:57,512 - INFO - Scrolling... (10/12)
+2025-08-07 11:43:57,626 - INFO - Listings visible: 38
+2025-08-07 11:43:57,626 - INFO - Scrolling... (7/12)
+2025-08-07 11:43:57,938 - INFO - Waiting for results pane to load...
+2025-08-07 11:43:58,442 - INFO - Listings visible: 52
+2025-08-07 11:43:58,442 - INFO - Scrolling... (10/12)
+2025-08-07 11:43:58,490 - INFO - Scrolling to load listings...
+2025-08-07 11:43:58,490 - INFO - Scrolling... (1/12)
+2025-08-07 11:43:59,649 - INFO - Listings visible: 58
+2025-08-07 11:43:59,650 - INFO - Scrolling... (11/12)
+2025-08-07 11:43:59,820 - INFO - Listings visible: 40
+2025-08-07 11:43:59,821 - INFO - Scrolling... (8/12)
+2025-08-07 11:44:01,248 - INFO - Listings visible: 58
+2025-08-07 11:44:01,248 - INFO - Scrolling... (11/12)
+2025-08-07 11:44:01,272 - INFO - Listings visible: 12
+2025-08-07 11:44:01,272 - INFO - Scrolling... (2/12)
+2025-08-07 11:44:01,738 - INFO - Listings visible: 60
+2025-08-07 11:44:01,739 - INFO - Scrolling... (12/12)
+2025-08-07 11:44:02,580 - INFO - Listings visible: 46
+2025-08-07 11:44:02,580 - INFO - Scrolling... (9/12)
+2025-08-07 11:44:03,466 - INFO - Listings visible: 18
+2025-08-07 11:44:03,466 - INFO - Scrolling... (3/12)
+2025-08-07 11:44:03,819 - INFO - Listings visible: 66
+2025-08-07 11:44:03,847 - INFO - Found 66 listings
+2025-08-07 11:44:05,326 - INFO - Listings visible: 60
+2025-08-07 11:44:05,326 - INFO - Scrolling... (12/12)
+2025-08-07 11:44:05,506 - INFO - Listings visible: 20
+2025-08-07 11:44:05,507 - INFO - Scrolling... (4/12)
+2025-08-07 11:44:06,249 - INFO - Listings visible: 52
+2025-08-07 11:44:06,249 - INFO - Scrolling... (10/12)
+2025-08-07 11:44:08,095 - INFO - Listings visible: 20
+2025-08-07 11:44:08,095 - INFO - Scrolling... (5/12)
+2025-08-07 11:44:08,797 - INFO - Listings visible: 58
+2025-08-07 11:44:08,797 - INFO - Scrolling... (11/12)
+2025-08-07 11:44:09,099 - INFO - Listings visible: 66
+2025-08-07 11:44:09,134 - INFO - Found 66 listings
+2025-08-07 11:44:10,299 - INFO - Listings visible: 26
+2025-08-07 11:44:10,300 - INFO - Scrolling... (6/12)
+2025-08-07 11:44:11,448 - INFO - Listings visible: 60
+2025-08-07 11:44:11,449 - INFO - Scrolling... (12/12)
+2025-08-07 11:44:13,441 - INFO - Listings visible: 32
+2025-08-07 11:44:13,441 - INFO - Scrolling... (7/12)
+2025-08-07 11:44:13,590 - INFO - Listings visible: 66
+2025-08-07 11:44:13,613 - INFO - Found 66 listings
+2025-08-07 11:44:13,655 - INFO - Results saved to static\temples_google_maps_070825.csv
+2025-08-07 11:44:15,960 - INFO - Listings visible: 38
+2025-08-07 11:44:15,960 - INFO - Scrolling... (8/12)
+2025-08-07 11:44:16,542 - INFO - Results saved to static\temples_google_maps_070825.csv
+2025-08-07 11:44:18,007 - INFO - Listings visible: 40
+2025-08-07 11:44:18,007 - INFO - Scrolling... (9/12)
+2025-08-07 11:44:20,071 - INFO - Listings visible: 46
+2025-08-07 11:44:20,071 - INFO - Scrolling... (10/12)
+2025-08-07 11:44:21,307 - INFO - Results saved to static\temples_google_maps_070825.csv
+2025-08-07 11:44:22,166 - INFO - Listings visible: 52
+2025-08-07 11:44:22,167 - INFO - Scrolling... (11/12)
+2025-08-07 11:44:24,211 - INFO - Listings visible: 58
+2025-08-07 11:44:24,211 - INFO - Scrolling... (12/12)
+2025-08-07 11:44:26,264 - INFO - Listings visible: 60
+2025-08-07 11:44:26,276 - INFO - Found 60 listings
+2025-08-07 11:44:28,817 - INFO - Results saved to static\temples_google_maps_070825.csv
