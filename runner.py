@@ -1,5 +1,8 @@
 # runner.py
 
+import subprocess
+subprocess.run(["playwright", "install", "chromium"], check=True)
+
 import argparse
 import importlib
 import sys
