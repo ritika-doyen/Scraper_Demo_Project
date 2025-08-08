@@ -1,171 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Web Scraper UI</title>
     <style>
         body {
             font-family: "Segoe UI", sans-serif;
-            background: #eef2f5;
-            margin: 0;
-            padding: 40px;
+            background: #f7f7f7;
+            padding: 20px;
         }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-        }
-
         h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
+            color: #333;
         }
-
-        .card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 40px;
-        }
-
         form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        .actions {
-            grid-column: span 2;
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        button, .reset-link {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        button {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .reset-link {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        .reset-link:hover,
-        button:hover {
-            opacity: 0.9;
-        }
-
-        .message {
-            padding: 15px;
-            background-color: #fffbe6;
-            border-left: 6px solid #f0ad4e;
-            border-radius: 6px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="button"] {
+            background: #dc3545;
+            margin-left: 10px;
+        }
+        .message {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #ffffe0;
+            border: 1px solid #e0e0aa;
+            border-radius: 4px;
+        }
         .download-link {
             margin-top: 20px;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .table-wrapper {
+            max-height: 500px;
+            overflow-x: auto;
+            overflow-y: auto;
             background: #fff;
-            border-radius: 6px;
-            overflow: hidden;
+            border-radius: 8px;
+            padding: 10px;
         }
-
+        table {
+            width: max-content;
+            border-collapse: collapse;
+            min-width: 100%;
+        }
         th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
             text-align: left;
+            white-space: nowrap;
         }
-
         th {
-            background-color: #f9f9f9;
-            color: #333;
+            background: #eee;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Modular Web Scraper</h1>
+    <h1>Web Scraper Interface</h1>
 
-        {% if message %}
-        <div class="message">{{ message|safe }}</div>
-        {% endif %}
+    {% if message %}
+    <div class="message">{{ message|safe }}</div>
+    {% endif %}
 
-        <div class="card">
-            <form method="POST">
-                <div>
-                    <label for="site">Select Site</label>
-                    <select name="site" required>
-                        <option value="">--Choose--</option>
-                        {% for plugin in available_plugins %}
-                        <option value="{{ plugin }}">{{ plugin.replace("_", " ").title() }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+    <form method="POST">
+        <label for="site">Select Site</label>
+        <select name="site" required>
+            <option value="">--Choose--</option>
+            {% for plugin in available_plugins %}
+            <option value="{{ plugin }}">{{ plugin.replace("_", " ").title() }}</option>
+            {% endfor %}
+        </select>
 
-                <div>
-                    <label for="query">Search Query</label>
-                    <input type="text" name="query" placeholder="e.g., tiles dealers in pune" required>
-                </div>
+        <label for="query">Search Query</label>
+        <input type="text" name="query" placeholder="e.g., hospitals in delhi" required>
 
-                <div>
-                    <label for="limit">Limit Results (optional)</label>
-                    <input type="number" name="limit" min="1" placeholder="e.g., 50">
-                </div>
+        <label for="limit">Limit Results (optional)</label>
+        <input type="number" name="limit" min="1" placeholder="e.g., 50">
 
-                <div class="actions">
-                    <button type="submit">Scrape</button>
-                    <a href="{{ url_for('reset') }}" class="reset-link">Reset</a>
-                </div>
-            </form>
-        </div>
+        <button type="submit">Scrape</button>
+        <a href="{{ url_for('reset') }}">
+            <button type="button">Reset</button>
+        </a>
+    </form>
 
-        {% if output_file %}
-        <div class="download-link">
-            <strong>Download:</strong>
-            <a href="{{ url_for('static', filename=output_file) }}?t={{ timestamp }}" target="_blank">
-                {{ output_file }}
-            </a>
-        </div>
-        {% endif %}
+    {% if output_file %}
+    <div class="download-link">
+        <strong>Download:</strong>
+        <a href="{{ url_for('static', filename=output_file) }}?t={{ timestamp }}" target="_blank">
+            {{ output_file }}
+        </a>
+    </div>
+    {% endif %}
 
-        {% if headers and table_data %}
+    {% if headers and table_data %}
+    <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
@@ -184,8 +135,8 @@
                 {% endfor %}
             </tbody>
         </table>
-        {% endif %}
     </div>
+    {% endif %}
 
 </body>
 </html>
