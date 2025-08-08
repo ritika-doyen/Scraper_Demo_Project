@@ -9,23 +9,24 @@ from utils.logger import get_logger
 
 logger = get_logger("google_maps")
 
-logger.info("🛠 Custom google_maps.py loaded with slicing logic.")
+logger.info("🛠 Optimized google_maps.py loaded with performance tweaks.")
 
 def build_search_url(query):
     return f"https://www.google.com/maps/search/{quote_plus(query)}"
 
-def auto_scroll(page, scroll_container_selector, scroll_count=12, delay=2, limit=None):
+def auto_scroll(page, scroll_container_selector, scroll_count=6, delay=0.5, limit=None):
     scroll_container = page.locator(scroll_container_selector).nth(1)
     logger.info("Scrolling to load listings...")
+
     for i in range(scroll_count):
         logger.info(f"Scrolling... ({i + 1}/{scroll_count})")
         scroll_container.evaluate("el => el.scrollBy(0, el.scrollHeight)")
         time.sleep(delay)
 
-        current_count = len(page.locator("a.hfpxzc").all_inner_texts())
+        current_count = page.locator("a.hfpxzc").count()
         logger.info(f"Listings visible: {current_count}")
         if limit and current_count >= limit:
-            logger.info(f"Stopping scroll early at {current_count} listings.")
+            logger.info(f"Early stop at {current_count} listings.")
             break
 
 def extract_data(page, limit=None):
@@ -43,7 +44,7 @@ def extract_data(page, limit=None):
             url = card.evaluate("el => el.getAttribute('href')") or "N/A"
             data.append({"Name": name.strip(), "URL": url.strip()})
         except Exception as e:
-            logger.warning(f"Error extracting data from card {i}: {e}")
+            logger.warning(f"Error extracting card {i}: {e}")
             continue
 
     return data
@@ -78,7 +79,7 @@ def run_scraper(query, output_file=None, limit=None):
             save_to_csv([], output_file)
             return 0
 
-        auto_scroll(page, "div.m6QErb.DxyBCb.kA9KIf.dS8AEf.XiKgde", scroll_count=12, delay=2, limit=limit)
+        auto_scroll(page, "div.m6QErb.DxyBCb.kA9KIf.dS8AEf.XiKgde", scroll_count=6, delay=0.5, limit=limit)
         results = extract_data(page, limit=limit)
 
         if not results:
@@ -87,7 +88,9 @@ def run_scraper(query, output_file=None, limit=None):
         save_to_csv(results, output_file)
         browser.close()
 
+        print(f"FOUND_COUNT: {len(results)}")
         return len(results)
+
 
 
 
