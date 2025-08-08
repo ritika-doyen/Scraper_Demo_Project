@@ -23,9 +23,8 @@ def run_scraper(site, query, output_file, limit=None):
         sys.exit(1)
 
     try:
-        os.makedirs("static", exist_ok=True)  # Ensure static dir exists
-        output_file = os.path.abspath(output_file)  # Ensure absolute path
-
+        os.makedirs("static", exist_ok=True)
+        output_file = os.path.abspath(output_file)
         print(f"\n[INFO] Running: {site} for '{query}' -> {output_file}")
         count = scraper_module.run_scraper(query, output_file, limit=limit)
         print(f"FOUND_COUNT: {count}")
@@ -39,8 +38,8 @@ def main():
     parser.add_argument("--mode", default="modular")
     parser.add_argument("--site", required=True)
     parser.add_argument("--query", required=True)
-    parser.add_argument("--output", required=False, help="Output CSV file name")
-    parser.add_argument("--limit", type=int, default=None, help="Max records to scrape")
+    parser.add_argument("--output", required=False)
+    parser.add_argument("--limit", type=int, default=None)
     args = parser.parse_args()
 
     output_file = args.output or generate_filename(args.query, args.site)
@@ -48,6 +47,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

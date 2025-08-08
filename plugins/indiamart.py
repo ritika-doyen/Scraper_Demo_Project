@@ -3,35 +3,27 @@
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import csv
 import os
+import time
 from urllib.parse import quote_plus
 from utils.logger import get_logger
 
 logger = get_logger("indiamart")
-
 description = "Scrape supplier contact data from IndiaMART (B2B marketplace)."
 
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
 
-def scroll_until_end(page, max_scrolls=30, delay=1.5):
+def scroll_until_end(page, max_scrolls=20):
     logger.info("Starting auto-scroll to load all results...")
     last_height = 0
-    unchanged_scrolls = 0
-
     for i in range(max_scrolls):
         page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-        page.wait_for_timeout(delay * 1000)
-
+        time.sleep(3)
         new_height = page.evaluate("document.body.scrollHeight")
         if new_height == last_height:
-            unchanged_scrolls += 1
-            if unchanged_scrolls >= 2:
-                logger.info(f"No more content loaded after {i+1} scrolls.")
-                break
-        else:
-            unchanged_scrolls = 0
+            logger.info(f"⏹️ No more content loaded after {i + 1} scrolls.")
+            break
         last_height = new_height
-
     logger.info("Auto-scroll completed.")
 
 def extract_data_from_page(page):
@@ -39,7 +31,6 @@ def extract_data_from_page(page):
     try:
         cards = page.query_selector_all(".supplierInfoDiv")
         logger.info(f"Found {len(cards)} cards on current scroll.")
-
         for card in cards:
             company_name = card.query_selector(".companyname a")
             location = card.query_selector(".newLocationUi span.highlight")
@@ -57,18 +48,15 @@ def extract_data_from_page(page):
                 "Phone": phone,
                 "URL": url
             })
-
     except Exception as e:
         logger.error(f"Error extracting data: {e}")
     return data
 
 def save_to_csv(data, file_path):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
-
     if not data:
-        logger.warning("⚠️ No data to save.")
+        logger.warning("No data to save.")
         return
-
     with open(file_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=data[0].keys())
         writer.writeheader()
@@ -79,16 +67,12 @@ def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Limit: {limit}")
     url = build_search_url(query)
-    logger.info(f"Opening URL: {url}")
-
+    logger.info(f"🌐 Opening URL: {url}")
     all_data = []
 
     with sync_playwright() as p:
         try:
-            browser = p.chromium.launch(
-                headless=True,
-                args=["--no-sandbox", "--disable-setuid-sandbox"]
-            )
+            browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
             context = browser.new_context()
             page = context.new_page()
             page.goto(url, timeout=60000)
@@ -96,7 +80,7 @@ def run_scraper(query, output_file=None, limit=None):
             try:
                 page.wait_for_selector(".supplierInfoDiv", timeout=15000)
             except PlaywrightTimeoutError:
-                logger.warning("⚠️ .supplierInfoDiv not found — page may not have loaded correctly.")
+                logger.warning(".supplierInfoDiv not found — page may not have loaded correctly.")
 
             screenshot_path = os.path.abspath("static/indiamart_debug.png")
             os.makedirs("static", exist_ok=True)
@@ -104,19 +88,14 @@ def run_scraper(query, output_file=None, limit=None):
             logger.info(f"Screenshot saved to: {screenshot_path}")
 
             scroll_until_end(page)
-
             all_data = extract_data_from_page(page)
-
             logger.info(f"Total extracted: {len(all_data)} records")
-
-            if not all_data:
-                logger.warning("Still 0 cards found after scrolling — possibly blocked or no data.")
 
             if limit:
                 all_data = all_data[:int(limit)]
                 logger.info(f"Limit applied: {limit} → Returning {len(all_data)} records.")
             else:
-                logger.info(f"No limit — returning all {len(all_data)} results.")
+                logger.info(f"No limit given — returning all {len(all_data)} results.")
 
             if output_file:
                 absolute_path = os.path.abspath(output_file)

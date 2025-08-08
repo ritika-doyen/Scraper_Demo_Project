@@ -8,14 +8,11 @@ import time
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = "your-secret-key"  # Use a secure key in production
+app.secret_key = "your-secret-key"
 
 def get_available_plugins():
     plugin_dir = os.path.join(os.path.dirname(__file__), "plugins")
-    return [
-        f[:-3] for f in os.listdir(plugin_dir)
-        if f.endswith(".py") and f != "__init__.py"
-    ]
+    return [f[:-3] for f in os.listdir(plugin_dir) if f.endswith(".py") and f != "__init__.py"]
 
 def generate_filename(query, site):
     filename_safe = query.lower().replace(" ", "_")
@@ -56,22 +53,10 @@ def index():
                     with open(output_abs_path, newline='', encoding='utf-8') as f:
                         reader = csv.reader(f)
                         rows = list(reader)
-                        record_count = len(rows) - 1
-
-                        if record_count > 0:
-                            headers = rows[0]
-                            table_data = rows[1:]
-                            session["headers"] = headers
-                            session["table_data"] = table_data
+                        if len(rows) > 1:
+                            session["headers"] = rows[0]
+                            session["table_data"] = rows[1:]
                             session["output_file"] = filename
-
-                            if limit:
-                                try:
-                                    int_limit = int(limit)
-                                    if record_count < int_limit:
-                                        message += f"<br>Only {record_count} records found out of requested {int_limit}."
-                                except ValueError:
-                                    message += "<br>⚠️ Invalid limit value."
                         else:
                             message += "<br>⚠️ Output file is empty."
                     session["message"] = message
@@ -84,17 +69,12 @@ def index():
 
         return redirect(url_for("index"))
 
-    message = session.pop("message", None)
-    output_file = session.pop("output_file", None)
-    headers = session.pop("headers", None)
-    table_data = session.pop("table_data", None)
-
     return render_template(
         "index.html",
-        message=message,
-        output_file=output_file,
-        headers=headers,
-        table_data=table_data,
+        message=session.pop("message", None),
+        output_file=session.pop("output_file", None),
+        headers=session.pop("headers", None),
+        table_data=session.pop("table_data", None),
         available_plugins=available_plugins,
         timestamp=int(time.time())
     )
@@ -107,6 +87,7 @@ def reset():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
 
 
