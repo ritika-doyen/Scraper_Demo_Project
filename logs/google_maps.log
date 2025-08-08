@@ -2031,3 +2031,19 @@ waiting for navigation until 'load'
 2025-08-08 22:34:22,293 - INFO - Early stopping at 12 listings.
 2025-08-08 22:34:22,302 - INFO - Total cards found: 12
 2025-08-08 22:34:25,858 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_223416.csv
+2025-08-08 22:50:33,313 - INFO - Starting Google Maps scraper for: colleges in haryana
+2025-08-08 22:50:33,314 - INFO - Received limit: 10
+2025-08-08 22:50:46,468 - INFO - Waiting for listings container to load...
+2025-08-08 22:50:46,814 - INFO - Scrolling to load listings...
+2025-08-08 22:50:47,916 - INFO - Scroll 1: 16 listings visible.
+2025-08-08 22:50:47,917 - INFO - Early stopping at 16 listings.
+2025-08-08 22:50:47,935 - INFO - Total cards found: 16
+2025-08-08 22:50:52,029 - INFO - Results saved to C:\Users\shari\scraper_project\static\colleges_in_haryana_google_maps_080825_225032.csv
+2025-08-08 23:02:54,446 - INFO - Starting Google Maps scraper for: temples
+2025-08-08 23:02:54,447 - INFO - Received limit: 5
+2025-08-08 23:03:05,715 - INFO - Waiting for listings container to load...
+2025-08-08 23:03:05,834 - INFO - Scrolling to load listings...
+2025-08-08 23:03:06,875 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 23:03:06,875 - INFO - Early stopping at 12 listings.
+2025-08-08 23:03:06,886 - INFO - Total cards found: 12
+2025-08-08 23:03:11,504 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_230254.csv

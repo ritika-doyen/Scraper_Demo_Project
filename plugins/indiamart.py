@@ -1,4 +1,4 @@
-# indiamart.py
+# plugins/indiamart.py
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import csv
@@ -21,7 +21,7 @@ def scroll_until_end(page, max_scrolls=20):
         time.sleep(3)
         new_height = page.evaluate("document.body.scrollHeight")
         if new_height == last_height:
-            logger.info(f"⏹️ No more content loaded after {i + 1} scrolls.")
+            logger.info(f"No more content loaded after {i + 1} scrolls.")
             break
         last_height = new_height
     logger.info("Auto-scroll completed.")
@@ -56,18 +56,20 @@ def save_to_csv(data, file_path):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     if not data:
         logger.warning("No data to save.")
-        return
+        raise ValueError("No data extracted to save.")
     with open(file_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=data[0].keys())
         writer.writeheader()
         writer.writerows(data)
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Failed to create file at: {file_path}")
     logger.info(f"Saved {len(data)} records to {file_path}")
 
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Limit: {limit}")
     url = build_search_url(query)
-    logger.info(f"🌐 Opening URL: {url}")
+    logger.info(f"Opening URL: {url}")
     all_data = []
 
     with sync_playwright() as p:
@@ -91,6 +93,9 @@ def run_scraper(query, output_file=None, limit=None):
             all_data = extract_data_from_page(page)
             logger.info(f"Total extracted: {len(all_data)} records")
 
+            if not all_data:
+                raise ValueError("No data extracted from IndiaMART.")
+
             if limit:
                 all_data = all_data[:int(limit)]
                 logger.info(f"Limit applied: {limit} → Returning {len(all_data)} records.")
@@ -108,11 +113,12 @@ def run_scraper(query, output_file=None, limit=None):
             return len(all_data)
 
         except PlaywrightTimeoutError:
-            logger.error("Timeout while loading IndiaMART.")
+            logger.error("⏱Timeout while loading IndiaMART.")
         except Exception as e:
             logger.error(f"Unexpected error: {e}")
 
         return 0
+
 
 
 

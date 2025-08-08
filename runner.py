@@ -1,7 +1,5 @@
 # runner.py
 
-import subprocess
-import argparse
 import importlib
 import sys
 import os
@@ -26,12 +24,21 @@ def run_scraper(site, query, output_file, limit=None):
         print(f"[INFO] Running: {site} for '{query}' -> {output_file}")
         count = scraper_module.run_scraper(query, output_file, limit=limit)
         print(f"FOUND_COUNT: {count}")
+
+        if count == 0:
+            print("⚠️ No data scraped. Output file may not exist.")
+        elif not os.path.exists(output_file):
+            print(f"Output file not found at: {output_file}")
+        else:
+            print(f"Output saved to: {output_file}")
+
     except Exception as e:
-        print(f"[ERROR] Scraper failed: {e}")
+        print(f"Scraper failed. Error: {e}")
         traceback.print_exc()
         sys.exit(1)
 
 def main():
+    import argparse
     parser = argparse.ArgumentParser(description="Modular Web Scraper")
     parser.add_argument("--mode", default="modular")
     parser.add_argument("--site", required=True)
@@ -47,6 +54,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
