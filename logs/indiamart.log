@@ -580,3 +580,14 @@
 2025-08-08 16:12:49,080 - INFO - Saving output to: C:\Users\shari\scraper_project\static\speakers_indiamart_080825.csv
 2025-08-08 16:12:49,082 - INFO - Saved 10 records to C:\Users\shari\scraper_project\static\speakers_indiamart_080825.csv
 2025-08-08 16:12:49,240 - INFO - Scraping completed with 10 results.
+2025-08-08 16:43:56,980 - INFO - Running IndiaMART scraper for: headphone
+2025-08-08 16:43:56,981 - INFO - Limit: 5
+2025-08-08 16:43:56,981 - INFO - 🌐 Opening URL: https://dir.indiamart.com/search.mp?ss=headphone
+2025-08-08 16:44:08,007 - INFO - 📸 Screenshot saved to: C:\Users\shari\scraper_project\static\indiamart_debug.png
+2025-08-08 16:44:08,038 - INFO - Starting auto-scroll to load all results...
+2025-08-08 16:44:12,140 - INFO - No more content loaded after 2 scrolls.
+2025-08-08 16:44:12,141 - INFO - Auto-scroll completed.
+2025-08-08 16:44:12,173 - INFO - Found 20 cards on current scroll.
+2025-08-08 16:44:13,249 - INFO - Saving to CSV: C:\Users\shari\scraper_project\static\headphone_indiamart_080825.csv
+2025-08-08 16:44:13,252 - INFO - Saved 5 records to C:\Users\shari\scraper_project\static\headphone_indiamart_080825.csv
+2025-08-08 16:44:13,404 - INFO - Scraping completed with 5 results.

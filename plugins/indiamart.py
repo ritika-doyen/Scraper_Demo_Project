@@ -9,11 +9,13 @@ from utils.logger import get_logger
 
 logger = get_logger("indiamart")
 
+description = "Scrape supplier contact data from IndiaMART (B2B marketplace)."
+
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
 
 def scroll_until_end(page, max_scrolls=50):
-    logger.info("🔃 Starting auto-scroll to load all results...")
+    logger.info("Starting auto-scroll to load all results...")
     last_height = 0
     for i in range(max_scrolls):
         page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
@@ -29,7 +31,7 @@ def extract_data_from_page(page):
     data = []
     try:
         cards = page.query_selector_all(".supplierInfoDiv")
-        logger.info(f"📦 Found {len(cards)} cards on current scroll.")
+        logger.info(f"Found {len(cards)} cards on current scroll.")
 
         for card in cards:
             company_name = card.query_selector(".companyname a")
@@ -54,11 +56,12 @@ def extract_data_from_page(page):
     return data
 
 def save_to_csv(data, file_path):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
     if not data:
         logger.warning("No data to save.")
         return
 
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=data[0].keys())
         writer.writeheader()
@@ -67,7 +70,8 @@ def save_to_csv(data, file_path):
 
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
-    logger.info(f"Received limit: {limit}")
+    logger.info(f"Limit: {limit}")
+
     url = build_search_url(query)
     logger.info(f"🌐 Opening URL: {url}")
 
@@ -75,7 +79,10 @@ def run_scraper(query, output_file=None, limit=None):
 
     with sync_playwright() as p:
         try:
-            browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
+            browser = p.chromium.launch(
+                headless=True,
+                args=["--no-sandbox", "--disable-setuid-sandbox"]
+            )
             context = browser.new_context()
             page = context.new_page()
             page.goto(url, timeout=60000)
@@ -83,19 +90,17 @@ def run_scraper(query, output_file=None, limit=None):
             try:
                 page.wait_for_selector(".supplierInfoDiv", timeout=15000)
             except PlaywrightTimeoutError:
-                logger.warning(".supplierInfoDiv not found after waiting. Page may not have loaded correctly.")
+                logger.warning(".supplierInfoDiv not found — page may not have loaded correctly.")
 
-            # Save screenshot for debugging (especially on Render)
-            screenshot_path = os.path.abspath("indiamart_debug.png")
+            # Screenshot for live debug (view via /static/)
+            screenshot_path = os.path.abspath("static/indiamart_debug.png")
             page.screenshot(path=screenshot_path, full_page=True)
-            logger.info(f"Screenshot saved to: {screenshot_path}")
+            logger.info(f"📸 Screenshot saved to: {screenshot_path}")
 
-            # Warn if no cards initially found
             if not page.locator(".supplierInfoDiv").count():
-                logger.warning("No .supplierInfoDiv elements found — possible page load failure or blocked.")
+                logger.warning("No .supplierInfoDiv elements found — possible block or JS not rendered.")
 
             scroll_until_end(page)
-
             all_data = extract_data_from_page(page)
 
             if limit:
@@ -103,7 +108,7 @@ def run_scraper(query, output_file=None, limit=None):
 
             if output_file:
                 absolute_path = os.path.abspath(output_file)
-                logger.info(f"Saving output to: {absolute_path}")
+                logger.info(f"Saving to CSV: {absolute_path}")
                 save_to_csv(all_data, absolute_path)
 
             browser.close()
@@ -117,6 +122,7 @@ def run_scraper(query, output_file=None, limit=None):
             logger.error(f"Unexpected error: {e}")
 
         return 0
+
 
 
 
