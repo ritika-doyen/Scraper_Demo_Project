@@ -27,7 +27,6 @@ def index():
             date_str = datetime.now().strftime("%d%m%y")
             output_file = f"{filename_safe}_{site}_{date_str}.csv"
             output_path = os.path.join("static", output_file)
-            absolute_path = os.path.abspath(output_path)
 
             command = ["python", "runner.py", "--mode", "modular", "--site", site, "--query", query, "--output", output_path]
             if limit:
@@ -37,34 +36,25 @@ def index():
                 result = subprocess.run(command, check=True, capture_output=True, text=True)
                 last_message = f"Scraping completed. Output saved to static/{output_file}"
 
-                # Extract FOUND_COUNT from stdout
-                found_count = None
-                if result.stdout:
-                    for line in result.stdout.splitlines():
-                        if "FOUND_COUNT:" in line:
-                            try:
-                                found_count = int(line.split("FOUND_COUNT:")[1].strip())
-                            except ValueError:
-                                pass
-
-                # Compare with limit
-                if limit:
-                    try:
-                        int_limit = int(limit)
-                        if found_count is not None and found_count < int_limit:
-                            last_message += f"<br>⚠️ Only {found_count} records found out of requested {int_limit}."
-                    except ValueError:
-                        last_message += "<br>⚠️ Invalid limit value."
-
-                # Load results from CSV using absolute path
-                if os.path.exists(absolute_path):
-                    with open(absolute_path, newline='', encoding='utf-8') as f:
+                # Check if output CSV exists and load its content
+                if os.path.exists(output_path):
+                    with open(output_path, newline='', encoding='utf-8') as f:
                         reader = csv.reader(f)
                         rows = list(reader)
-                        if len(rows) > 1:
+                        record_count = len(rows) - 1  # subtract header
+
+                        if record_count > 0:
                             last_headers = rows[0]
                             last_table_data = rows[1:]
                             last_output_file = output_file
+
+                            if limit:
+                                try:
+                                    int_limit = int(limit)
+                                    if record_count < int_limit:
+                                        last_message += f"<br>⚠️ Only {record_count} records found out of requested {int_limit}."
+                                except ValueError:
+                                    last_message += "<br>⚠️ Invalid limit value."
                         else:
                             last_message += "<br>⚠️ Output file is empty."
                             last_output_file = None
@@ -90,6 +80,7 @@ def index():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
 
 
