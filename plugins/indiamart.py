@@ -14,15 +14,15 @@ description = "Scrape supplier contact data from IndiaMART (B2B marketplace)."
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
 
-def scroll_until_end(page, max_scrolls=50):
+def scroll_until_end(page, max_scrolls=100):
     logger.info("Starting auto-scroll to load all results...")
     last_height = 0
     for i in range(max_scrolls):
         page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-        time.sleep(2)
+        time.sleep(3)  # Increase delay for Render's slower JS render
         new_height = page.evaluate("document.body.scrollHeight")
         if new_height == last_height:
-            logger.info(f"No more content loaded after {i + 1} scrolls.")
+            logger.info(f"⏹️ No more content loaded after {i + 1} scrolls.")
             break
         last_height = new_height
     logger.info("Auto-scroll completed.")
@@ -71,7 +71,6 @@ def save_to_csv(data, file_path):
 def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Limit: {limit}")
-
     url = build_search_url(query)
     logger.info(f"🌐 Opening URL: {url}")
 
@@ -92,19 +91,25 @@ def run_scraper(query, output_file=None, limit=None):
             except PlaywrightTimeoutError:
                 logger.warning(".supplierInfoDiv not found — page may not have loaded correctly.")
 
-            # Screenshot for live debug (view via /static/)
             screenshot_path = os.path.abspath("static/indiamart_debug.png")
+            os.makedirs("static", exist_ok=True)
             page.screenshot(path=screenshot_path, full_page=True)
-            logger.info(f"📸 Screenshot saved to: {screenshot_path}")
-
-            if not page.locator(".supplierInfoDiv").count():
-                logger.warning("No .supplierInfoDiv elements found — possible block or JS not rendered.")
+            logger.info(f"Screenshot saved to: {screenshot_path}")
 
             scroll_until_end(page)
+
             all_data = extract_data_from_page(page)
+
+            logger.info(f"Total extracted: {len(all_data)} records")
+
+            if len(all_data) == 0:
+                logger.warning("Still 0 cards found after scrolling — possibly blocked or no data.")
 
             if limit:
                 all_data = all_data[:int(limit)]
+                logger.info(f"Limit applied: {limit} → Returning {len(all_data)} records.")
+            else:
+                logger.info(f"No limit given — returning all {len(all_data)} results.")
 
             if output_file:
                 absolute_path = os.path.abspath(output_file)
@@ -122,6 +127,7 @@ def run_scraper(query, output_file=None, limit=None):
             logger.error(f"Unexpected error: {e}")
 
         return 0
+
 
 
 

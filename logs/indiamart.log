@@ -591,3 +591,27 @@
 2025-08-08 16:44:13,249 - INFO - Saving to CSV: C:\Users\shari\scraper_project\static\headphone_indiamart_080825.csv
 2025-08-08 16:44:13,252 - INFO - Saved 5 records to C:\Users\shari\scraper_project\static\headphone_indiamart_080825.csv
 2025-08-08 16:44:13,404 - INFO - Scraping completed with 5 results.
+2025-08-08 16:52:20,742 - INFO - Running IndiaMART scraper for: tiles
+2025-08-08 16:52:20,742 - INFO - Limit: None
+2025-08-08 16:52:20,742 - INFO - 🌐 Opening URL: https://dir.indiamart.com/search.mp?ss=tiles
+2025-08-08 16:52:32,164 - INFO - 📸 Screenshot saved to: C:\Users\shari\scraper_project\static\indiamart_debug.png
+2025-08-08 16:52:32,180 - INFO - Starting auto-scroll to load all results...
+2025-08-08 16:52:36,326 - INFO - No more content loaded after 2 scrolls.
+2025-08-08 16:52:36,326 - INFO - Auto-scroll completed.
+2025-08-08 16:52:36,359 - INFO - Found 20 cards on current scroll.
+2025-08-08 16:52:37,917 - INFO - Saving to CSV: C:\Users\shari\scraper_project\static\tiles_indiamart_080825.csv
+2025-08-08 16:52:37,921 - INFO - Saved 20 records to C:\Users\shari\scraper_project\static\tiles_indiamart_080825.csv
+2025-08-08 16:52:38,093 - INFO - Scraping completed with 20 results.
+2025-08-08 16:57:54,823 - INFO - Running IndiaMART scraper for: tiles
+2025-08-08 16:57:54,825 - INFO - Limit: None
+2025-08-08 16:57:54,825 - INFO - 🌐 Opening URL: https://dir.indiamart.com/search.mp?ss=tiles
+2025-08-08 16:57:58,791 - INFO - Screenshot saved to: C:\Users\shari\scraper_project\static\indiamart_debug.png
+2025-08-08 16:57:58,791 - INFO - Starting auto-scroll to load all results...
+2025-08-08 16:58:04,874 - INFO - ⏹️ No more content loaded after 2 scrolls.
+2025-08-08 16:58:04,874 - INFO - Auto-scroll completed.
+2025-08-08 16:58:04,902 - INFO - Found 20 cards on current scroll.
+2025-08-08 16:58:06,008 - INFO - Total extracted: 20 records
+2025-08-08 16:58:06,008 - INFO - No limit given — returning all 20 results.
+2025-08-08 16:58:06,008 - INFO - Saving to CSV: C:\Users\shari\scraper_project\static\tiles_indiamart_080825.csv
+2025-08-08 16:58:06,010 - INFO - Saved 20 records to C:\Users\shari\scraper_project\static\tiles_indiamart_080825.csv
+2025-08-08 16:58:06,153 - INFO - Scraping completed with 20 results.
