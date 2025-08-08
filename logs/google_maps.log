@@ -1581,3 +1581,225 @@ Call log:
 2025-08-08 16:31:37,333 - INFO - Found 16 listings
 2025-08-08 16:31:37,333 - INFO - Limiting to first 5 results.
 2025-08-08 16:31:49,024 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 17:55:14,495 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 17:55:14,496 - INFO - Received limit: 10
+2025-08-08 17:55:15,494 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 17:55:15,496 - INFO - Received limit: 10
+2025-08-08 17:55:34,898 - INFO - Waiting for results pane to load...
+2025-08-08 17:55:35,165 - INFO - Scrolling to load listings...
+2025-08-08 17:55:35,165 - INFO - Scrolling... (1/6)
+2025-08-08 17:55:35,938 - INFO - Waiting for results pane to load...
+2025-08-08 17:55:36,038 - INFO - Scrolling to load listings...
+2025-08-08 17:55:36,038 - INFO - Scrolling... (1/6)
+2025-08-08 17:55:36,233 - INFO - Listings visible: 16
+2025-08-08 17:55:36,233 - INFO - Early stop at 16 listings.
+2025-08-08 17:55:36,241 - INFO - Found 16 listings
+2025-08-08 17:55:36,241 - INFO - Limiting to first 10 results.
+2025-08-08 17:55:37,357 - INFO - Listings visible: 16
+2025-08-08 17:55:37,357 - INFO - Early stop at 16 listings.
+2025-08-08 17:55:37,380 - INFO - Found 16 listings
+2025-08-08 17:55:37,381 - INFO - Limiting to first 10 results.
+2025-08-08 17:55:50,685 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 17:55:50,685 - INFO - Received limit: 10
+2025-08-08 17:55:57,926 - INFO - Waiting for results pane to load...
+2025-08-08 17:55:58,179 - INFO - Scrolling to load listings...
+2025-08-08 17:55:58,180 - INFO - Scrolling... (1/6)
+2025-08-08 17:55:59,600 - INFO - Listings visible: 16
+2025-08-08 17:55:59,600 - INFO - Early stop at 16 listings.
+2025-08-08 17:55:59,626 - INFO - Found 16 listings
+2025-08-08 17:55:59,626 - INFO - Limiting to first 10 results.
+2025-08-08 17:56:00,097 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 17:56:00,734 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_175509.csv
+2025-08-08 17:56:22,764 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_175547.csv
+2025-08-08 18:08:06,889 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 18:08:06,889 - INFO - Received limit: 10
+2025-08-08 18:08:20,724 - INFO - Waiting for results pane to load...
+2025-08-08 18:08:20,934 - INFO - Scrolling to load listings...
+2025-08-08 18:08:20,935 - INFO - Scrolling... (1/6)
+2025-08-08 18:08:22,078 - INFO - Listings visible: 16
+2025-08-08 18:08:22,078 - INFO - Early stop at 16 listings.
+2025-08-08 18:08:22,093 - INFO - Found 16 listings
+2025-08-08 18:08:22,093 - INFO - Limiting to first 10 results.
+2025-08-08 18:08:40,413 - INFO - Running Google Maps scraper for: temples
+2025-08-08 18:08:40,413 - INFO - Received limit: 10
+2025-08-08 18:08:44,796 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_180805.csv
+2025-08-08 18:08:47,104 - INFO - Waiting for results pane to load...
+2025-08-08 18:08:47,170 - INFO - Scrolling to load listings...
+2025-08-08 18:08:47,170 - INFO - Scrolling... (1/6)
+2025-08-08 18:08:48,243 - INFO - Listings visible: 12
+2025-08-08 18:08:48,243 - INFO - Early stop at 12 listings.
+2025-08-08 18:08:48,249 - INFO - Found 12 listings
+2025-08-08 18:08:48,249 - INFO - Limiting to first 10 results.
+2025-08-08 18:09:10,771 - INFO - Results saved to static\temples_google_maps_080825_180838.csv
+2025-08-08 18:11:23,676 - INFO - Running Google Maps scraper for: malls
+2025-08-08 18:11:23,676 - INFO - Received limit: 20
+2025-08-08 18:11:27,395 - INFO - Waiting for results pane to load...
+2025-08-08 18:11:27,463 - INFO - Scrolling to load listings...
+2025-08-08 18:11:27,464 - INFO - Scrolling... (1/6)
+2025-08-08 18:11:28,524 - INFO - Listings visible: 12
+2025-08-08 18:11:28,525 - INFO - Scrolling... (2/6)
+2025-08-08 18:11:29,598 - INFO - Listings visible: 18
+2025-08-08 18:11:29,598 - INFO - Scrolling... (3/6)
+2025-08-08 18:11:30,637 - INFO - Listings visible: 20
+2025-08-08 18:11:30,638 - INFO - Early stop at 20 listings.
+2025-08-08 18:11:30,648 - INFO - Found 20 listings
+2025-08-08 18:11:30,649 - INFO - Limiting to first 20 results.
+2025-08-08 18:12:16,410 - INFO - Results saved to static\malls_google_maps_080825_181122.csv
+2025-08-08 18:17:21,432 - INFO - Running Google Maps scraper for: temples
+2025-08-08 18:17:21,432 - INFO - Received limit: None
+2025-08-08 18:17:25,207 - INFO - Waiting for results pane to load...
+2025-08-08 18:17:25,286 - INFO - Scrolling to load listings...
+2025-08-08 18:17:25,286 - INFO - Scrolling... (1/6)
+2025-08-08 18:17:26,374 - INFO - Listings visible: 12
+2025-08-08 18:17:26,374 - INFO - Scrolling... (2/6)
+2025-08-08 18:17:27,465 - INFO - Listings visible: 18
+2025-08-08 18:17:27,465 - INFO - Scrolling... (3/6)
+2025-08-08 18:17:28,495 - INFO - Listings visible: 20
+2025-08-08 18:17:28,495 - INFO - Scrolling... (4/6)
+2025-08-08 18:17:29,521 - INFO - Listings visible: 20
+2025-08-08 18:17:29,521 - INFO - Scrolling... (5/6)
+2025-08-08 18:17:30,564 - INFO - Listings visible: 26
+2025-08-08 18:17:30,565 - INFO - Scrolling... (6/6)
+2025-08-08 18:17:31,584 - INFO - Listings visible: 32
+2025-08-08 18:17:31,589 - INFO - Found 32 listings
+2025-08-08 18:18:42,797 - INFO - Results saved to static\temples_google_maps_080825_181720.csv
+2025-08-08 18:20:00,506 - INFO - Running Google Maps scraper for: temples
+2025-08-08 18:20:00,506 - INFO - Received limit: None
+2025-08-08 18:20:04,403 - INFO - Waiting for results pane to load...
+2025-08-08 18:20:04,498 - INFO - Scrolling to load listings...
+2025-08-08 18:20:04,499 - INFO - Scrolling... (1/6)
+2025-08-08 18:20:05,574 - INFO - Listings visible: 12
+2025-08-08 18:20:05,574 - INFO - Scrolling... (2/6)
+2025-08-08 18:20:06,627 - INFO - Listings visible: 18
+2025-08-08 18:20:06,627 - INFO - Scrolling... (3/6)
+2025-08-08 18:20:07,660 - INFO - Listings visible: 20
+2025-08-08 18:20:07,660 - INFO - Scrolling... (4/6)
+2025-08-08 18:20:08,692 - INFO - Listings visible: 26
+2025-08-08 18:20:08,692 - INFO - Scrolling... (5/6)
+2025-08-08 18:20:09,757 - INFO - Listings visible: 32
+2025-08-08 18:20:09,758 - INFO - Scrolling... (6/6)
+2025-08-08 18:20:10,779 - INFO - Listings visible: 38
+2025-08-08 18:20:10,784 - INFO - Found 38 listings
+2025-08-08 18:21:35,920 - INFO - Results saved to static\temples_google_maps_080825_181959.csv
+2025-08-08 18:26:15,712 - INFO - Running Google Maps scraper for: temples
+2025-08-08 18:26:15,712 - INFO - Received limit: None
+2025-08-08 18:26:21,828 - INFO - Waiting for results pane to load...
+2025-08-08 18:26:21,953 - INFO - Scrolling to load listings...
+2025-08-08 18:26:21,953 - INFO - Scrolling... (1/6)
+2025-08-08 18:26:23,021 - INFO - Listings visible: 12
+2025-08-08 18:26:23,022 - INFO - Scrolling... (2/6)
+2025-08-08 18:26:24,120 - INFO - Listings visible: 18
+2025-08-08 18:26:24,120 - INFO - Scrolling... (3/6)
+2025-08-08 18:26:25,148 - INFO - Listings visible: 20
+2025-08-08 18:26:25,149 - INFO - Scrolling... (4/6)
+2025-08-08 18:26:26,192 - INFO - Listings visible: 20
+2025-08-08 18:26:26,192 - INFO - Scrolling... (5/6)
+2025-08-08 18:26:27,253 - INFO - Listings visible: 26
+2025-08-08 18:26:27,254 - INFO - Scrolling... (6/6)
+2025-08-08 18:26:28,294 - INFO - Listings visible: 32
+2025-08-08 18:26:28,303 - INFO - Found 32 listings
+2025-08-08 18:27:44,496 - INFO - Results saved to static\temples_google_maps_080825_182613.csv
+2025-08-08 18:28:28,458 - INFO - Running Google Maps scraper for: temples in chennai
+2025-08-08 18:28:28,458 - INFO - Received limit: None
+2025-08-08 18:28:32,991 - INFO - Waiting for results pane to load...
+2025-08-08 18:28:33,139 - INFO - Scrolling to load listings...
+2025-08-08 18:28:33,139 - INFO - Scrolling... (1/6)
+2025-08-08 18:28:34,300 - INFO - Listings visible: 12
+2025-08-08 18:28:34,300 - INFO - Scrolling... (2/6)
+2025-08-08 18:28:35,402 - INFO - Listings visible: 18
+2025-08-08 18:28:35,402 - INFO - Scrolling... (3/6)
+2025-08-08 18:28:36,457 - INFO - Listings visible: 20
+2025-08-08 18:28:36,457 - INFO - Scrolling... (4/6)
+2025-08-08 18:28:37,529 - INFO - Listings visible: 26
+2025-08-08 18:28:37,530 - INFO - Scrolling... (5/6)
+2025-08-08 18:28:38,626 - INFO - Listings visible: 32
+2025-08-08 18:28:38,627 - INFO - Scrolling... (6/6)
+2025-08-08 18:28:39,680 - INFO - Listings visible: 38
+2025-08-08 18:28:39,697 - INFO - Found 38 listings
+2025-08-08 18:30:12,436 - INFO - Results saved to static\temples_in_chennai_google_maps_080825_182826.csv
+2025-08-08 18:31:13,066 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 18:31:13,067 - INFO - Received limit: 40
+2025-08-08 18:31:18,325 - INFO - Waiting for results pane to load...
+2025-08-08 18:31:18,427 - INFO - Scrolling to load listings...
+2025-08-08 18:31:18,428 - INFO - Scrolling... (1/6)
+2025-08-08 18:31:19,534 - INFO - Listings visible: 16
+2025-08-08 18:31:19,534 - INFO - Scrolling... (2/6)
+2025-08-08 18:31:20,673 - INFO - Listings visible: 20
+2025-08-08 18:31:20,673 - INFO - Scrolling... (3/6)
+2025-08-08 18:31:21,765 - INFO - Listings visible: 20
+2025-08-08 18:31:21,765 - INFO - Scrolling... (4/6)
+2025-08-08 18:31:22,827 - INFO - Listings visible: 28
+2025-08-08 18:31:22,828 - INFO - Scrolling... (5/6)
+2025-08-08 18:31:23,924 - INFO - Listings visible: 36
+2025-08-08 18:31:23,924 - INFO - Scrolling... (6/6)
+2025-08-08 18:31:25,030 - INFO - Listings visible: 40
+2025-08-08 18:31:25,030 - INFO - Early stop at 40 listings.
+2025-08-08 18:31:25,041 - INFO - Found 40 listings
+2025-08-08 18:31:25,041 - INFO - Limiting to first 40 results.
+2025-08-08 18:32:56,698 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_183111.csv
+2025-08-08 18:33:21,393 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 18:33:21,393 - INFO - Received limit: None
+2025-08-08 18:33:26,069 - INFO - Waiting for results pane to load...
+2025-08-08 18:33:26,164 - INFO - Scrolling to load listings...
+2025-08-08 18:33:26,164 - INFO - Scrolling... (1/6)
+2025-08-08 18:33:27,289 - INFO - Listings visible: 16
+2025-08-08 18:33:27,290 - INFO - Scrolling... (2/6)
+2025-08-08 18:33:28,348 - INFO - Listings visible: 20
+2025-08-08 18:33:28,348 - INFO - Scrolling... (3/6)
+2025-08-08 18:33:29,516 - INFO - Listings visible: 28
+2025-08-08 18:33:29,516 - INFO - Scrolling... (4/6)
+2025-08-08 18:33:30,567 - INFO - Listings visible: 36
+2025-08-08 18:33:30,567 - INFO - Scrolling... (5/6)
+2025-08-08 18:33:31,625 - INFO - Listings visible: 40
+2025-08-08 18:33:31,625 - INFO - Scrolling... (6/6)
+2025-08-08 18:33:32,916 - INFO - Listings visible: 48
+2025-08-08 18:33:32,930 - INFO - Found 48 listings
+2025-08-08 18:35:25,972 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_183319.csv
+2025-08-08 18:40:56,260 - INFO - Running Google Maps scraper for: temples
+2025-08-08 18:40:56,261 - INFO - Received limit: 50
+2025-08-08 18:41:08,966 - INFO - Waiting for results pane to load...
+2025-08-08 18:41:09,167 - INFO - Scrolling to load listings...
+2025-08-08 18:41:09,168 - INFO - Scrolling... (1/6)
+2025-08-08 18:41:10,220 - INFO - Listings visible: 12
+2025-08-08 18:41:10,220 - INFO - Scrolling... (2/6)
+2025-08-08 18:41:11,266 - INFO - Listings visible: 18
+2025-08-08 18:41:11,266 - INFO - Scrolling... (3/6)
+2025-08-08 18:41:12,292 - INFO - Listings visible: 20
+2025-08-08 18:41:12,292 - INFO - Scrolling... (4/6)
+2025-08-08 18:41:13,340 - INFO - Listings visible: 26
+2025-08-08 18:41:13,341 - INFO - Scrolling... (5/6)
+2025-08-08 18:41:14,464 - INFO - Listings visible: 32
+2025-08-08 18:41:14,464 - INFO - Scrolling... (6/6)
+2025-08-08 18:41:15,508 - INFO - Listings visible: 38
+2025-08-08 18:41:15,521 - INFO - Found 38 listings
+2025-08-08 18:41:15,521 - INFO - Limiting to first 38 results.
+2025-08-08 18:41:28,907 - INFO - Running Google Maps scraper for: temples
+2025-08-08 18:41:28,907 - INFO - Received limit: 50
+2025-08-08 18:41:34,014 - INFO - Waiting for results pane to load...
+2025-08-08 18:41:34,141 - INFO - Scrolling to load listings...
+2025-08-08 18:41:34,141 - INFO - Scrolling... (1/6)
+2025-08-08 18:41:35,508 - INFO - Listings visible: 12
+2025-08-08 18:41:35,509 - INFO - Scrolling... (2/6)
+2025-08-08 18:41:37,005 - INFO - Listings visible: 18
+2025-08-08 18:41:37,006 - INFO - Scrolling... (3/6)
+2025-08-08 18:41:38,169 - INFO - Listings visible: 20
+2025-08-08 18:41:38,171 - INFO - Scrolling... (4/6)
+2025-08-08 18:41:39,227 - INFO - Listings visible: 20
+2025-08-08 18:41:39,228 - INFO - Scrolling... (5/6)
+2025-08-08 18:41:40,378 - INFO - Listings visible: 26
+2025-08-08 18:41:40,379 - INFO - Scrolling... (6/6)
+2025-08-08 18:41:41,759 - INFO - Listings visible: 32
+2025-08-08 18:41:41,779 - INFO - Found 32 listings
+2025-08-08 18:41:41,784 - INFO - Limiting to first 32 results.
+2025-08-08 18:43:00,896 - INFO - Results saved to static\temples_google_maps_080825_184054.csv
+2025-08-08 18:43:08,930 - INFO - Results saved to static\temples_google_maps_080825_184126.csv
+2025-08-08 18:46:25,412 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 18:46:25,413 - INFO - Received limit: 10
+2025-08-08 18:46:30,706 - INFO - Waiting for results pane to load...
+2025-08-08 18:46:30,875 - INFO - Scrolling to load listings...
+2025-08-08 18:46:30,876 - INFO - Scrolling... (1/6)
+2025-08-08 18:46:32,000 - INFO - Listings visible: 16
+2025-08-08 18:46:32,000 - INFO - Early stop at 16 listings.
+2025-08-08 18:46:32,009 - INFO - Found 16 listings
+2025-08-08 18:46:32,010 - INFO - Limiting to first 10 results.
+2025-08-08 18:46:55,540 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_184623.csv
