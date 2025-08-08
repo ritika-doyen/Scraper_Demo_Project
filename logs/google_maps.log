@@ -2007,3 +2007,11 @@ waiting for navigation until 'load'
 waiting for navigation until 'load'
 ============================================================
 2025-08-08 19:28:07,487 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_192716.csv
+2025-08-08 19:40:36,472 - INFO - Starting Google Maps scraper for: temples
+2025-08-08 19:40:36,472 - INFO - Received limit: 5
+2025-08-08 19:40:41,296 - INFO - Waiting for listings container to load...
+2025-08-08 19:40:41,394 - INFO - Scrolling to load listings...
+2025-08-08 19:40:42,484 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 19:40:42,485 - INFO - Early stopping at 12 listings.
+2025-08-08 19:40:42,501 - INFO - Total cards found: 12
+2025-08-08 19:40:48,751 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_194035.csv

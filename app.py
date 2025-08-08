@@ -8,10 +8,7 @@ import time
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = "your-secret-key"  # Replace with a strong secret key in production
-
-# Always ensure static/ exists
-os.makedirs("static", exist_ok=True)
+app.secret_key = "your-secret-key"  # Use a secure key in production
 
 def get_available_plugins():
     plugin_dir = os.path.join(os.path.dirname(__file__), "plugins")
@@ -23,7 +20,7 @@ def get_available_plugins():
 def generate_filename(query, site):
     filename_safe = query.lower().replace(" ", "_")
     timestamp = datetime.now().strftime("%d%m%y_%H%M%S")
-    return os.path.join("static", f"{filename_safe}_{site}_{timestamp}.csv")
+    return f"{filename_safe}_{site}_{timestamp}.csv"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -35,50 +32,58 @@ def index():
         limit = request.form.get("limit")
 
         if site and query:
-            output_file = generate_filename(query, site)
-            command = ["python", "runner.py", "--site", site, "--query", query, "--output", output_file]
+            filename = generate_filename(query, site)
+            output_rel_path = os.path.join("static", filename)
+            output_abs_path = os.path.abspath(output_rel_path)
 
+            os.makedirs("static", exist_ok=True)
+
+            command = [
+                "python", "runner.py",
+                "--mode", "modular",
+                "--site", site,
+                "--query", query,
+                "--output", output_abs_path
+            ]
             if limit:
                 command.extend(["--limit", limit])
 
             try:
                 result = subprocess.run(command, check=True, capture_output=True, text=True)
-                message = f"Scraping completed. Output saved to {output_file}"
+                message = f"Scraping completed. Output saved to static/{filename}"
 
-                absolute_path = os.path.abspath(output_file)
-                print(f"[DEBUG] Checking file at: {absolute_path}")
-
-                if os.path.exists(absolute_path):
-                    with open(absolute_path, newline='', encoding='utf-8') as f:
+                if os.path.exists(output_abs_path):
+                    with open(output_abs_path, newline='', encoding='utf-8') as f:
                         reader = csv.reader(f)
                         rows = list(reader)
+                        record_count = len(rows) - 1
 
-                        if len(rows) > 1:
+                        if record_count > 0:
                             headers = rows[0]
                             table_data = rows[1:]
-                            session["output_file"] = os.path.basename(output_file)
                             session["headers"] = headers
                             session["table_data"] = table_data
+                            session["output_file"] = filename
+
+                            if limit:
+                                try:
+                                    int_limit = int(limit)
+                                    if record_count < int_limit:
+                                        message += f"<br>Only {record_count} records found out of requested {int_limit}."
+                                except ValueError:
+                                    message += "<br>⚠️ Invalid limit value."
                         else:
                             message += "<br>⚠️ Output file is empty."
-                            session["headers"] = None
-                            session["table_data"] = None
+                    session["message"] = message
                 else:
-                    message += "<br>⚠️ Output file not found."
-                    session["headers"] = None
-                    session["table_data"] = None
-
-                session["message"] = message
-
+                    session["message"] = message + "<br>⚠️ Output file not found."
             except subprocess.CalledProcessError as e:
                 session["message"] = f"❌ Scraper failed. Error: {e.stderr or e.stdout or 'Check logs.'}"
-
         else:
             session["message"] = "⚠️ Please fill all fields."
 
         return redirect(url_for("index"))
 
-    # GET request
     message = session.pop("message", None)
     output_file = session.pop("output_file", None)
     headers = session.pop("headers", None)
@@ -86,11 +91,11 @@ def index():
 
     return render_template(
         "index.html",
-        available_plugins=available_plugins,
         message=message,
         output_file=output_file,
         headers=headers,
         table_data=table_data,
+        available_plugins=available_plugins,
         timestamp=int(time.time())
     )
 
@@ -102,6 +107,7 @@ def reset():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
 
 
