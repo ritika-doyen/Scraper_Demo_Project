@@ -9,6 +9,8 @@ from utils.logger import get_logger
 
 logger = get_logger("google_maps")
 
+description = "Scrape business listings, ratings, and addresses from Google Maps."
+
 def build_search_url(query):
     return f"https://www.google.com/maps/search/{quote_plus(query)}"
 

@@ -1,3 +1,5 @@
+# validate_plugins.py
+
 import importlib.util
 import inspect
 import os
@@ -7,6 +9,7 @@ PLUGIN_DIR = os.path.join(os.path.dirname(__file__), "plugins")
 
 REQUIRED_FUNC = "run_scraper"
 REQUIRED_PARAMS = ["query", "output_file"]
+REQUIRED_VAR = "description"
 
 def validate_plugin(path, plugin_name):
     try:
@@ -14,11 +17,12 @@ def validate_plugin(path, plugin_name):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
     except Exception as e:
-        print(f"Failed to import {plugin_name}: {e}")
+        print(f"[ERROR] Failed to import '{plugin_name}': {e}")
         return False
 
+    # Check for run_scraper function
     if not hasattr(module, REQUIRED_FUNC):
-        print(f"{plugin_name} is missing required function: {REQUIRED_FUNC}()")
+        print(f"[ERROR] {plugin_name} is missing required function: {REQUIRED_FUNC}()")
         return False
 
     func = getattr(module, REQUIRED_FUNC)
@@ -27,16 +31,22 @@ def validate_plugin(path, plugin_name):
 
     for req_param in REQUIRED_PARAMS:
         if req_param not in params:
-            print(f"{plugin_name} is missing required argument: '{req_param}' in {REQUIRED_FUNC}()")
+            print(f"[ERROR] {plugin_name} is missing required argument: '{req_param}' in {REQUIRED_FUNC}()")
             return False
 
-    print(f"{plugin_name} passed validation.")
+    # Check for description variable
+    if not hasattr(module, REQUIRED_VAR):
+        print(f"[ERROR] {plugin_name} is missing required variable: '{REQUIRED_VAR}'")
+        return False
+
+    description = getattr(module, REQUIRED_VAR)
+    print(f"{plugin_name} - {description}")
     return True
 
 def run_validation():
     print("Validating plugins...\n")
     plugin_files = [f for f in os.listdir(PLUGIN_DIR) if f.endswith(".py") and f != "__init__.py"]
-    
+
     if not plugin_files:
         print("No plugins found.")
         return
