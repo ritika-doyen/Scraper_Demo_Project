@@ -1431,3 +1431,143 @@ Call log:
 2025-08-07 15:45:24,692 - INFO - Listings visible: 88
 2025-08-07 15:45:24,715 - INFO - Found 88 listings
 2025-08-07 15:45:27,471 - INFO - Results saved to static\colleges_in_haryana_google_maps_070825.csv
+2025-08-08 14:51:11,880 - INFO - 🛠 Optimized google_maps.py loaded with performance tweaks.
+2025-08-08 14:51:11,882 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 14:51:11,882 - INFO - Received limit: 10
+2025-08-08 14:51:16,730 - INFO - 🛠 Optimized google_maps.py loaded with performance tweaks.
+2025-08-08 14:51:16,730 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 14:51:16,730 - INFO - Received limit: 10
+2025-08-08 14:51:25,081 - INFO - Waiting for results pane to load...
+2025-08-08 14:51:25,085 - INFO - Waiting for results pane to load...
+2025-08-08 14:51:25,236 - INFO - Scrolling to load listings...
+2025-08-08 14:51:25,236 - INFO - Scrolling... (1/6)
+2025-08-08 14:51:25,240 - INFO - Scrolling to load listings...
+2025-08-08 14:51:25,241 - INFO - Scrolling... (1/6)
+2025-08-08 14:51:25,946 - INFO - Listings visible: 16
+2025-08-08 14:51:25,947 - INFO - Early stop at 16 listings.
+2025-08-08 14:51:25,948 - INFO - Listings visible: 16
+2025-08-08 14:51:25,948 - INFO - Early stop at 16 listings.
+2025-08-08 14:51:25,955 - INFO - Found 16 listings
+2025-08-08 14:51:25,955 - INFO - Limiting to first 10 results.
+2025-08-08 14:51:25,958 - INFO - Found 16 listings
+2025-08-08 14:51:25,958 - INFO - Limiting to first 10 results.
+2025-08-08 14:51:26,724 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 14:51:26,910 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 14:51:57,617 - INFO - 🛠 Optimized google_maps.py loaded with performance tweaks.
+2025-08-08 14:51:57,617 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 14:51:57,617 - INFO - Received limit: 10
+2025-08-08 14:52:01,694 - INFO - Waiting for results pane to load...
+2025-08-08 14:52:01,792 - INFO - Scrolling to load listings...
+2025-08-08 14:52:01,792 - INFO - Scrolling... (1/6)
+2025-08-08 14:52:02,368 - INFO - Listings visible: 16
+2025-08-08 14:52:02,368 - INFO - Early stop at 16 listings.
+2025-08-08 14:52:02,373 - INFO - Found 16 listings
+2025-08-08 14:52:02,373 - INFO - Limiting to first 10 results.
+2025-08-08 14:52:03,373 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 15:27:01,550 - INFO - 🛠 Optimized google_maps.py loaded with performance tweaks.
+2025-08-08 15:27:01,551 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 15:27:01,551 - INFO - Received limit: None
+2025-08-08 15:27:12,930 - INFO - Waiting for results pane to load...
+2025-08-08 15:27:12,993 - INFO - Scrolling to load listings...
+2025-08-08 15:27:12,993 - INFO - Scrolling... (1/6)
+2025-08-08 15:27:13,542 - INFO - Listings visible: 16
+2025-08-08 15:27:13,542 - INFO - Scrolling... (2/6)
+2025-08-08 15:27:14,374 - INFO - Listings visible: 21
+2025-08-08 15:27:14,375 - INFO - Scrolling... (3/6)
+2025-08-08 15:27:14,953 - INFO - Listings visible: 21
+2025-08-08 15:27:14,954 - INFO - Scrolling... (4/6)
+2025-08-08 15:27:15,481 - INFO - Listings visible: 21
+2025-08-08 15:27:15,481 - INFO - Scrolling... (5/6)
+2025-08-08 15:27:16,070 - INFO - Listings visible: 29
+2025-08-08 15:27:16,070 - INFO - Scrolling... (6/6)
+2025-08-08 15:27:16,625 - INFO - Listings visible: 37
+2025-08-08 15:27:16,634 - INFO - Found 37 listings
+2025-08-08 15:27:18,446 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 16:05:16,101 - INFO - 🛠 Optimized google_maps.py loaded with performance tweaks.
+2025-08-08 16:05:16,102 - INFO - Running Google Maps scraper for: hospitals in delhi
+2025-08-08 16:05:16,102 - INFO - Received limit: 10
+2025-08-08 16:05:19,824 - INFO - Waiting for results pane to load...
+2025-08-08 16:05:19,961 - INFO - Scrolling to load listings...
+2025-08-08 16:05:19,962 - INFO - Scrolling... (1/6)
+2025-08-08 16:05:20,748 - INFO - Listings visible: 16
+2025-08-08 16:05:20,755 - INFO - Early stop at 16 listings.
+2025-08-08 16:05:20,782 - INFO - Found 16 listings
+2025-08-08 16:05:20,813 - INFO - Limiting to first 10 results.
+2025-08-08 16:05:21,633 - INFO - Results saved to static\hospitals_in_delhi_google_maps_080825.csv
+2025-08-08 16:05:59,127 - INFO - 🛠 Optimized google_maps.py loaded with performance tweaks.
+2025-08-08 16:05:59,128 - INFO - Running Google Maps scraper for: pharmacies near mumbai
+2025-08-08 16:05:59,128 - INFO - Received limit: 15
+2025-08-08 16:06:02,869 - INFO - Waiting for results pane to load...
+2025-08-08 16:06:02,951 - INFO - Scrolling to load listings...
+2025-08-08 16:06:02,956 - INFO - Scrolling... (1/6)
+2025-08-08 16:06:03,611 - INFO - Listings visible: 16
+2025-08-08 16:06:03,611 - INFO - Early stop at 16 listings.
+2025-08-08 16:06:03,619 - INFO - Found 16 listings
+2025-08-08 16:06:03,620 - INFO - Limiting to first 15 results.
+2025-08-08 16:06:04,527 - INFO - Results saved to static\pharmacies_near_mumbai_google_maps_080825.csv
+2025-08-08 16:08:08,543 - INFO - Running Google Maps scraper for: pharmacies near mumbai
+2025-08-08 16:08:08,543 - INFO - Received limit: 20
+2025-08-08 16:08:12,624 - INFO - Waiting for results pane to load...
+2025-08-08 16:08:12,746 - INFO - Scrolling to load listings...
+2025-08-08 16:08:12,746 - INFO - Scrolling... (1/6)
+2025-08-08 16:08:13,827 - INFO - Listings visible: 16
+2025-08-08 16:08:13,828 - INFO - Scrolling... (2/6)
+2025-08-08 16:08:14,903 - INFO - Listings visible: 20
+2025-08-08 16:08:14,904 - INFO - Early stop at 20 listings.
+2025-08-08 16:08:14,909 - INFO - Found 20 listings
+2025-08-08 16:08:14,910 - INFO - Limiting to first 20 results.
+2025-08-08 16:08:57,978 - INFO - Results saved to static\pharmacies_near_mumbai_google_maps_080825.csv
+2025-08-08 16:09:35,303 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 16:09:35,303 - INFO - Received limit: None
+2025-08-08 16:09:39,710 - INFO - Waiting for results pane to load...
+2025-08-08 16:09:39,850 - INFO - Scrolling to load listings...
+2025-08-08 16:09:39,851 - INFO - Scrolling... (1/6)
+2025-08-08 16:09:41,128 - INFO - Listings visible: 16
+2025-08-08 16:09:41,128 - INFO - Scrolling... (2/6)
+2025-08-08 16:09:42,357 - INFO - Listings visible: 20
+2025-08-08 16:09:42,358 - INFO - Scrolling... (3/6)
+2025-08-08 16:09:42,623 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 16:09:42,623 - INFO - Received limit: None
+2025-08-08 16:09:43,386 - INFO - Listings visible: 20
+2025-08-08 16:09:43,387 - INFO - Scrolling... (4/6)
+2025-08-08 16:09:44,489 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 16:09:44,489 - INFO - Received limit: None
+2025-08-08 16:09:44,655 - INFO - Listings visible: 36
+2025-08-08 16:09:44,655 - INFO - Scrolling... (5/6)
+2025-08-08 16:09:45,748 - INFO - Listings visible: 40
+2025-08-08 16:09:45,749 - INFO - Scrolling... (6/6)
+2025-08-08 16:09:46,926 - INFO - Listings visible: 48
+2025-08-08 16:09:46,939 - INFO - Found 48 listings
+2025-08-08 16:09:49,036 - INFO - Waiting for results pane to load...
+2025-08-08 16:09:49,416 - INFO - Scrolling to load listings...
+2025-08-08 16:09:49,416 - INFO - Scrolling... (1/6)
+2025-08-08 16:09:50,470 - INFO - Listings visible: 16
+2025-08-08 16:09:50,470 - INFO - Scrolling... (2/6)
+2025-08-08 16:09:51,578 - INFO - Waiting for results pane to load...
+2025-08-08 16:09:51,951 - INFO - Listings visible: 21
+2025-08-08 16:09:51,951 - INFO - Scrolling... (3/6)
+2025-08-08 16:09:52,013 - INFO - Scrolling to load listings...
+2025-08-08 16:09:52,014 - INFO - Scrolling... (1/6)
+2025-08-08 16:09:53,354 - INFO - Listings visible: 21
+2025-08-08 16:09:53,354 - INFO - Scrolling... (4/6)
+2025-08-08 16:09:53,477 - INFO - Listings visible: 16
+2025-08-08 16:09:53,477 - INFO - Scrolling... (2/6)
+2025-08-08 16:09:54,843 - INFO - Listings visible: 37
+2025-08-08 16:09:54,844 - INFO - Scrolling... (5/6)
+2025-08-08 16:09:54,849 - INFO - Listings visible: 22
+2025-08-08 16:09:54,849 - INFO - Scrolling... (3/6)
+2025-08-08 16:09:55,949 - INFO - Listings visible: 22
+2025-08-08 16:09:55,949 - INFO - Scrolling... (4/6)
+2025-08-08 16:09:57,011 - INFO - Listings visible: 22
+2025-08-08 16:09:57,011 - INFO - Scrolling... (5/6)
+2025-08-08 16:09:57,094 - INFO - Listings visible: 41
+2025-08-08 16:09:57,094 - INFO - Scrolling... (6/6)
+2025-08-08 16:09:58,182 - INFO - Listings visible: 41
+2025-08-08 16:09:58,236 - INFO - Found 41 listings
+2025-08-08 16:09:58,972 - INFO - Listings visible: 30
+2025-08-08 16:09:58,973 - INFO - Scrolling... (6/6)
+2025-08-08 16:10:00,164 - INFO - Listings visible: 38
+2025-08-08 16:10:00,178 - INFO - Found 38 listings
+2025-08-08 16:11:52,742 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 16:11:58,210 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv
+2025-08-08 16:12:05,215 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825.csv

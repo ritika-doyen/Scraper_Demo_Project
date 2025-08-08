@@ -5,6 +5,7 @@ services:
     buildCommand: |
       pip install -r requirements.txt
       playwright install chromium
+      python validate_plugins.py
     startCommand: python app.py
     plan: free
     region: oregon

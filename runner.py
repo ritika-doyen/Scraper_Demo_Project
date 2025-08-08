@@ -17,7 +17,7 @@ def generate_filename(query, site):
 
 def run_scraper(site, query, output_file, limit=None):
     try:
-        scraper_module = importlib.import_module(f"scrapers.{site}")
+        scraper_module = importlib.import_module(f"plugins.{site}")
     except ModuleNotFoundError:
         print(f"Scraper module not found for site: {site}")
         sys.exit(1)
@@ -45,6 +45,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

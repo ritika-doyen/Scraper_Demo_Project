@@ -74,8 +74,9 @@
         <label for="site">Select Site</label>
         <select name="site" required>
             <option value="">--Choose--</option>
-            <option value="google_maps">Google Maps</option>
-            <option value="indiamart">IndiaMART</option>
+            {% for plugin in available_plugins %}
+            <option value="{{ plugin }}">{{ plugin.replace("_", " ").title() }}</option>
+            {% endfor %}
         </select>
 
         <label for="query">Search Query</label>
@@ -114,6 +115,8 @@
 
 </body>
 </html>
+
+
 
 
 

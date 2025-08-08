@@ -13,9 +13,18 @@ last_table_data = None
 last_headers = None
 last_message = None
 
+def get_available_plugins():
+    plugin_dir = os.path.join(os.path.dirname(__file__), "plugins")
+    return [
+        f[:-3] for f in os.listdir(plugin_dir)
+        if f.endswith(".py") and f != "__init__.py"
+    ]
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     global last_output_file, last_table_data, last_headers, last_message
+
+    available_plugins = get_available_plugins()
 
     if request.method == "POST":
         site = request.form.get("site")
@@ -36,12 +45,11 @@ def index():
                 result = subprocess.run(command, check=True, capture_output=True, text=True)
                 last_message = f"Scraping completed. Output saved to static/{output_file}"
 
-                # Check if output CSV exists and load its content
                 if os.path.exists(output_path):
                     with open(output_path, newline='', encoding='utf-8') as f:
                         reader = csv.reader(f)
                         rows = list(reader)
-                        record_count = len(rows) - 1  # subtract header
+                        record_count = len(rows) - 1
 
                         if record_count > 0:
                             last_headers = rows[0]
@@ -52,7 +60,7 @@ def index():
                                 try:
                                     int_limit = int(limit)
                                     if record_count < int_limit:
-                                        last_message += f"<br>⚠️ Only {record_count} records found out of requested {int_limit}."
+                                        last_message += f"<br>Only {record_count} records found out of requested {int_limit}."
                                 except ValueError:
                                     last_message += "<br>⚠️ Invalid limit value."
                         else:
@@ -75,12 +83,12 @@ def index():
                            message=last_message,
                            output_file=last_output_file,
                            headers=last_headers,
-                           table_data=last_table_data)
+                           table_data=last_table_data,
+                           available_plugins=available_plugins)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=True)
-
 
 
 
