@@ -3,7 +3,6 @@
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 import csv
 import os
-import time
 from urllib.parse import quote_plus
 from utils.logger import get_logger
 
@@ -14,17 +13,25 @@ description = "Scrape supplier contact data from IndiaMART (B2B marketplace)."
 def build_search_url(query):
     return f"https://dir.indiamart.com/search.mp?ss={quote_plus(query)}"
 
-def scroll_until_end(page, max_scrolls=100):
+def scroll_until_end(page, max_scrolls=30, delay=1.5):
     logger.info("Starting auto-scroll to load all results...")
     last_height = 0
+    unchanged_scrolls = 0
+
     for i in range(max_scrolls):
         page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-        time.sleep(3)  # Increase delay for Render's slower JS render
+        page.wait_for_timeout(delay * 1000)
+
         new_height = page.evaluate("document.body.scrollHeight")
         if new_height == last_height:
-            logger.info(f"⏹️ No more content loaded after {i + 1} scrolls.")
-            break
+            unchanged_scrolls += 1
+            if unchanged_scrolls >= 2:
+                logger.info(f"No more content loaded after {i+1} scrolls.")
+                break
+        else:
+            unchanged_scrolls = 0
         last_height = new_height
+
     logger.info("Auto-scroll completed.")
 
 def extract_data_from_page(page):
@@ -59,7 +66,7 @@ def save_to_csv(data, file_path):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     if not data:
-        logger.warning("No data to save.")
+        logger.warning("⚠️ No data to save.")
         return
 
     with open(file_path, "w", newline="", encoding="utf-8") as f:
@@ -72,7 +79,7 @@ def run_scraper(query, output_file=None, limit=None):
     logger.info(f"Running IndiaMART scraper for: {query}")
     logger.info(f"Limit: {limit}")
     url = build_search_url(query)
-    logger.info(f"🌐 Opening URL: {url}")
+    logger.info(f"Opening URL: {url}")
 
     all_data = []
 
@@ -89,7 +96,7 @@ def run_scraper(query, output_file=None, limit=None):
             try:
                 page.wait_for_selector(".supplierInfoDiv", timeout=15000)
             except PlaywrightTimeoutError:
-                logger.warning(".supplierInfoDiv not found — page may not have loaded correctly.")
+                logger.warning("⚠️ .supplierInfoDiv not found — page may not have loaded correctly.")
 
             screenshot_path = os.path.abspath("static/indiamart_debug.png")
             os.makedirs("static", exist_ok=True)
@@ -102,14 +109,14 @@ def run_scraper(query, output_file=None, limit=None):
 
             logger.info(f"Total extracted: {len(all_data)} records")
 
-            if len(all_data) == 0:
+            if not all_data:
                 logger.warning("Still 0 cards found after scrolling — possibly blocked or no data.")
 
             if limit:
                 all_data = all_data[:int(limit)]
                 logger.info(f"Limit applied: {limit} → Returning {len(all_data)} records.")
             else:
-                logger.info(f"No limit given — returning all {len(all_data)} results.")
+                logger.info(f"No limit — returning all {len(all_data)} results.")
 
             if output_file:
                 absolute_path = os.path.abspath(output_file)

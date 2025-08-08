@@ -23,9 +23,12 @@ def run_scraper(site, query, output_file, limit=None):
         sys.exit(1)
 
     try:
-        print(f"\nRunning: {site} for '{query}' -> {output_file}")
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)  # Ensure static folder exists
+        output_file = os.path.abspath(output_file)  # Convert to absolute path
+        print(f"\n[INFO] Running: {site} for '{query}' -> {output_file}")
+
         count = scraper_module.run_scraper(query, output_file, limit=limit)
-        print(f"FOUND_COUNT: {count}")
+        print(f"[INFO] FOUND_COUNT: {count}")
     except Exception as e:
         print(f"[ERROR] Scraper failed: {e}")
         traceback.print_exc()
@@ -45,6 +48,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

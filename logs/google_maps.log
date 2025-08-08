@@ -1803,3 +1803,207 @@ Call log:
 2025-08-08 18:46:32,009 - INFO - Found 16 listings
 2025-08-08 18:46:32,010 - INFO - Limiting to first 10 results.
 2025-08-08 18:46:55,540 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_184623.csv
+2025-08-08 19:04:55,820 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 19:04:55,820 - INFO - Received limit: None
+2025-08-08 19:04:59,843 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 19:04:59,843 - INFO - Received limit: None
+2025-08-08 19:05:08,676 - INFO - Waiting for results pane to load...
+2025-08-08 19:05:09,128 - INFO - Scrolling to load listings...
+2025-08-08 19:05:09,129 - INFO - Scrolling... (1/6)
+2025-08-08 19:05:10,511 - INFO - Listings visible: 16
+2025-08-08 19:05:10,512 - INFO - Scrolling... (2/6)
+2025-08-08 19:05:10,968 - INFO - Waiting for results pane to load...
+2025-08-08 19:05:11,091 - INFO - Scrolling to load listings...
+2025-08-08 19:05:11,091 - INFO - Scrolling... (1/6)
+2025-08-08 19:05:11,726 - INFO - Listings visible: 20
+2025-08-08 19:05:11,727 - INFO - Scrolling... (3/6)
+2025-08-08 19:05:12,355 - INFO - Listings visible: 16
+2025-08-08 19:05:12,356 - INFO - Scrolling... (2/6)
+2025-08-08 19:05:12,924 - INFO - Listings visible: 20
+2025-08-08 19:05:12,924 - INFO - Scrolling... (4/6)
+2025-08-08 19:05:13,460 - INFO - Listings visible: 20
+2025-08-08 19:05:13,460 - INFO - Scrolling... (3/6)
+2025-08-08 19:05:13,964 - INFO - Listings visible: 28
+2025-08-08 19:05:13,965 - INFO - Scrolling... (5/6)
+2025-08-08 19:05:14,495 - INFO - Listings visible: 20
+2025-08-08 19:05:14,495 - INFO - Scrolling... (4/6)
+2025-08-08 19:05:15,079 - INFO - Listings visible: 36
+2025-08-08 19:05:15,079 - INFO - Scrolling... (6/6)
+2025-08-08 19:05:15,534 - INFO - Listings visible: 28
+2025-08-08 19:05:15,541 - INFO - Scrolling... (5/6)
+2025-08-08 19:05:16,150 - INFO - Listings visible: 40
+2025-08-08 19:05:16,163 - INFO - Found 40 listings
+2025-08-08 19:05:16,745 - INFO - Listings visible: 36
+2025-08-08 19:05:16,745 - INFO - Scrolling... (6/6)
+2025-08-08 19:05:18,166 - INFO - Listings visible: 40
+2025-08-08 19:05:18,248 - INFO - Found 40 listings
+2025-08-08 19:05:26,394 - INFO - Running Google Maps scraper for: colleges in haryana
+2025-08-08 19:05:26,394 - INFO - Received limit: None
+2025-08-08 19:05:45,643 - INFO - Waiting for results pane to load...
+2025-08-08 19:05:47,801 - INFO - Scrolling to load listings...
+2025-08-08 19:05:47,803 - INFO - Scrolling... (1/6)
+2025-08-08 19:05:50,101 - INFO - Listings visible: 16
+2025-08-08 19:05:50,101 - INFO - Scrolling... (2/6)
+2025-08-08 19:05:51,719 - INFO - Listings visible: 20
+2025-08-08 19:05:51,720 - INFO - Scrolling... (3/6)
+2025-08-08 19:05:53,108 - INFO - Listings visible: 20
+2025-08-08 19:05:53,109 - INFO - Scrolling... (4/6)
+2025-08-08 19:05:55,547 - INFO - Listings visible: 28
+2025-08-08 19:05:55,547 - INFO - Scrolling... (5/6)
+2025-08-08 19:05:56,727 - INFO - Listings visible: 36
+2025-08-08 19:05:56,728 - INFO - Scrolling... (6/6)
+2025-08-08 19:05:58,509 - INFO - Listings visible: 40
+2025-08-08 19:05:58,519 - INFO - Found 40 listings
+2025-08-08 19:07:20,379 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_190453.csv
+2025-08-08 19:07:22,288 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_190458.csv
+2025-08-08 19:07:56,008 - INFO - Results saved to static\colleges_in_haryana_google_maps_080825_190514.csv
+2025-08-08 19:10:52,971 - INFO - Running Google Maps scraper for: colleges in pune
+2025-08-08 19:10:52,971 - INFO - Received limit: 10
+2025-08-08 19:10:58,300 - INFO - Waiting for results pane to load...
+2025-08-08 19:10:58,399 - INFO - Scrolling to load listings...
+2025-08-08 19:10:58,399 - INFO - Scrolling... (1/6)
+2025-08-08 19:10:59,540 - INFO - Listings visible: 16
+2025-08-08 19:10:59,540 - INFO - Early stop at 16 listings.
+2025-08-08 19:10:59,564 - INFO - Found 16 listings
+2025-08-08 19:10:59,564 - INFO - Limiting to first 10 results.
+2025-08-08 19:11:23,643 - INFO - Results saved to static\colleges_in_pune_google_maps_080825_191050.csv
+2025-08-08 19:18:59,298 - INFO - Running Google Maps scraper for: temples
+2025-08-08 19:18:59,298 - INFO - Received limit: 5
+2025-08-08 19:19:03,504 - INFO - Waiting for results pane to load...
+2025-08-08 19:19:03,630 - INFO - Scrolling to load listings...
+2025-08-08 19:19:03,630 - INFO - Scrolling... (1/6)
+2025-08-08 19:19:04,711 - INFO - Listings visible: 12
+2025-08-08 19:19:04,711 - INFO - Early stop at 12 listings.
+2025-08-08 19:19:04,724 - INFO - Found 12 listings
+2025-08-08 19:19:04,725 - INFO - Limiting to first 5 results.
+2025-08-08 19:19:16,536 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_191857.csv
+2025-08-08 19:22:50,032 - INFO - Starting Google Maps scraper for: temples
+2025-08-08 19:22:50,032 - INFO - Received limit: None
+2025-08-08 19:22:54,614 - INFO - Waiting for listings container to load...
+2025-08-08 19:22:54,749 - INFO - Scrolling to load listings...
+2025-08-08 19:22:55,842 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 19:22:56,925 - INFO - Scroll 2: 18 listings visible.
+2025-08-08 19:22:57,969 - INFO - Scroll 3: 20 listings visible.
+2025-08-08 19:22:59,048 - INFO - Scroll 4: 20 listings visible.
+2025-08-08 19:22:59,048 - INFO - ⏹No new results loaded.
+2025-08-08 19:22:59,061 - INFO - Total cards found: 20
+2025-08-08 19:23:06,369 - INFO - Starting Google Maps scraper for: temples
+2025-08-08 19:23:06,370 - INFO - Received limit: None
+2025-08-08 19:23:11,586 - INFO - Waiting for listings container to load...
+2025-08-08 19:23:11,809 - INFO - Scrolling to load listings...
+2025-08-08 19:23:13,041 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 19:23:14,199 - INFO - Scroll 2: 18 listings visible.
+2025-08-08 19:23:15,384 - INFO - Scroll 3: 20 listings visible.
+2025-08-08 19:23:16,626 - INFO - Scroll 4: 26 listings visible.
+2025-08-08 19:23:17,911 - INFO - Scroll 5: 32 listings visible.
+2025-08-08 19:23:19,237 - INFO - Scroll 6: 38 listings visible.
+2025-08-08 19:23:20,285 - INFO - Scroll 7: 40 listings visible.
+2025-08-08 19:23:20,909 - WARNING - ⚠️ Failed to extract listing 11: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:23:21,356 - INFO - Scroll 8: 40 listings visible.
+2025-08-08 19:23:21,357 - INFO - ⏹No new results loaded.
+2025-08-08 19:23:21,393 - INFO - Total cards found: 40
+2025-08-08 19:23:39,092 - WARNING - ⚠️ Failed to extract listing 4: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:23:43,605 - WARNING - ⚠️ Failed to extract listing 20: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:23:43,638 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_192248.csv
+2025-08-08 19:23:52,288 - WARNING - ⚠️ Failed to extract listing 7: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:24:04,199 - WARNING - ⚠️ Failed to extract listing 10: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:24:20,831 - WARNING - ⚠️ Failed to extract listing 16: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:24:38,563 - WARNING - ⚠️ Failed to extract listing 22: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:24:50,648 - WARNING - ⚠️ Failed to extract listing 25: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:25:07,206 - WARNING - ⚠️ Failed to extract listing 32: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:25:11,066 - INFO - Starting Google Maps scraper for: cafes in mumbai
+2025-08-08 19:25:11,068 - INFO - Received limit: None
+2025-08-08 19:25:17,873 - INFO - Waiting for listings container to load...
+2025-08-08 19:25:18,011 - INFO - Scrolling to load listings...
+2025-08-08 19:25:19,115 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 19:25:20,313 - INFO - Scroll 2: 18 listings visible.
+2025-08-08 19:25:21,376 - INFO - Scroll 3: 20 listings visible.
+2025-08-08 19:25:21,436 - WARNING - ⚠️ Failed to extract listing 37: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:25:22,448 - INFO - Scroll 4: 20 listings visible.
+2025-08-08 19:25:22,455 - INFO - ⏹No new results loaded.
+2025-08-08 19:25:22,480 - INFO - Total cards found: 20
+2025-08-08 19:25:32,643 - WARNING - ⚠️ Failed to extract listing 40: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:25:32,646 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_192302.csv
+2025-08-08 19:25:36,291 - WARNING - ⚠️ Failed to extract listing 5: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:25:56,912 - INFO - Starting Google Maps scraper for: cafes in mumbai
+2025-08-08 19:25:56,914 - INFO - Received limit: None
+2025-08-08 19:26:01,604 - INFO - Waiting for listings container to load...
+2025-08-08 19:26:01,685 - INFO - Scrolling to load listings...
+2025-08-08 19:26:02,818 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 19:26:03,892 - INFO - Scroll 2: 18 listings visible.
+2025-08-08 19:26:04,934 - INFO - Scroll 3: 20 listings visible.
+2025-08-08 19:26:05,982 - INFO - Scroll 4: 20 listings visible.
+2025-08-08 19:26:05,982 - INFO - ⏹No new results loaded.
+2025-08-08 19:26:05,992 - INFO - Total cards found: 20
+2025-08-08 19:26:24,966 - WARNING - ⚠️ Failed to extract listing 13: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:26:36,270 - WARNING - ⚠️ Failed to extract listing 16: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:26:47,657 - WARNING - ⚠️ Failed to extract listing 19: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:26:48,377 - INFO - Results saved to C:\Users\shari\scraper_project\static\cafes_in_mumbai_google_maps_080825.csv
+2025-08-08 19:27:17,963 - INFO - Starting Google Maps scraper for: temples
+2025-08-08 19:27:17,964 - INFO - Received limit: None
+2025-08-08 19:27:22,865 - INFO - Waiting for listings container to load...
+2025-08-08 19:27:22,953 - INFO - Scrolling to load listings...
+2025-08-08 19:27:24,086 - INFO - Scroll 1: 12 listings visible.
+2025-08-08 19:27:25,217 - INFO - Scroll 2: 18 listings visible.
+2025-08-08 19:27:26,242 - INFO - Scroll 3: 20 listings visible.
+2025-08-08 19:27:27,270 - INFO - Scroll 4: 20 listings visible.
+2025-08-08 19:27:27,270 - INFO - ⏹No new results loaded.
+2025-08-08 19:27:27,276 - INFO - Total cards found: 20
+2025-08-08 19:27:42,053 - WARNING - ⚠️ Failed to extract listing 8: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:27:53,039 - WARNING - ⚠️ Failed to extract listing 11: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:28:06,357 - WARNING - ⚠️ Failed to extract listing 18: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until 'load'
+============================================================
+2025-08-08 19:28:07,487 - INFO - Results saved to C:\Users\shari\scraper_project\static\temples_google_maps_080825_192716.csv
